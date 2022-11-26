@@ -1,0 +1,1091 @@
+{
+  "multipart": [
+    {
+      "apply":
+      {
+        "model": "losgallysprops:block/post/fancy_iron_post_center"
+      }
+    },
+    {
+      "apply":{
+        "model": "losgallysprops:block/post/fancy_iron_post"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": "0"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/modern/binding"
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": "0"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/modern/binding",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": "0"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/modern/binding",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": "0"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/modern/binding",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": "0"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": "1"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": "2"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": "3"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_67_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": "0"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": "1"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": "2"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": "3"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_67_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": "0"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": "1"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": "2"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": "3"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_67_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": "0"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": "1"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": "2"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": "3"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/modern_traffic_light_base_67_5",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/default"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 1,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 2,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 3,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/67_5"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/default",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 1,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 2,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 3,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/67_5",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/default",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 1,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 2,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 3,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/67_5",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement0/67_5",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/default"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 1,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 2,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 3,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/67_5"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/default",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 1,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 2,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 3,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/67_5",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/default",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 1,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 2,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 3,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/67_5",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement1/67_5",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/default"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 1,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 2,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 3,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/67_5"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/default",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 1,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 2,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 3,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/67_5",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/default",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 1,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 2,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 3,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/67_5",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement2/67_5",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/default"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 1,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 2,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 3,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/67_5"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/default",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 1,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 2,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 3,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/67_5",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/default",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 1,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 2,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 3,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/67_5",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement3/67_5",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/default"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 1,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 2,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 3,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/67_5"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/default",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 1,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 2,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 3,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/67_5",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/default",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 1,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 2,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 3,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/67_5",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/pedestrian_modern/lights/statement4/67_5",
+        "y": 270
+      }
+    }
+  ]
+}

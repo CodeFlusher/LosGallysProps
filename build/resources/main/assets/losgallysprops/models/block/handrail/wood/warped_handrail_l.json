@@ -1,0 +1,10 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "losgallysprops:block/handrail/l_handrail_base",
+	"textures": {
+		"top": "block/stripped_warped_stem",
+		"side": "block/iron_block",
+		"bottom": "block/warped_stem",
+		"particle": "block/stripped_warped_stem"
+	}
+}

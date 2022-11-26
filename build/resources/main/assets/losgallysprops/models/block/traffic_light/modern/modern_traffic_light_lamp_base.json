@@ -1,0 +1,48 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"2": "losgallysprops:block/traffic_lights/modern/modern_traffic_light_yellow",
+		"3": "losgallysprops:block/traffic_lights/modern/modern_traffic_light_green",
+		"4": "losgallysprops:block/traffic_lights/modern/modern_traffic_light_red",
+		"particle": "losgallysprops:block/traffic_lights/modern/modern_traffic_light"
+	},
+	"elements": [
+		{
+			"name": "glass",
+			"from": [3, 13, 1.875],
+			"to": [13, 23, 1.875],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#red"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 10, 0], "texture": "#missing"},
+				"down": {"uv": [0, 0, 10, 0], "texture": "#missing"}
+			}
+		},
+		{
+			"name": "glass",
+			"from": [3, 3, 1.875],
+			"to": [13, 13, 1.875],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#yellow"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 10, 0], "texture": "#missing"},
+				"down": {"uv": [0, 0, 10, 0], "texture": "#missing"}
+			}
+		},
+		{
+			"name": "glass",
+			"from": [3, -7, 1.875],
+			"to": [13, 3, 1.875],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#green"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 10, 0], "texture": "#missing"},
+				"down": {"uv": [0, 0, 10, 0], "texture": "#missing"}
+			}
+		}
+	]
+}

@@ -1,0 +1,62 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"particle": "losgallysprops:block/traffic_lights/modern/modern_traffic_light"
+	},
+	"elements": [
+		{
+			"name": "green_base",
+			"from": [6, -7, -6.125],
+			"to": [16, 3, -6.125],
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#green"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"south": {"uv": [0, 0, 10, 16], "texture": "#missing"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 10, 0], "texture": "#missing"},
+				"down": {"uv": [0, 0, 10, 0], "texture": "#missing"}
+			}
+		},
+		{
+			"name": "yellow_base",
+			"from": [6, 3, -6.125],
+			"to": [16, 13, -6.125],
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#yellow"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"south": {"uv": [0, 0, 10, 16], "texture": "#missing"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 10, 0], "texture": "#missing"},
+				"down": {"uv": [0, 0, 10, 0], "texture": "#missing"}
+			}
+		},
+		{
+			"name": "red_base",
+			"from": [6, 13, -6.125],
+			"to": [16, 23, -6.125],
+			"rotation": {"angle": -45, "axis": "y", "origin": [0, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#red"},
+				"east": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"south": {"uv": [0, 0, 10, 16], "texture": "#missing"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#missing"},
+				"up": {"uv": [0, 0, 10, 0], "texture": "#missing"},
+				"down": {"uv": [0, 0, 10, 0], "texture": "#missing"}
+			}
+		}
+	],
+	"groups": [
+		0,
+		{
+			"name": "pack",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": []
+		},
+		1,
+		2
+	]
+}

@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/phone/phone"},
+        "facing=east": { "model": "losgallysprops:block/phone/phone", "y": 90},
+        "facing=south": { "model": "losgallysprops:block/phone/phone", "y": 180},
+        "facing=west": { "model": "losgallysprops:block/phone/phone", "y": 270}
+    }
+}

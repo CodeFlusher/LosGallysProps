@@ -1,0 +1,10 @@
+{
+    "multipart": [
+        {
+            "apply":
+            {
+            "model": "losgallysprops:block/post/fancy_iron_post"
+            }
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/decor_panel/birch"},
+        "facing=east":  { "model": "losgallysprops:block/decor_panel/birch", "y":  90},
+        "facing=south": { "model": "losgallysprops:block/decor_panel/birch", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/decor_panel/birch", "y": 270}
+    }
+}

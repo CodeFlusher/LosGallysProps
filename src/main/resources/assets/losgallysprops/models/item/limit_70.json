@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/speed_roadsign/limit_70",
+  "textures": {
+    "mark": "losgallysprops:block/roadsigns/limit_70"
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "variants":
+    {
+        "facing=north,rotation=0": { "model": "losgallysprops:block/roadsign/no_turn_right"},
+        "facing=north,rotation=1": { "model": "losgallysprops:block/roadsign/no_turn_right_225"},
+        "facing=north,rotation=2": { "model": "losgallysprops:block/roadsign/no_turn_right_45"},
+        "facing=north,rotation=3": { "model": "losgallysprops:block/roadsign/no_turn_right_675"},
+        "facing=east,rotation=0": { "model": "losgallysprops:block/roadsign/no_turn_right", "y": 90},
+        "facing=east,rotation=1": { "model": "losgallysprops:block/roadsign/no_turn_right_225","y": 90},
+        "facing=east,rotation=2": { "model": "losgallysprops:block/roadsign/no_turn_right_45", "y": 90},
+        "facing=east,rotation=3": { "model": "losgallysprops:block/roadsign/no_turn_right_675", "y": 90},
+        "facing=south,rotation=0": { "model": "losgallysprops:block/roadsign/no_turn_right", "y": 180},
+        "facing=south,rotation=1": { "model": "losgallysprops:block/roadsign/no_turn_right_225","y": 180},
+        "facing=south,rotation=2": { "model": "losgallysprops:block/roadsign/no_turn_right_45", "y": 180},
+        "facing=south,rotation=3": { "model": "losgallysprops:block/roadsign/no_turn_right_675", "y": 180},
+        "facing=west,rotation=0": { "model": "losgallysprops:block/roadsign/no_turn_right", "y": 270},
+        "facing=west,rotation=1": { "model": "losgallysprops:block/roadsign/no_turn_right_225","y": 270},
+        "facing=west,rotation=2": { "model": "losgallysprops:block/roadsign/no_turn_right_45", "y": 270},
+        "facing=west,rotation=3": { "model": "losgallysprops:block/roadsign/no_turn_right_675", "y": 270}
+    }
+}

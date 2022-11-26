@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/decor_panel/quartz"},
+        "facing=east":  { "model": "losgallysprops:block/decor_panel/quartz", "y":  90},
+        "facing=south": { "model": "losgallysprops:block/decor_panel/quartz", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/decor_panel/quartz", "y": 270}
+    }
+}

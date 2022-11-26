@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "losgallysprops:block/stairs/magenta/slab"
+    },
+    "type=double": {
+      "model": "block/magenta_concrete"
+    },
+    "type=top": {
+      "model": "losgallysprops:block/stairs/magenta/slab_top"
+    }
+  }
+}

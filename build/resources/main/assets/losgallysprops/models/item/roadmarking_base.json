@@ -1,0 +1,14 @@
+{
+  "credit": "Made with Blockbench",
+  "parent": "minecraft:item/handheld_rod",
+  "textures": {
+    "layer0": "item/carrot_on_a_stick"
+  },
+  "display": {
+    "fixed": {
+      "rotation": [0, -180, 0],
+      "translation": [0, 0, -2.25],
+      "scale": [3, 3, 3]
+    }
+  }
+}

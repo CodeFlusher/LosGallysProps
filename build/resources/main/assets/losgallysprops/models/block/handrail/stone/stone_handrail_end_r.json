@@ -1,0 +1,10 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "losgallysprops:block/handrail/r_handrail_end_base",
+	"textures": {
+		"top": "block/smooth_stone",
+		"side": "block/iron_block",
+		"bottom": "block/stone_bricks",
+		"particle": "block/smooth_stone"
+	}
+}

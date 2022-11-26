@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/handrail/wood/spruce_handrail_end_l" },
+        "facing=east":  { "model": "losgallysprops:block/handrail/wood/spruce_handrail_end_l", "y": 90},
+        "facing=south": { "model": "losgallysprops:block/handrail/wood/spruce_handrail_end_l", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/handrail/wood/spruce_handrail_end_l", "y": 270}
+    }
+}
