@@ -1,9 +1,0 @@
-{
-    "variants":
-    {
-        "facing=north": { "model": "losgallysprops:block/ironpostvertical" },
-        "facing=east":  { "model": "losgallysprops:block/ironpostvertical", "y": 90},
-        "facing=south": { "model": "losgallysprops:block/ironpostvertical", "y": 180},
-        "facing=west":  { "model": "losgallysprops:block/ironpostvertical", "y": 270}
-    }
-}

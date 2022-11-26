@@ -1,9 +1,0 @@
-{
-    "variants":
-    {
-        "facing=north": { "model": "losgallysprops:block/decor_panel/dark_oak"},
-        "facing=east":  { "model": "losgallysprops:block/decor_panel/dark_oak", "y":  90},
-        "facing=south": { "model": "losgallysprops:block/decor_panel/dark_oak", "y": 180},
-        "facing=west":  { "model": "losgallysprops:block/decor_panel/dark_oak", "y": 270}
-    }
-}

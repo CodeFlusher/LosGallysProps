@@ -1,9 +1,0 @@
-{
-    "variants":
-    {
-        "facing=north": { "model": "losgallysprops:block/decor_panel/jungle"},
-        "facing=east":  { "model": "losgallysprops:block/decor_panel/jungle", "y":  90},
-        "facing=south": { "model": "losgallysprops:block/decor_panel/jungle", "y": 180},
-        "facing=west":  { "model": "losgallysprops:block/decor_panel/jungle", "y": 270}
-    }
-}

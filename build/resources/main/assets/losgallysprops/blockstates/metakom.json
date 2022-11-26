@@ -1,9 +1,0 @@
-{
-    "variants":
-    {
-        "facing=north": { "model": "losgallysprops:block/metakom"},
-        "facing=east":  { "model": "losgallysprops:block/metakom", "y":  90},
-        "facing=south": { "model": "losgallysprops:block/metakom", "y": 180},
-        "facing=west":  { "model": "losgallysprops:block/metakom", "y": 270}
-    }
-}

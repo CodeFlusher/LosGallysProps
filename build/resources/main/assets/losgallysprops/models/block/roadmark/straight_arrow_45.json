@@ -1,6 +1,0 @@
-{
-  "parent": "losgallysprops:block/roadmarking_base_45",
-  "textures":{
-    "mark":"losgallysprops:block/markings/straight_arrow"
-  }
-}
