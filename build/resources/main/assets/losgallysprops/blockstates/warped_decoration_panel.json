@@ -1,9 +1,0 @@
-{
-    "variants":
-    {
-        "facing=north": { "model": "losgallysprops:block/decor_panel/warped"},
-        "facing=east":  { "model": "losgallysprops:block/decor_panel/warped", "y":  90},
-        "facing=south": { "model": "losgallysprops:block/decor_panel/warped", "y": 180},
-        "facing=west":  { "model": "losgallysprops:block/decor_panel/warped", "y": 270}
-    }
-}

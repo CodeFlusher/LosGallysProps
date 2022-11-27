@@ -1,9 +1,0 @@
-{
-    "variants":
-    {
-        "facing=north": { "model": "losgallysprops:block/decor_panel/mangrove"},
-        "facing=east":  { "model": "losgallysprops:block/decor_panel/mangrove", "y":  90},
-        "facing=south": { "model": "losgallysprops:block/decor_panel/mangrove", "y": 180},
-        "facing=west":  { "model": "losgallysprops:block/decor_panel/mangrove", "y": 270}
-    }
-}

@@ -1,9 +1,0 @@
-{
-    "variants":
-    {
-        "facing=north": { "model": "losgallysprops:block/drain_t"},
-        "facing=east":  { "model": "losgallysprops:block/drain_t", "y":  90},
-        "facing=south": { "model": "losgallysprops:block/drain_t", "y": 180},
-        "facing=west":  { "model": "losgallysprops:block/drain_t", "y": 270}
-    }
-}

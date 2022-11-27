@@ -1,9 +1,0 @@
-{
-	"credit": "Made with Blockbench",
-	"parent": "losgallysprops:block/traffic_light/on_wall_modern/onwall_modern_traffic_light_lamp_base",
-	"textures": {
-		"red": "losgallysprops:block/traffic_lights/modern/modern_traffic_light_red_lit",
-		"yellow": "losgallysprops:block/traffic_lights/modern/modern_traffic_light_yellow",
-		"green": "losgallysprops:block/traffic_lights/modern/modern_traffic_light_green"
-	}
-}

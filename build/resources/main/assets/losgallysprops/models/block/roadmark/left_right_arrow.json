@@ -1,6 +1,0 @@
-{
-  "parent": "losgallysprops:block/roadmarking_base",
-  "textures":{
-    "mark":"losgallysprops:block/markings/left_and_right"
-  }
-}

@@ -1,9 +1,0 @@
-{
-    "variants":
-    {
-        "facing=north": { "model": "losgallysprops:block/decor_panel/spruce"},
-        "facing=east":  { "model": "losgallysprops:block/decor_panel/spruce", "y":  90},
-        "facing=south": { "model": "losgallysprops:block/decor_panel/spruce", "y": 180},
-        "facing=west":  { "model": "losgallysprops:block/decor_panel/spruce", "y": 270}
-    }
-}

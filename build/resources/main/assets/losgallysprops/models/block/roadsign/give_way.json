@@ -1,6 +1,0 @@
-{
-  "parent": "losgallysprops:block/roadsign_base",
-  "textures": {
-    "mark": "losgallysprops:block/roadsigns/give_way"
-  }
-}
