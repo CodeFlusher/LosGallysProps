@@ -1,6 +1,5 @@
-package me.themiggergames.losgallysprops.block.streetProps.trafficlight;
+package me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight;
 
-import me.themiggergames.losgallysprops.LosGallysProps;
 import me.themiggergames.losgallysprops.block.BlockRotatable;
 import me.themiggergames.losgallysprops.util.CustomIntProperty;
 import me.themiggergames.losgallysprops.util.IntegerStatementManager;
@@ -13,8 +12,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
@@ -28,7 +25,6 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.minecraft.world.block.NeighborUpdater;
 import org.jetbrains.annotations.Nullable;
 
 public class TrafficLightBlock extends BlockRotatable implements BlockEntityProvider {

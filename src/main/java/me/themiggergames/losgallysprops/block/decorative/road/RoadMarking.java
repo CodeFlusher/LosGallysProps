@@ -1,4 +1,4 @@
-package me.themiggergames.losgallysprops.block.road;
+package me.themiggergames.losgallysprops.block.decorative.road;
 
 import me.themiggergames.losgallysprops.block.BlockRotatable;
 import net.minecraft.block.BlockState;

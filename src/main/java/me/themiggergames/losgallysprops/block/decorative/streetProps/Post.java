@@ -1,4 +1,4 @@
-package me.themiggergames.losgallysprops.block.streetProps;
+package me.themiggergames.losgallysprops.block.decorative.streetProps;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

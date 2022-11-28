@@ -4,11 +4,16 @@ import me.themiggergames.losgallysprops.LosGallysProps;
 import me.themiggergames.losgallysprops.ModSounds;
 import me.themiggergames.losgallysprops.block.additionalvanillablock.ModStairsBlock;
 import me.themiggergames.losgallysprops.block.decorative.*;
-import me.themiggergames.losgallysprops.block.road.RoadMarking;
-import me.themiggergames.losgallysprops.block.road.RoadSign;
-import me.themiggergames.losgallysprops.block.streetProps.DrainPipe;
-import me.themiggergames.losgallysprops.block.streetProps.Post;
-import me.themiggergames.losgallysprops.block.streetProps.trafficlight.TrafficLightBlock;
+import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRail;
+import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRailEnd;
+import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRail;
+import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRailEnd;
+import me.themiggergames.losgallysprops.block.decorative.road.RoadMarking;
+import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
+import me.themiggergames.losgallysprops.block.decorative.streetProps.BioToilet;
+import me.themiggergames.losgallysprops.block.decorative.streetProps.DrainPipe;
+import me.themiggergames.losgallysprops.block.decorative.streetProps.Post;
+import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
 import me.themiggergames.losgallysprops.block.test.DebugBlock;
 import me.themiggergames.losgallysprops.block.trafficlightcontroller.TrafficLightControllerBlock;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
@@ -180,12 +185,13 @@ public class ModBlocks {
     public static final LeftHandRail LEFT_HAND_QUARTZ_HANDRAIL = new LeftHandRail(FabricBlockSettings.of(Material.WOOD));
     public static final RightHandRailEnd RIGHT_HAND_QUARTZ_HANDRAIL_END = new RightHandRailEnd(FabricBlockSettings.of(Material.WOOD));
     public static final LeftHandRailEnd LEFT_HAND_QUARTZ_HANDRAIL_END = new LeftHandRailEnd(FabricBlockSettings.of(Material.WOOD));
+    public static final BioToilet BIO_TOILET = new BioToilet(FabricBlockSettings.of(Material.WOOD));
     public static void registerBlocks(){
         RegisterBlock("phone", PHONE, ModItemGroup.LOSGALLYS);
         RegisterBlock("metakom", METAKOM, ModItemGroup.LOSGALLYS);
         RegisterBlock("debugblock", DEBUG_BLOCK, null);
         RegisterBlock("fancy_iron_post",FANCY_IRON_POST, ModItemGroup.LOSGALLYS);
-
+        RegisterBlock("biotoilet",BIO_TOILET, ModItemGroup.LOSGALLYS);
 
 
 

@@ -1,5 +1,6 @@
-package me.themiggergames.losgallysprops.block.decorative;
+package me.themiggergames.losgallysprops.block.decorative.handrails;
 
+import me.themiggergames.losgallysprops.block.decorative.HandRail;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.util.math.BlockPos;
@@ -8,7 +9,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class RightHandRail extends HandRail{
+public class RightHandRail extends HandRail {
 
     public RightHandRail(Settings settings) {
         super(settings.nonOpaque(), true);

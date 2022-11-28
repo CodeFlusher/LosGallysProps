@@ -1,25 +1,19 @@
 package me.themiggergames.losgallysprops.block.decorative;
 
-import me.themiggergames.losgallysprops.block.BlockRotatable;
-import me.themiggergames.losgallysprops.block.road.RoadSign;
-import me.themiggergames.losgallysprops.block.streetProps.trafficlight.TrafficLightBlock;
+import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
+import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
 import net.minecraft.block.*;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.screen.ScreenHandler;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
-import net.minecraft.world.block.NeighborUpdater;
-import org.jetbrains.annotations.Nullable;
 
+//temporary unused cuz of this shit broken as hell.
 public class FancyPost extends Block {
 
     public FancyPost(Settings settings) {

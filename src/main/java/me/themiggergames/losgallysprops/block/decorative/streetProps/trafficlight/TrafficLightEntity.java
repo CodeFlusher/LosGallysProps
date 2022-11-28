@@ -1,4 +1,4 @@
-package me.themiggergames.losgallysprops.block.streetProps.trafficlight;
+package me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight;
 
 import me.themiggergames.losgallysprops.block.ModBlockEntities;
 import net.minecraft.block.BlockState;
