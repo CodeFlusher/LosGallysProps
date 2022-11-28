@@ -3,6 +3,7 @@ package me.themiggergames.losgallysprops;
 import me.themiggergames.losgallysprops.block.ModBlocks;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
 
 public class LosGallysPropsClient implements ClientModInitializer {
@@ -43,6 +44,19 @@ public class LosGallysPropsClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PEDESTRIAN_MODERN_TRAFFIC_LIGHT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ONWALL_MODERN_TRAFFIC_LIGHT, RenderLayer.getCutout());
 
+//        addHandrails();
+
     }
+
+    public void getCutout(Block block){
+        BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
+    }
+
+//    private void addHandrails(){
+//        getCutout(ModBlocks.RIGHT_HAND_ACACIA_HANDRAIL);
+//        getCutout(ModBlocks.LEFT_HAND_ACACIA_HANDRAIL);
+//        getCutout(ModBlocks.RIGHT_HAND_ACACIA_HANDRAIL_END);
+//        getCutout(ModBlocks.LEFT_HAND_ACACIA_HANDRAIL_END);
+//    }
 }
 
