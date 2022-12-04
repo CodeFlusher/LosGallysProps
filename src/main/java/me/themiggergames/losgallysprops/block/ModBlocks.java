@@ -180,15 +180,23 @@ public class ModBlocks {
     public static final LeftHandRail LEFT_HAND_QUARTZ_HANDRAIL = new LeftHandRail(FabricBlockSettings.of(Material.WOOD));
     public static final RightHandRailEnd RIGHT_HAND_QUARTZ_HANDRAIL_END = new RightHandRailEnd(FabricBlockSettings.of(Material.WOOD));
     public static final LeftHandRailEnd LEFT_HAND_QUARTZ_HANDRAIL_END = new LeftHandRailEnd(FabricBlockSettings.of(Material.WOOD));
+<<<<<<< Updated upstream
+=======
+    //public static final BioToilet BIO_TOILET = new BioToilet(FabricBlockSettings.of(Material.WOOD));
+>>>>>>> Stashed changes
     public static void registerBlocks(){
         RegisterBlock("phone", PHONE, ModItemGroup.LOSGALLYS);
         RegisterBlock("metakom", METAKOM, ModItemGroup.LOSGALLYS);
         RegisterBlock("debugblock", DEBUG_BLOCK, null);
         RegisterBlock("fancy_iron_post",FANCY_IRON_POST, ModItemGroup.LOSGALLYS);
+<<<<<<< Updated upstream
 
 
 
 
+=======
+        //RegisterBlock("biotoilet",BIO_TOILET, ModItemGroup.LOSGALLYS);
+>>>>>>> Stashed changes
 //        registerAmbientGenerators();
 
         registerDrains();

@@ -21,7 +21,7 @@ public class HandRail extends HorizontalFacingBlock implements Waterloggable {
     private static Boolean inverse;
     VoxelShape voxelShape;
     public HandRail(Settings settings, Boolean doInverse) {
-        super(settings);
+        super(settings.nonOpaque());
         inverse=doInverse;
     }
 
