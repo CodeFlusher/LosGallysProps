@@ -1,5 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative;
 
+import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -14,6 +15,8 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
 public class DecorPanel extends HorizontalFacingBlock {
+
+    private SymmetricVoxelShapeController controller;
 
     public DecorPanel(Settings settings) {
         super(settings);

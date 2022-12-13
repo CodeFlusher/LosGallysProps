@@ -47,8 +47,8 @@ public class ModBlocks {
 //    public static final Block ELECTRICITY_AMBIENT_GEN = Registry.register(Registry.BLOCK, new Identifier("electricity_ambient_gen", LosGallysProps.MOD_ID), new AmbientGenerator(FabricBlockSettings.of(Material.METAL).strength(4f)));
     //Traffic Marking
 
-    public static final Post FANCY_IRON_POST = new Post(FabricBlockSettings.of(Material.METAL).strength(3f));
-    //public static final FancyPost FANCY_IRON_POST = new FancyPost(FabricBlockSettings.of(Material.METAL).strength(3f));
+    //public static final Post FANCY_IRON_POST = new Post(FabricBlockSettings.of(Material.METAL).strength(3f));
+    public static final FancyPost FANCY_IRON_POST = new FancyPost(FabricBlockSettings.of(Material.METAL).strength(3f));
     public static final RoadMarking STRAIGHT_ARROW = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
     public static final RoadMarking STRAIGHT_RIGHT_ARROW = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
     public static final RoadMarking STRAIGHT_LEFT_ARROW = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());

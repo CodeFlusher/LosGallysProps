@@ -49,13 +49,16 @@ public class FancyPost extends Block {
         BlockState blockState2 = blockView.getBlockState(blockPos3);
         BlockState blockState3 = blockView.getBlockState(blockPos4);
         BlockState blockState4 = blockView.getBlockState(blockPos5);
+        BlockState blockState5 = blockView.getBlockState(blockPos6);
+        BlockState blockState6 = blockView.getBlockState(blockPos7);
+
         return super.getPlacementState(ctx)
                 .with(NORTH, this.canConnect(blockState, blockState.isSideSolidFullSquare(blockView, blockPos2, Direction.NORTH), Direction.NORTH))
                 .with(EAST, this.canConnect(blockState2, blockState2.isSideSolidFullSquare(blockView, blockPos3, Direction.WEST), Direction.WEST))
                 .with(SOUTH, this.canConnect(blockState3, blockState3.isSideSolidFullSquare(blockView, blockPos4, Direction.SOUTH), Direction.SOUTH))
                 .with(WEST, this.canConnect(blockState4, blockState4.isSideSolidFullSquare(blockView, blockPos5, Direction.EAST), Direction.EAST))
-                .with(WEST, this.canConnect(blockState4, blockState4.isSideSolidFullSquare(blockView, blockPos6, Direction.UP), Direction.UP))
-                .with(WEST, this.canConnect(blockState4, blockState4.isSideSolidFullSquare(blockView, blockPos7, Direction.DOWN), Direction.DOWN));
+                .with(UP, this.canConnect(blockState5, blockState5.isSideSolidFullSquare(blockView, blockPos6, Direction.UP), Direction.UP))
+                .with(DOWN, this.canConnect(blockState6, blockState6.isSideSolidFullSquare(blockView, blockPos7, Direction.DOWN), Direction.DOWN));
     }
 
     public boolean canConnect(BlockState state, boolean neighborIsFullSquare, Direction dir) {

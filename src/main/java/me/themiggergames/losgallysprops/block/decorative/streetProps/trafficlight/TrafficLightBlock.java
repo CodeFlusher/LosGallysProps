@@ -108,18 +108,7 @@ public class TrafficLightBlock extends BlockRotatable implements BlockEntityProv
         @Override
         public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
             Direction dir = state.get(FACING);
-            switch (dir) {
-                case NORTH:
-                    return voxelShapeController.getNorthShape();
-                case EAST:
-                    return voxelShapeController.getEastShape();
-                case SOUTH:
-                    return voxelShapeController.getSouthShape();
-                case WEST:
-                    return voxelShapeController.getWestShape();
-                default:
-                    return VoxelShapes.cuboid(0f, -0.5f, 0f, 1f, 1.5f, 0.5f);
-            }
+            return voxelShapeController.getVoxelOutline(dir);
         }
     }
     
