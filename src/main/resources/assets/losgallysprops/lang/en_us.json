@@ -1,4 +1,12 @@
 {
+	"ui.losgallysprops.trafficlight.setstatement0": "Set Disabled Statement",
+	"ui.losgallysprops.trafficlight.setstatement1": "Set Full Lit Statement",
+	"ui.losgallysprops.trafficlight.setstatement2": "Set Static Red Statement",
+	"ui.losgallysprops.trafficlight.setstatement3": "Set Static Yellow Statement",
+	"ui.losgallysprops.trafficlight.setstatement4": "Set Blinking Yellow Statement",
+	"ui.losgallysprops.trafficlight.setstatement5": "Set Static Green Statement",
+	"ui.losgallysprops.trafficlight.setstatement6": "Set Blinking Green Statement",
+
 	"item.losgallysprops.mce_one": "One MCE",
 	"item.losgallysprops.mce_two": "Two MCE",
 	"item.losgallysprops.mce_five": "Five MCE",

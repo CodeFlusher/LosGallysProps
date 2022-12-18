@@ -1,4 +1,12 @@
 {
+	"ui.losgallysprops.trafficlight.setstatement0": "Установить Выключенный Режим",
+	"ui.losgallysprops.trafficlight.setstatement1": "Установить Полностью Включённый режим",
+	"ui.losgallysprops.trafficlight.setstatement2": "Установить Красный Свет",
+	"ui.losgallysprops.trafficlight.setstatement3": "Установить Жёлтый Свет",
+	"ui.losgallysprops.trafficlight.setstatement4": "Установить Моргающий Жёлтый Свет",
+	"ui.losgallysprops.trafficlight.setstatement5": "Установить Зелёный Свет",
+	"ui.losgallysprops.trafficlight.setstatement6": "Установить Моргающий Зелёный Свет",
+
 	"item.losgallysprops.mce_one": "Один MCE",
 	"item.losgallysprops.mce_two": "Два MCE",
 	"item.losgallysprops.mce_five": "Пять MCE",
@@ -15,8 +23,8 @@
 
 	"block.losgallysprops.metakom": "Домофон Метаком 2003",
 
-	"block.losgallysprops.drain": "Маленький Слив",
-	"block.losgallysprops.drain_t": "Маленький Слив (Прозрачный)",
+	"block.losgallysprops.drain": "Маленький Сливной Барьер",
+	"block.losgallysprops.drain_t": "Маленький Сливной Барьер (Прозрачный)",
 	"block.losgallysprops.manhole": "Канализационный Люк",
 	"block.losgallysprops.street_drain": "Уличный Водосток",
 

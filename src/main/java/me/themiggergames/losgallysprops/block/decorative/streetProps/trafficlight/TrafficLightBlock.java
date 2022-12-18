@@ -1,6 +1,8 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight;
 
 import me.themiggergames.losgallysprops.block.BlockRotatable;
+import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightPhaseEditorDescription;
+import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightScreen;
 import me.themiggergames.losgallysprops.util.CustomIntProperty;
 import me.themiggergames.losgallysprops.util.IntegerStatementManager;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
@@ -11,6 +13,7 @@ import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -84,14 +87,17 @@ public class TrafficLightBlock extends BlockRotatable implements BlockEntityProv
 //        );
     }
 
+
+
     @Override
     public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity placedBy, Hand hand, BlockHitResult blockHitResult) {
         DebugLogger.sendMessage("Click Spotted");
         if(placedBy.getInventory().getMainHandStack().getItem() == ModItems.CONFIGURATIOR){
             DebugLogger.sendMessage("Click Spotted");
-            world.setBlockState(blockPos, blockState.with(MODE, manager.changeStatement()));
+            MinecraftClient.getInstance().setScreen(new TrafficLightScreen(new TrafficLightPhaseEditorDescription(world, blockState, blockPos)));
+            //world.setBlockState(blockPos, blockState.with(MODE, manager.changeStatement()));
         } else {
-            placedBy.sendMessage(Text.translatable("block.losgallysprops.trafficlight.setstatement."+manager.getCurrentStatement()), true);
+            placedBy.sendMessage(Text.translatable("block.losgallysprops.trafficlight.setstatement."+blockState.get(MODE)), true);
         }
 
         return ActionResult.SUCCESS;

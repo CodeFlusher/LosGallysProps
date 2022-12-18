@@ -15,6 +15,10 @@ repositories {
 		name = "CottonMC"
 		url = "https://server.bbkr.space/artifactory/libs-release"
 	}
+	maven {
+		name = "RainbowJuice"
+		url = "https://github.com/"
+	}
 }
 
 dependencies {
@@ -28,7 +32,7 @@ dependencies {
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
-	modImplementation include("io.github.cottonmc:LibGui:6.0.0+1.19")
+	modImplementation include("io.github.cottonmc:LibGui:6.5.0+1.19.3")
 }
 
 processResources {
