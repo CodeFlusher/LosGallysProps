@@ -2,19 +2,19 @@ package me.themiggergames.losgallysprops.block;
 
 
 import me.themiggergames.losgallysprops.LosGallysProps;
-import me.themiggergames.losgallysprops.util.CustomIntProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.Direction;
 
 
 public class BlockRotatable extends HorizontalFacingBlock{
 
-    public static final CustomIntProperty rotation = new CustomIntProperty("rotation",0,3);
+    public static final IntProperty rotation = IntProperty.of("rotation",0,3);
     boolean addStatements;
 
     protected BlockRotatable(Settings settings, boolean useAdditionalStates) {

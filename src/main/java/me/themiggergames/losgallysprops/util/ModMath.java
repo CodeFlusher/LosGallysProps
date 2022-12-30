@@ -1,9 +1,5 @@
 package me.themiggergames.losgallysprops.util;
 
-import me.themiggergames.losgallysprops.LosGallysProps;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.math.Direction;
-
 public class ModMath {
 
     public boolean isInRange(double x, float range1, float range2, boolean including){
@@ -20,5 +16,20 @@ public class ModMath {
                return x > range1 || x < range2;
            }
        }
+    }
+
+    public float getMax(float a, float b){
+        if(a>=b){
+            return a;
+        }else{
+            return b;
+        }
+    }
+    public float getMin(float a, float b){
+        if(a<=b){
+            return a;
+        }else{
+            return b;
+        }
     }
 }

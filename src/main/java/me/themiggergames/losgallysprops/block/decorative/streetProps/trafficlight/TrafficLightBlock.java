@@ -1,13 +1,12 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight;
 
 import me.themiggergames.losgallysprops.block.BlockRotatable;
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightPhaseEditorDescription;
 import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightScreen;
-import me.themiggergames.losgallysprops.util.CustomIntProperty;
+import me.themiggergames.losgallysprops.items.ModItems;
 import me.themiggergames.losgallysprops.util.IntegerStatementManager;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
-import me.themiggergames.losgallysprops.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
@@ -16,7 +15,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -42,25 +41,13 @@ public class TrafficLightBlock extends BlockRotatable implements BlockEntityProv
     5-always green
     6-always blinking yellow
      */
-    public static final CustomIntProperty MODE = new CustomIntProperty("statement", 0,6);
-    public static final BooleanProperty SOUTH = BooleanProperty.of("north");
-    public static final BooleanProperty NORTH = BooleanProperty.of("south");
-    public static final BooleanProperty EAST = BooleanProperty.of("east");
-    public static final BooleanProperty WEST = BooleanProperty.of("west");
-    public static final BooleanProperty UP = BooleanProperty.of("up");
-    public static final BooleanProperty DOWN = BooleanProperty.of("down");
+    public static final IntProperty MODE = IntProperty.of("statement", 0,6);
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
         stateManager.add(Properties.HORIZONTAL_FACING);
         stateManager.add(BlockRotatable.rotation);
         stateManager.add(MODE);
-//        stateManager.add(NORTH);
-//        stateManager.add(EAST);
-//        stateManager.add(SOUTH);
-//        stateManager.add(WEST);
-//        stateManager.add(UP);
-//        stateManager.add(DOWN);
     }
 
     @Nullable

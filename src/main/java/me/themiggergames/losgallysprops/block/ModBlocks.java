@@ -2,7 +2,6 @@ package me.themiggergames.losgallysprops.block;
 
 import me.themiggergames.losgallysprops.LosGallysProps;
 import me.themiggergames.losgallysprops.ModSounds;
-import me.themiggergames.losgallysprops.block.additionalvanillablock.ModStairsBlock;
 import me.themiggergames.losgallysprops.block.decorative.*;
 import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRail;
 import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRailEnd;
@@ -12,12 +11,11 @@ import me.themiggergames.losgallysprops.block.decorative.road.RoadMarking;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.BioToilet;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.DrainPipe;
-import me.themiggergames.losgallysprops.block.decorative.streetProps.Post;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
 import me.themiggergames.losgallysprops.block.test.DebugBlock;
 import me.themiggergames.losgallysprops.block.trafficlightcontroller.TrafficLightControllerBlock;
-import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import me.themiggergames.losgallysprops.items.ModItemGroup;
+import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -186,6 +184,16 @@ public class ModBlocks {
     public static final RightHandRailEnd RIGHT_HAND_QUARTZ_HANDRAIL_END = new RightHandRailEnd(FabricBlockSettings.of(Material.WOOD));
     public static final LeftHandRailEnd LEFT_HAND_QUARTZ_HANDRAIL_END = new LeftHandRailEnd(FabricBlockSettings.of(Material.WOOD));
     public static final BioToilet BIO_TOILET = new BioToilet(FabricBlockSettings.of(Material.WOOD));
+    public static final VerticalSlab BRICK_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
+    public static final VerticalSlab OAK_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
+    public static final VerticalSlab BIRCH_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
+    public static final VerticalSlab SPRUCE_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
+    public static final VerticalSlab JUNGLE_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
+    public static final VerticalSlab ACACIA_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
+    public static final VerticalSlab DARK_OAK_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
+    public static final VerticalSlab MANGROVE_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
+    public static final VerticalSlab WARPED_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
+    public static final VerticalSlab CRIMSON_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
     public static void registerBlocks(){
         RegisterBlock("phone", PHONE, ModItemGroup.LOSGALLYS);
         RegisterBlock("metakom", METAKOM, ModItemGroup.LOSGALLYS);
@@ -214,6 +222,8 @@ public class ModBlocks {
         registerTrafficLights();
 
         registerHandRails();
+
+        registerVerticalSlabs();
     }
 
     public static Block RegisterBlock(String name, Block block, ItemGroup itemGroup){
@@ -305,6 +315,19 @@ public class ModBlocks {
         RegisterBlock("mangrove_decoration_panel", MANGROVE_DECOR_PANEL, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("quartz_decoration_panel", QUARTZ_DECOR_PANEL, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("stone_decoration_panel", STONE_DECOR_PANEL, ModItemGroup.LGBUILDINGBLOCKS);
+    }
+
+    private static void registerVerticalSlabs(){
+        RegisterBlock("brick_vertical_slab", BRICK_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("acacia_vertical_slab", ACACIA_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("warped_vertical_slab", WARPED_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("crimson_vertical_slab", CRIMSON_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("spruce_vertical_slab", SPRUCE_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("jungle_vertical_slab", JUNGLE_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("oak_vertical_slab", OAK_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("birch_vertical_slab", BIRCH_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("dark_oak_vertical_slab", DARK_OAK_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("mangrove_vertical_slab", MANGROVE_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
     }
 
     private static void registerTrafficLights(){

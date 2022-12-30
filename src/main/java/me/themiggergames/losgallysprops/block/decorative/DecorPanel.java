@@ -11,12 +11,11 @@ import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
 public class DecorPanel extends HorizontalFacingBlock {
 
-    private SymmetricVoxelShapeController controller;
+    private final SymmetricVoxelShapeController controller = new SymmetricVoxelShapeController(1, 0.2f, 1, 0, 0, 0.4f);
 
     public DecorPanel(Settings settings) {
         super(settings);
@@ -29,18 +28,19 @@ public class DecorPanel extends HorizontalFacingBlock {
     }
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        switch (state.get(FACING)){
-            case NORTH:
-                return VoxelShapes.cuboid(0f, 0f, 0.4f, 1f, 1f, 0.6f);
-            case SOUTH:
-                return VoxelShapes.cuboid(0f, 0f, 0.4f, 1f, 1f, 0.6f);
-            case WEST:
-                return VoxelShapes.cuboid(0.4f, 0f, 0f, 0.6f, 1f, 1f);
-            case EAST:
-                return VoxelShapes.cuboid(0.4f, 0f, 0f, 0.6f, 1f, 1f);
-            default:
-                return VoxelShapes.cuboid(0.4f, 0f, 0f, 0.6f, 1f, 1f);
-        }
+        return controller.getVoxelOutline(state.get(FACING));
+//       switch (state.get(FACING)){
+//            case NORTH:
+//                return VoxelShapes.cuboid(0f, 0f, 0.4f, 1f, 1f, 0.6f);
+//            case SOUTH:
+//                return VoxelShapes.cuboid(0f, 0f, 0.4f, 1f, 1f, 0.6f);
+//            case WEST:
+//                return VoxelShapes.cuboid(0.4f, 0f, 0f, 0.6f, 1f, 1f);
+//            case EAST:
+//                return VoxelShapes.cuboid(0.4f, 0f, 0f, 0.6f, 1f, 1f);
+//            default:
+//                return VoxelShapes.cuboid(0.4f, 0f, 0f, 0.6f, 1f, 1f);
+//        }
     }
 
 

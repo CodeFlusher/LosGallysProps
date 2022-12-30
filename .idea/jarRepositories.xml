@@ -36,5 +36,15 @@
       <option name="name" value="CottonMC" />
       <option name="url" value="https://server.bbkr.space/artifactory/libs-release" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="RainbowJuice" />
+      <option name="name" value="RainbowJuice" />
+      <option name="url" value="https://github.com/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="RainbowJuice" />
+      <option name="name" value="RainbowJuice" />
+      <option name="url" value="https://github.com/RainbowJuiceMinecraft/RainbowJuiceModLib" />
+    </remote-repository>
   </component>
 </project>

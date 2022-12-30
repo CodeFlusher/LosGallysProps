@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/vertical_slabs/slab/jungle_vertical_slab"},
+        "facing=east":  { "model": "losgallysprops:block/vertical_slabs/slab/jungle_vertical_slab", "y":  90},
+        "facing=south": { "model": "losgallysprops:block/vertical_slabs/slab/jungle_vertical_slab", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/vertical_slabs/slab/jungle_vertical_slab", "y": 270}
+    }
+}

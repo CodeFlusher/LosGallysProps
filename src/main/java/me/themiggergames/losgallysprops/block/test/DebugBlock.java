@@ -4,7 +4,6 @@ import me.themiggergames.losgallysprops.LosGallysProps;
 import me.themiggergames.losgallysprops.ModSounds;
 import me.themiggergames.losgallysprops.block.BlockRotatable;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.text.Text;

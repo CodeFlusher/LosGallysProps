@@ -23,6 +23,17 @@
 
 	"block.losgallysprops.phone": "Phone",
 
+	"block.losgallysprops.brick_vertical_slab": "Brick Vertical Slab",
+	"block.losgallysprops.acacia_vertical_slab": "Acacia Vertical Slab",
+	"block.losgallysprops.warped_vertical_slab": "Warped Vertical Slab",
+	"block.losgallysprops.crimson_vertical_slab": "Crimson Vertical Slab",
+	"block.losgallysprops.spruce_vertical_slab": "Spruce Vertical Slab",
+	"block.losgallysprops.jungle_vertical_slab": "Jungle Vertical Slab",
+	"block.losgallysprops.oak_vertical_slab": "Oak Vertical Slab",
+	"block.losgallysprops.birch_vertical_slab": "Birch Vertical Slab",
+	"block.losgallysprops.dark_oak_vertical_slab": "Dark Oak Vertical Slab",
+	"block.losgallysprops.mangrove_vertical_slab": "Mangrove Vertical Slab",
+
 	"block.losgallysprops.metakom": "Metakom 2003 Intercom",
 
 	"block.losgallysprops.drain": "Small Drain",

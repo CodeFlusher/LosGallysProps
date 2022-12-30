@@ -28,9 +28,9 @@ public class SymmetricVoxelShapeController {
             case WEST:
                 return VoxelShapes.cuboid(z, y, x, z+thickness, y+height, x+wideness);
             case SOUTH:
-                return VoxelShapes.cuboid(x, y, 1-z-thickness, x+wideness, y+height, 1-z);
+                return VoxelShapes.cuboid(x,y,1-(thickness+z), x+wideness, y+height, 1-z);
             case EAST:
-                return VoxelShapes.cuboid(1-thickness, y, x, 1-z, y+height, x+wideness);
+                return VoxelShapes.cuboid(1-(thickness+z), y, x, 1-z, y+height, x+wideness);
             default:
                 return VoxelShapes.cuboid(x, y, z, x+wideness, y+height, z+thickness);
         }

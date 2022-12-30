@@ -1,21 +1,15 @@
 package me.themiggergames.losgallysprops.gui.trafficlight;
 
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
-import io.github.cottonmc.cotton.gui.widget.WBox;
 import io.github.cottonmc.cotton.gui.widget.WButton;
 import io.github.cottonmc.cotton.gui.widget.WGridPanel;
 import io.github.cottonmc.cotton.gui.widget.WLabel;
-import io.github.cottonmc.cotton.gui.widget.data.Texture;
 import io.github.cottonmc.cotton.gui.widget.icon.ItemIcon;
-import io.github.cottonmc.cotton.gui.widget.icon.TextureIcon;
-import me.themiggergames.losgallysprops.LosGallysProps;
 import me.themiggergames.losgallysprops.block.ModBlocks;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
-import me.themiggergames.losgallysprops.util.TrafficLightStatements;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -29,19 +23,17 @@ public class TrafficLightPhaseEditorDescription extends LightweightGuiDescriptio
         setRootPanel(root);
         root.setSize(256, 162);
 
-        addChangerLine(new WButton(), world, state, pos, 0);
-        addChangerLine(new WButton(), world, state, pos, 1);
-        addChangerLine(new WButton(), world, state, pos, 2);
-        addChangerLine(new WButton(), world, state, pos, 3);
-        addChangerLine(new WButton(), world, state, pos, 4);
-        addChangerLine(new WButton(), world, state, pos, 5);
-        addChangerLine(new WButton(), world, state, pos, 6);
+        for(int i = 0; i<6; i++){
+            addChangerLine( world, state, pos, i);
+        }
 
     }
 
-    protected void addChangerLine(WButton button,World world, BlockState state, BlockPos pos, int n){
+    protected void addChangerLine(World world, BlockState state, BlockPos pos, int n){
 
         WLabel label = new WLabel(Text.translatable("ui.losgallysprops.trafficlight.setstatement"+n));
+
+        WButton button = new WButton();
 
         root.add(label, 2,1+n);
 
