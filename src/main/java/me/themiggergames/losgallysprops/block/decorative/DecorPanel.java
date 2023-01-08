@@ -29,21 +29,7 @@ public class DecorPanel extends HorizontalFacingBlock {
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return controller.getVoxelOutline(state.get(FACING));
-//       switch (state.get(FACING)){
-//            case NORTH:
-//                return VoxelShapes.cuboid(0f, 0f, 0.4f, 1f, 1f, 0.6f);
-//            case SOUTH:
-//                return VoxelShapes.cuboid(0f, 0f, 0.4f, 1f, 1f, 0.6f);
-//            case WEST:
-//                return VoxelShapes.cuboid(0.4f, 0f, 0f, 0.6f, 1f, 1f);
-//            case EAST:
-//                return VoxelShapes.cuboid(0.4f, 0f, 0f, 0.6f, 1f, 1f);
-//            default:
-//                return VoxelShapes.cuboid(0.4f, 0f, 0f, 0.6f, 1f, 1f);
-//        }
     }
-
-
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {

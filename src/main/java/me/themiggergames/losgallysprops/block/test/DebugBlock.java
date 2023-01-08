@@ -20,7 +20,7 @@ public class DebugBlock extends BlockRotatable {
 
     @Override
     public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity placedBy, Hand hand, BlockHitResult blockHitResult) {
-        if(LosGallysProps.LOGGER.isDebugEnabled())
+        if(LosGallysProps.isDebugEnabled())
             placedBy.sendMessage(Text.of(blockState.toString() + " " + blockPos.toString() + " " + placedBy.getHeadYaw()), true);
         if(!world.isClient)
             world.playSound(null, blockPos, ModSounds.LORE_SOUND_EVENT, SoundCategory.BLOCKS, 1f, 1f);

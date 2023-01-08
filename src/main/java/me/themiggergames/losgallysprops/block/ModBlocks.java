@@ -9,6 +9,8 @@ import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRail
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRailEnd;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadMarking;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
+import me.themiggergames.losgallysprops.block.decorative.roof.RoofSlopeBlock;
+import me.themiggergames.losgallysprops.block.decorative.roof.RoofTopBlock;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.BioToilet;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.DrainPipe;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
@@ -18,15 +20,16 @@ import me.themiggergames.losgallysprops.items.ModItemGroup;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.TrapdoorBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
 
 public class ModBlocks {
 
@@ -185,15 +188,19 @@ public class ModBlocks {
     public static final LeftHandRailEnd LEFT_HAND_QUARTZ_HANDRAIL_END = new LeftHandRailEnd(FabricBlockSettings.of(Material.WOOD));
     public static final BioToilet BIO_TOILET = new BioToilet(FabricBlockSettings.of(Material.WOOD));
     public static final VerticalSlab BRICK_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
-    public static final VerticalSlab OAK_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
-    public static final VerticalSlab BIRCH_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
-    public static final VerticalSlab SPRUCE_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
-    public static final VerticalSlab JUNGLE_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
-    public static final VerticalSlab ACACIA_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
-    public static final VerticalSlab DARK_OAK_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
-    public static final VerticalSlab MANGROVE_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
-    public static final VerticalSlab WARPED_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
-    public static final VerticalSlab CRIMSON_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
+    public static final VerticalSlab OAK_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
+    public static final VerticalSlab BIRCH_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
+    public static final VerticalSlab SPRUCE_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
+    public static final VerticalSlab JUNGLE_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
+    public static final VerticalSlab ACACIA_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
+    public static final VerticalSlab DARK_OAK_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
+    public static final VerticalSlab MANGROVE_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
+    public static final VerticalSlab WARPED_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
+    public static final VerticalSlab CRIMSON_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
+    public static final RoofTopBlock SMOOTH_STONE_ROOF_TOP = new RoofTopBlock(FabricBlockSettings.of(Material.STONE));
+    public static final RoofTopBlock BRICK_ROOF_TOP = new RoofTopBlock(FabricBlockSettings.of(Material.STONE));
+    public static final RoofSlopeBlock SMOOTH_STONE_ROOF_SLOPE = new RoofSlopeBlock(FabricBlockSettings.of(Material.STONE));
+    public static final RoofSlopeBlock BRICK_ROOF_SLOPE = new RoofSlopeBlock(FabricBlockSettings.of(Material.STONE));
     public static void registerBlocks(){
         RegisterBlock("phone", PHONE, ModItemGroup.LOSGALLYS);
         RegisterBlock("metakom", METAKOM, ModItemGroup.LOSGALLYS);
@@ -224,6 +231,8 @@ public class ModBlocks {
         registerHandRails();
 
         registerVerticalSlabs();
+
+        registerRoofSlopes();
     }
 
     public static Block RegisterBlock(String name, Block block, ItemGroup itemGroup){
@@ -235,12 +244,6 @@ public class ModBlocks {
     public static Item RegisterBlockItem(String name, Block block, ItemGroup itemGroup){
         return Registry.register(Registry.ITEM, new Identifier(LosGallysProps.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(itemGroup)));
-    }
-
-
-    public static boolean Falsh(BlockState blockState, BlockView blockView,
-                                 BlockPos blockPos){
-        return false;
     }
 
 //    public static void registerAmbientGenerators(){
@@ -302,6 +305,13 @@ public class ModBlocks {
         RegisterBlock("left_hand_quartz_handrail", LEFT_HAND_QUARTZ_HANDRAIL, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("right_hand_quartz_handrail_end", RIGHT_HAND_QUARTZ_HANDRAIL_END, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("left_hand_quartz_handrail_end", LEFT_HAND_QUARTZ_HANDRAIL_END, ModItemGroup.LGBUILDINGBLOCKS);
+    }
+
+    private static void registerRoofSlopes(){
+        RegisterBlock("smooth_stone_roof_top", SMOOTH_STONE_ROOF_TOP, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("smooth_stone_roof_slope", SMOOTH_STONE_ROOF_SLOPE, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("brick_roof_top", BRICK_ROOF_TOP, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("brick_roof_slope", BRICK_ROOF_SLOPE, ModItemGroup.LGBUILDINGBLOCKS);
     }
     private static void registerDecorPanels(){
         RegisterBlock("oak_decoration_panel", OAK_DECOR_PANEL, ModItemGroup.LGBUILDINGBLOCKS);
@@ -394,7 +404,6 @@ public class ModBlocks {
         RegisterBlock("no_turn_left",NO_TURN_LEFT, ModItemGroup.LGROAD);
         RegisterBlock("no_turn_right",NO_TURN_RIGHT, ModItemGroup.LGROAD);
         RegisterBlock("crossing",CROSSING, ModItemGroup.LGROAD);
-
     }
 
     private static void registerRoadMarks(){
@@ -402,7 +411,6 @@ public class ModBlocks {
         RegisterBlock("straight_right_arrow", STRAIGHT_RIGHT_ARROW, ModItemGroup.LGROAD);
         RegisterBlock("straight_left_arrow", STRAIGHT_LEFT_ARROW, ModItemGroup.LGROAD);
         RegisterBlock("straight_both_arrow", STRAIGHT_BOTH_ARROW, ModItemGroup.LGROAD);
-
 
         RegisterBlock("left_right_arrow", LEFT_RIGHT_ARROW, ModItemGroup.LGROAD);
         RegisterBlock("right_arrow", RIGHT_ARROW, ModItemGroup.LGROAD);
@@ -416,7 +424,6 @@ public class ModBlocks {
         RegisterBlock("limit_90_mark",LIMIT90MARK, ModItemGroup.LGROAD);
         RegisterBlock("limit_100_mark",LIMIT100MARK, ModItemGroup.LGROAD);
         RegisterBlock("limit_120_mark",LIMIT120MARK, ModItemGroup.LGROAD);
-
     }
 
     private static void registerSpeedLimitBlocks(){

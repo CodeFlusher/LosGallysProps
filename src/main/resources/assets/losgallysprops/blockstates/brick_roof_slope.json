@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/roof/variants/brick_roof_slope_wing"},
+        "facing=east":  { "model": "losgallysprops:block/roof/variants/brick_roof_slope_wing", "y":  90},
+        "facing=south": { "model": "losgallysprops:block/roof/variants/brick_roof_slope_wing", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/roof/variants/brick_roof_slope_wing", "y": 270}
+    }
+}

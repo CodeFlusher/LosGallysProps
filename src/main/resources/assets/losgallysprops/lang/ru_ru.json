@@ -23,6 +23,11 @@
 
 	"block.losgallysprops.metakom": "Домофон Метаком 2003",
 
+	"block.losgallysprops.brick_roof_slope": "Крышной Склон Из Кирпича",
+	"block.losgallysprops.brick_roof_top": "Верхушка Крыши Из Кирпича",
+	"block.losgallysprops.smooth_stone_roof_slope": "Крышной Склон Из Гладкого Камня",
+	"block.losgallysprops.smooth_stone_roof_top": "Верхушка Крыши Из Гладкого Камня",
+
 	"block.losgallysprops.drain": "Маленький Сливной Барьер",
 	"block.losgallysprops.drain_t": "Маленький Сливной Барьер (Прозрачный)",
 	"block.losgallysprops.manhole": "Канализационный Люк",

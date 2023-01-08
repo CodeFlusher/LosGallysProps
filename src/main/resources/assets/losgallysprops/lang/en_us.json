@@ -23,6 +23,11 @@
 
 	"block.losgallysprops.phone": "Phone",
 
+	"block.losgallysprops.brick_roof_slope": "Brick Roof Slope Block",
+	"block.losgallysprops.brick_roof_top": "Brick Roof Top Block",
+	"block.losgallysprops.smooth_stone_roof_slope": "Smooth Stone Roof Slope Block",
+	"block.losgallysprops.smooth_stone_roof_top": "Smooth Stone Roof Top Block",
+
 	"block.losgallysprops.brick_vertical_slab": "Brick Vertical Slab",
 	"block.losgallysprops.acacia_vertical_slab": "Acacia Vertical Slab",
 	"block.losgallysprops.warped_vertical_slab": "Warped Vertical Slab",

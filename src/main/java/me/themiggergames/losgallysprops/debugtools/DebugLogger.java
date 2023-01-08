@@ -9,8 +9,9 @@ public class DebugLogger {
     private static final Logger DEBUGLOGGER = LogManager.getLogger(LosGallysProps.MOD_ID);
 
     public static void sendMessage(String message){
-        if(LosGallysProps.LOGGER.isDebugEnabled()){
+        if(LosGallysProps.isDebugEnabled()){
             DEBUGLOGGER.info(message);
         }
     }
+
 }

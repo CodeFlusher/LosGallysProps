@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/roof/roof_top_wing",
+  "textures": {
+    "roof": "block/smooth_stone"
+  }
+}

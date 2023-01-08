@@ -7,8 +7,8 @@
 	"elements": [
 		{
 			"name": "slab",
-			"from": [0, 0, -0.125],
-			"to": [16, 16, 7.875],
+			"from": [0, 0, 0],
+			"to": [16, 16, 8],
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#face", "cullface": "north"},
 				"east": {"uv": [0, 0, 8, 16], "texture": "#face", "cullface": "east"},

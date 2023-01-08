@@ -11,8 +11,6 @@ import org.apache.logging.log4j.Logger;
 
 
 public class LosGallysProps implements ModInitializer {
-
-    public static final ScreenHandlerType<?> SCREEN_HANDLER_TYPE = ScreenHandlerType.LECTERN;
     protected static final boolean onDebugTools = true;
     public static final ModMath unifiedMath = new ModMath();
 
@@ -25,9 +23,9 @@ public class LosGallysProps implements ModInitializer {
         ModBlocks.registerBlocks();
         ModSounds.registerSounds();
         ModBlockEntities.registerBlockEntities();
-
+        LOGGER.info("LosGallysProps v0.7.0. Init.");
     }
-    public boolean isDebugEnabled(){
+    public static boolean isDebugEnabled(){
         return onDebugTools;
     }
 }
