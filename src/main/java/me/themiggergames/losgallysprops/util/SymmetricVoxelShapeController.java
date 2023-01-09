@@ -12,6 +12,19 @@ public class SymmetricVoxelShapeController {
     protected float y;
     protected float z;
 
+    //When you create controller, you give him wideness,height and thickness of model.
+    //Also takes distance from number axis(dx, dy, dz)
+    //Given setting are for north facing of block for north.
+    //  ^y
+    //  |   *********************
+    //  |   *                   *
+    //  |   *                   *height
+    //  |dy *       width       *
+    //  |---*********************
+    //  |   |dx
+    //------------------------------------>x
+    //Same with Z axis.
+
     public SymmetricVoxelShapeController(float wide, float thick, float h, float dx,float dy, float dz){
         wideness = wide;
         thickness = thick;
@@ -21,6 +34,8 @@ public class SymmetricVoxelShapeController {
         z = dz;
     }
 
+    //This function returns voxel shape of model.
+    //Voxel shape can be changed(rotated), but still have form of north outline.
     public VoxelShape getVoxelOutline(Direction direction){
         switch (direction){
             case NORTH:

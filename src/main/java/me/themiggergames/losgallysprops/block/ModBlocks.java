@@ -137,8 +137,8 @@ public class ModBlocks {
     public static final TrapdoorBlock MANHOLE = new TrapdoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4f).nonOpaque());
     public static final TrapdoorBlock STREET_DRAIN = new TrapdoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4f).nonOpaque());
     //registering block
-    public static final DebugBlock DEBUG_BLOCK = new DebugBlock(FabricBlockSettings.of(Material.STONE), true);
-    public static final TrafficLightBlock MODERN_TRAFFIC_LIGHT = new TrafficLightBlock(FabricBlockSettings.of(Material.METAL).strength(4f), true);
+    public static final DebugBlock DEBUG_BLOCK = new DebugBlock(FabricBlockSettings.of(Material.STONE));
+    public static final TrafficLightBlock MODERN_TRAFFIC_LIGHT = new TrafficLightBlock(FabricBlockSettings.of(Material.METAL).strength(4f));
     public static final TrafficLightBlock.OnWallTrafficLight ONWALL_MODERN_TRAFFIC_LIGHT = new TrafficLightBlock.OnWallTrafficLight(FabricBlockSettings.of(Material.METAL).strength(4f), new SymmetricVoxelShapeController(0.7f,0.15f,2f,0.15f,-0.5f,0f));
     public static final TrafficLightBlock.PedestrianTrafficLight PEDESTRIAN_MODERN_TRAFFIC_LIGHT = new TrafficLightBlock.PedestrianTrafficLight(FabricBlockSettings.of(Material.METAL), true);
     public static final TrafficLightControllerBlock TRAFFIC_LIGHT_CONTROLLER_BLOCK = new TrafficLightControllerBlock(FabricBlockSettings.of(Material.METAL));

@@ -1,22 +1,19 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight;
 
-import me.themiggergames.losgallysprops.block.BlockRotatable;
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightPhaseEditorDescription;
 import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightScreen;
 import me.themiggergames.losgallysprops.items.ModItems;
+import me.themiggergames.losgallysprops.util.BlockRotatable;
 import me.themiggergames.losgallysprops.util.IntegerStatementManager;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -29,7 +26,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class TrafficLightBlock extends BlockRotatable implements BlockEntityProvider {
+public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEntityProvider, BlockRotatable {
 
     public static IntegerStatementManager manager = IntegerStatementManager.of(0,6);
     /*
@@ -45,8 +42,7 @@ public class TrafficLightBlock extends BlockRotatable implements BlockEntityProv
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-        stateManager.add(Properties.HORIZONTAL_FACING);
-        stateManager.add(BlockRotatable.rotation);
+        BlockRotatable.appendRotationProperties(stateManager);
         stateManager.add(MODE);
     }
 
@@ -60,11 +56,16 @@ public class TrafficLightBlock extends BlockRotatable implements BlockEntityProv
         return VoxelShapes.cuboid(0.25f,0f,0.25f, 0.75f, 1f, 0.75f);
     }
 
+    @Nullable
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw()));
+    }
+
     boolean addStatements;
 
-    public TrafficLightBlock(Settings settings, boolean useAdditionalStates) {
-        super(settings, useAdditionalStates);
-        addStatements = useAdditionalStates;
+    public TrafficLightBlock(Settings settings) {
+        super(settings);
 //        setDefaultState(this.getDefaultState().with(EAST, false)
 //                .with(WEST, false)
 //                .with(SOUTH, false)
@@ -94,8 +95,13 @@ public class TrafficLightBlock extends BlockRotatable implements BlockEntityProv
         SymmetricVoxelShapeController voxelShapeController;
 
         public OnWallTrafficLight(Settings settings, SymmetricVoxelShapeController shapeController) {
-            super(settings, false);
+            super(settings);
             voxelShapeController = shapeController;
+        }
+
+        @Override
+        public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
+            return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION,0);
         }
 
         @Override
@@ -117,7 +123,12 @@ public class TrafficLightBlock extends BlockRotatable implements BlockEntityProv
         6-always blinking yellow
         */
         public PedestrianTrafficLight(Settings settings, boolean useAdditionalStates) {
-            super(settings, useAdditionalStates);
+            super(settings);
+        }
+
+        @Override
+        public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
+            return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION,BlockRotatable.getRotation(ctx.getPlayerYaw()));
         }
 
         @Override

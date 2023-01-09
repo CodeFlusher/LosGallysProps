@@ -1,21 +1,18 @@
 package me.themiggergames.losgallysprops.util;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import org.checkerframework.checker.units.qual.C;
 
 public interface BlockConnactable {
+    //Available types of connections with neighbouring blocks
     enum ConnectionTypes{
         HORISONTAL_ONLY,
         EVERYTHING
     }
 
+    //Properties
     final BooleanProperty SOUTH = BooleanProperty.of("north");
     final BooleanProperty NORTH = BooleanProperty.of("south");
     final BooleanProperty EAST = BooleanProperty.of("east");
@@ -24,17 +21,20 @@ public interface BlockConnactable {
     final BooleanProperty DOWN = BooleanProperty.of("down");
 
     static void appendConnectionProperties(StateManager.Builder<Block, BlockState> stateManager, ConnectionTypes type){
+        //Appending properties for block
         stateManager.add(NORTH);
         stateManager.add(EAST);
         stateManager.add(SOUTH);
         stateManager.add(WEST);
         if(type != ConnectionTypes.HORISONTAL_ONLY){
+            //Appending Some properties if someone needs this.
             stateManager.add(UP);
             stateManager.add(DOWN);
         }
     }
 
      static BlockState setDefaultConnectionsTo(BlockState state, boolean statement, ConnectionTypes type){
+        //Maybe this will help sometimes.
         if(type==ConnectionTypes.EVERYTHING) {
             state.with(UP, statement).with(DOWN, statement);
         }

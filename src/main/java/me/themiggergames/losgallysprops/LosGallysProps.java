@@ -5,7 +5,6 @@ import me.themiggergames.losgallysprops.block.ModBlocks;
 import me.themiggergames.losgallysprops.items.ModItems;
 import me.themiggergames.losgallysprops.util.ModMath;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.screen.ScreenHandlerType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

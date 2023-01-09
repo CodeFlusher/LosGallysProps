@@ -1,16 +1,16 @@
 package me.themiggergames.losgallysprops.block.trafficlightcontroller;
 
-import me.themiggergames.losgallysprops.block.BlockRotatable;
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.items.ModItems;
-import net.minecraft.block.BlockEntityProvider;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
+import me.themiggergames.losgallysprops.util.BlockRotatable;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.state.StateManager;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -22,11 +22,10 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class TrafficLightControllerBlock extends BlockRotatable implements BlockEntityProvider, NamedScreenHandlerFactory {
+public class TrafficLightControllerBlock extends HorizontalFacingBlock implements BlockRotatable, BlockEntityProvider, NamedScreenHandlerFactory {
 
     public TrafficLightControllerBlock(Settings settings) {
-        super(settings, true);
-
+        super(settings);
     }
 
     @Nullable
@@ -47,6 +46,17 @@ public class TrafficLightControllerBlock extends BlockRotatable implements Block
         }
 
         return ActionResult.SUCCESS;
+    }
+
+    @Nullable
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw()));
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        BlockRotatable.appendRotationProperties(builder);
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context){
