@@ -2,6 +2,7 @@ package me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlig
 
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightPhaseEditorDescription;
+import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightPhaseListDescription;
 import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightScreen;
 import me.themiggergames.losgallysprops.items.ModItems;
 import me.themiggergames.losgallysprops.util.BlockRotatable;
@@ -82,7 +83,7 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEnt
         DebugLogger.sendMessage("Click Spotted");
         if(placedBy.getInventory().getMainHandStack().getItem() == ModItems.CONFIGURATIOR){
             DebugLogger.sendMessage("Click Spotted");
-            MinecraftClient.getInstance().setScreen(new TrafficLightScreen(new TrafficLightPhaseEditorDescription(world, blockState, blockPos)));
+            MinecraftClient.getInstance().setScreen(new TrafficLightScreen(new TrafficLightPhaseListDescription(world, blockState, blockPos)));
             //world.setBlockState(blockPos, blockState.with(MODE, manager.changeStatement()));
         } else {
             placedBy.sendMessage(Text.translatable("block.losgallysprops.trafficlight.setstatement."+blockState.get(MODE)), true);

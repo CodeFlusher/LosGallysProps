@@ -6,6 +6,7 @@
 	"ui.losgallysprops.trafficlight.setstatement4": "Set Blinking Yellow Statement",
 	"ui.losgallysprops.trafficlight.setstatement5": "Set Static Green Statement",
 	"ui.losgallysprops.trafficlight.setstatement6": "Set Blinking Green Statement",
+	"ui.losgallysprops.trafficlight.statementmanager": "Change This Phase Setup",
 
 	"item.losgallysprops.mce_one": "One MCE",
 	"item.losgallysprops.mce_two": "Two MCE",
@@ -22,6 +23,7 @@
 	"itemGroup.losgallysprops.lgbuildblock": "Los Gallys Props: Building Blocks",
 
 	"block.losgallysprops.phone": "Phone",
+	"block.losgallysprops.lava_lamp": "Lava Lamp",
 
 	"block.losgallysprops.brick_roof_slope": "Brick Roof Slope Block",
 	"block.losgallysprops.brick_roof_top": "Brick Roof Top Block",
@@ -139,6 +141,8 @@
 
 	"block.losgallysprops.drain_pipe_block": "Drain Pipe (Stone)",
 	"block.losgallysprops.drain_pipe_block_bricks": "Drain Pipe (Stone Bricks)",
+	"block.losgallysprops.drain_pipe_block_light_gray_concrete": "Drain Pipe (Light Gray Concrete)",
+	"block.losgallysprops.drain_pipe_block_gray_concrete": "Drain Pipe (Gray Concrete)",
 
 	"block.losgallysprops.black_concrete_stairs": "Black Concrete Stairs",
 	"block.losgallysprops.blue_concrete_stairs": "Blue Concrete Stairs",

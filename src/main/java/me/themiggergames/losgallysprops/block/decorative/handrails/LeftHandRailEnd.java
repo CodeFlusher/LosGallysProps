@@ -11,7 +11,7 @@ import net.minecraft.world.BlockView;
 
 public class LeftHandRailEnd extends HandRail {
     public LeftHandRailEnd(Settings settings) {
-        super(settings.nonOpaque(), true);
+        super(settings.nonOpaque(), false);
     }
 
     @Override
@@ -19,15 +19,15 @@ public class LeftHandRailEnd extends HandRail {
         Direction dir = state.get(FACING);
         switch (dir){
             case SOUTH:
-                return VoxelShapes.cuboid(0.4f, -0.5f,0.8f, 1f, 1.5f,1f);
+                return VoxelShapes.cuboid(0.4f, 0,0.8f, 1f, 1.5f,1f);
             case WEST:
-                return VoxelShapes.cuboid(0f, -0.5f,0f, 0.2f, 1.5f,0.6f);
+                return VoxelShapes.cuboid(0f, 0,0.4f, 0.2f, 1.5f,1f);
             case NORTH:
-                return VoxelShapes.cuboid(0f, -0.5f,0f, 0.6f, 1.5f,0.2f);
+                return VoxelShapes.cuboid(0f, 0,0f, 0.6f, 1.5f,0.2f);
             case EAST:
-                return VoxelShapes.cuboid(0.8f, -0.5f,0.4f, 1f, 1.5f,1f);
+                return VoxelShapes.cuboid(0.8f, 0,0f, 1f, 1.5f,0.6f);
             default:
-                return VoxelShapes.cuboid(0f, -0.5f,0f, 1f, 1.5f,0.5f);
+                return VoxelShapes.cuboid(0f, 0,0f, 1f, 1.5f,0.5f);
         }
     }
 }

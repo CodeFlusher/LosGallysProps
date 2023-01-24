@@ -7,6 +7,7 @@ import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRail;
 import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRailEnd;
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRail;
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRailEnd;
+import me.themiggergames.losgallysprops.block.decorative.lavalamp.LavaLamp;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadMarking;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
 import me.themiggergames.losgallysprops.block.decorative.roof.RoofSlopeBlock;
@@ -14,16 +15,13 @@ import me.themiggergames.losgallysprops.block.decorative.roof.RoofTopBlock;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.BioToilet;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.DrainPipe;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
-import me.themiggergames.losgallysprops.block.test.DebugBlock;
+import me.themiggergames.losgallysprops.debugtools.DebugBlock;
 import me.themiggergames.losgallysprops.block.trafficlightcontroller.TrafficLightControllerBlock;
 import me.themiggergames.losgallysprops.items.ModItemGroup;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.TrapdoorBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -38,9 +36,10 @@ public class ModBlocks {
     public static final Phone PHONE = new Phone(FabricBlockSettings.of(Material.REDSTONE_LAMP).strength(2f),
            ModSounds.PHONE_SOUND_EVENT,
            VoxelShapes.cuboid(0.1, 0, 0.1f, 0.9f, 0.3f, 0.9f));
-    public static final Phone METAKOM = new Phone(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision(),
+    public static final Intercom METAKOM = new Intercom(FabricBlockSettings.of(Material.METAL).strength(2f).nonOpaque(),
             ModSounds.METAKOM_SOUND_EVENT,
-            VoxelShapes.cuboid(0.1f, 0.1f, 0.1f, 0.9f, 0.9f, 0.9f));
+            new SymmetricVoxelShapeController(0.5f, 0.1f, 1f, 0.25f, 0f, 0.9f));
+
 
     //Concrete Stairs
 
@@ -123,6 +122,8 @@ public class ModBlocks {
 
     public static final DrainPipe DRAIN_PIPE_STONE = new DrainPipe(FabricBlockSettings.of(Material.STONE).strength(2f));
     public static final DrainPipe DRAIN_PIPE_STONEBRICKS = new DrainPipe(FabricBlockSettings.of(Material.STONE).strength(2f));
+    public static final DrainPipe DRAIN_PIPE_LIGHT_GRAY_CONCRETE = new DrainPipe(FabricBlockSettings.of(Material.STONE).strength(2f));
+    public static final DrainPipe DRAIN_PIPE_GRAY_CONCRETE = new DrainPipe(FabricBlockSettings.of(Material.STONE).strength(2f));
     public static final DecorPanel OAK_DECOR_PANEL = new DecorPanel(FabricBlockSettings.of(Material.WOOD).strength(1f));
     public static final DecorPanel SPRUCE_DECOR_PANEL = new DecorPanel(FabricBlockSettings.of(Material.WOOD).strength(1f));
     public static final DecorPanel ACACIA_DECOR_PANEL = new DecorPanel(FabricBlockSettings.of(Material.WOOD).strength(1f));
@@ -201,13 +202,16 @@ public class ModBlocks {
     public static final RoofTopBlock BRICK_ROOF_TOP = new RoofTopBlock(FabricBlockSettings.of(Material.STONE));
     public static final RoofSlopeBlock SMOOTH_STONE_ROOF_SLOPE = new RoofSlopeBlock(FabricBlockSettings.of(Material.STONE));
     public static final RoofSlopeBlock BRICK_ROOF_SLOPE = new RoofSlopeBlock(FabricBlockSettings.of(Material.STONE));
+    public static final LavaLamp LAVA_LAMP = new LavaLamp(FabricBlockSettings.of(Material.GLASS).nonOpaque());
+    public static final PowerElements FUSE_BOX_TYPE_1 = new PowerElements(FabricBlockSettings.of(Material.METAL));
+
     public static void registerBlocks(){
         RegisterBlock("phone", PHONE, ModItemGroup.LOSGALLYS);
         RegisterBlock("metakom", METAKOM, ModItemGroup.LOSGALLYS);
         RegisterBlock("debugblock", DEBUG_BLOCK, null);
         RegisterBlock("fancy_iron_post",FANCY_IRON_POST, ModItemGroup.LOSGALLYS);
         RegisterBlock("biotoilet",BIO_TOILET, ModItemGroup.LOSGALLYS);
-
+        RegisterBlock("lava_lamp", LAVA_LAMP, ModItemGroup.LOSGALLYS);
 
 
 //        registerAmbientGenerators();
@@ -233,6 +237,8 @@ public class ModBlocks {
         registerVerticalSlabs();
 
         registerRoofSlopes();
+
+        registerPowerSupplies();
     }
 
     public static Block RegisterBlock(String name, Block block, ItemGroup itemGroup){
@@ -355,6 +361,8 @@ public class ModBlocks {
 
         RegisterBlock("drain_pipe_block", DRAIN_PIPE_STONE, ModItemGroup.LOSGALLYS);
         RegisterBlock("drain_pipe_block_bricks", DRAIN_PIPE_STONEBRICKS, ModItemGroup.LOSGALLYS);
+        RegisterBlock("drain_pipe_block_light_gray_concrete", DRAIN_PIPE_LIGHT_GRAY_CONCRETE, ModItemGroup.LOSGALLYS);
+        RegisterBlock("drain_pipe_block_gray_concrete", DRAIN_PIPE_GRAY_CONCRETE, ModItemGroup.LOSGALLYS);
 
     }
 
@@ -433,5 +441,9 @@ public class ModBlocks {
         RegisterBlock("limit_90", LIMIT90, ModItemGroup.LGROAD);
         RegisterBlock("limit_100", LIMIT100, ModItemGroup.LGROAD);
         RegisterBlock("limit_120", LIMIT120, ModItemGroup.LGROAD);
+    }
+
+    private static void registerPowerSupplies(){
+        RegisterBlock("fuse_box_type1", FUSE_BOX_TYPE_1, ModItemGroup.LOSGALLYS);
     }
 }

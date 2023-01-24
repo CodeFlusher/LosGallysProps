@@ -1,8 +1,11 @@
 package me.themiggergames.losgallysprops;
 
+import me.themiggergames.losgallysprops.block.ModBlockEntities;
 import me.themiggergames.losgallysprops.block.ModBlocks;
+import me.themiggergames.losgallysprops.block.decorative.lavalamp.LavaLampEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
 
@@ -43,6 +46,9 @@ public class LosGallysPropsClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MODERN_TRAFFIC_LIGHT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PEDESTRIAN_MODERN_TRAFFIC_LIGHT, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ONWALL_MODERN_TRAFFIC_LIGHT, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LAVA_LAMP, RenderLayer.getTranslucent());
+
+        BlockEntityRendererRegistry.register(ModBlockEntities.LAVA_LAMP_ENTITY, LavaLampEntityRenderer::new);
 
 //        addHandrails();
 

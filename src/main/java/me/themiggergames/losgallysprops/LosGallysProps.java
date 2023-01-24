@@ -22,7 +22,10 @@ public class LosGallysProps implements ModInitializer {
         ModBlocks.registerBlocks();
         ModSounds.registerSounds();
         ModBlockEntities.registerBlockEntities();
-        LOGGER.info("LosGallysProps v0.7.0. Init.");
+        LOGGER.info("LosGallysProps v1.0.0. Init.");
+        LOGGER.info("Hey stranger! Yes, you. HELLO!!!!!");
+        LOGGER.info("What's gonna ruin this game, nothing right?");
+        LOGGER.info("LOL NOT. I'm gonna do this 😈");
     }
     public static boolean isDebugEnabled(){
         return onDebugTools;

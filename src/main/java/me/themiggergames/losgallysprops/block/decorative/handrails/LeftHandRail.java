@@ -12,7 +12,7 @@ import net.minecraft.world.BlockView;
 public class LeftHandRail extends HandRail {
 
     public LeftHandRail(Settings settings) {
-        super(settings.nonOpaque(), true);
+        super(settings.nonOpaque(), false);
     }
 
     @Override

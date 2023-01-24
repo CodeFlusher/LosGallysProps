@@ -19,7 +19,9 @@ repositories {
 		name = "RainbowJuice"
 		url = uri("https://github.com/RainbowJuiceMinecraft/RainbowJuiceModLib")
 	}
+	maven { url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/' }
 }
+
 
 dependencies {
 	// To change the versions see the gradle.properties file
@@ -33,7 +35,7 @@ dependencies {
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 	modImplementation include("io.github.cottonmc:LibGui:6.0.0+1.19")
-
+	modImplementation 'software.bernie.geckolib:geckolib-fabric-1.19:3.1.38'
 }
 
 processResources {

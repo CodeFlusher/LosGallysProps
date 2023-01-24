@@ -18,11 +18,11 @@ import net.minecraft.world.WorldAccess;
 public class HandRail extends HorizontalFacingBlock implements Waterloggable {
 
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    private static Boolean inverse;
+    private Boolean inverse;
     VoxelShape voxelShape;
     public HandRail(Settings settings, Boolean doInverse) {
         super(settings);
-        inverse=doInverse;
+        this.inverse = doInverse;
     }
 
     @Override
@@ -30,15 +30,11 @@ public class HandRail extends HorizontalFacingBlock implements Waterloggable {
         stateManager.add(Properties.HORIZONTAL_FACING, WATERLOGGED);
     }
 
-
-
-
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        if(!inverse){
+        if(inverse) {
             return this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite()).with(WATERLOGGED, false);
-        }
-        else{
+        } else{
             return this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing()).with(WATERLOGGED, false);
         }
     }

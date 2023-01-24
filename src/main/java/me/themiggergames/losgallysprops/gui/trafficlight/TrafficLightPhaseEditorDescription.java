@@ -7,24 +7,35 @@ import io.github.cottonmc.cotton.gui.widget.WLabel;
 import io.github.cottonmc.cotton.gui.widget.icon.ItemIcon;
 import me.themiggergames.losgallysprops.block.ModBlocks;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
+import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightEntity;
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class TrafficLightPhaseEditorDescription extends LightweightGuiDescription {
 
+    private static Integer nPhase;
     private final int sharedStatementButtonWidth = 200;
     private final int sharedStatementButtonHeight = 20;
     private WGridPanel root = new WGridPanel();
-    public TrafficLightPhaseEditorDescription(World world, BlockState state, BlockPos pos){
+    public TrafficLightPhaseEditorDescription(World world, BlockState state, BlockPos pos, int nPhase){
+
+        this.nPhase = nPhase;
 
         setRootPanel(root);
         root.setSize(256, 162);
 
         for(int i = 0; i<6; i++){
-            addChangerLine( world, state, pos, i);
+            DebugLogger.sendMessage(String.valueOf(world));
+            DebugLogger.sendMessage(String.valueOf(state));
+            DebugLogger.sendMessage(String.valueOf(pos));
+            DebugLogger.sendMessage(String.valueOf(i));
+            DebugLogger.sendMessage(String.valueOf(nPhase));
+            addChangerLine(world, state, pos, i);
         }
 
     }
@@ -42,8 +53,20 @@ public class TrafficLightPhaseEditorDescription extends LightweightGuiDescriptio
         root.add(button, 1,1+n);
 
         button.setOnClick(() -> {
-            // DebugLogger.sendMessage("Traffic Light UI Click spotted (1)");
-            world.setBlockState(pos, state.with(TrafficLightBlock.MODE, n));
+            setPhasePreset(n, world, pos);
+            //world.setBlockState(pos, state.with(TrafficLightBlock.MODE, n));
         });
+    }
+    public static void setPhasePreset(int n, World world, BlockPos pos){
+
+        DebugLogger.sendMessage("Phase Preset Change Triggered");
+
+        if(world.getBlockEntity(pos) instanceof TrafficLightEntity){
+            DebugLogger.sendMessage("Changing Statements");
+            ((TrafficLightEntity) world.getBlockEntity(pos)).commitPhaseChanges(nPhase,n);
+            NbtCompound nbt = new NbtCompound();
+            ((TrafficLightEntity) world.getBlockEntity(pos)).writeNbt(nbt);
+        }
+
     }
 }
