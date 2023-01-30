@@ -1,8 +1,5 @@
 package me.themiggergames.losgallysprops.util;
 
-import me.themiggergames.losgallysprops.block.decorative.Intercom;
-import net.minecraft.client.MinecraftClient;
-
 import java.util.concurrent.TimeUnit;
 
 public abstract class WaiterWithFunction extends Thread{

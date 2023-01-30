@@ -16,6 +16,7 @@ public class LavaLampEntityRenderer extends GeoBlockRenderer<LavaLampEntity> {
 
     @Override
     public RenderLayer getRenderType(LavaLampEntity animatable, float partialTick, MatrixStack poseStack, @Nullable VertexConsumerProvider bufferSource, @Nullable VertexConsumer buffer, int packedLight, Identifier texture) {
-            return RenderLayer.getEntityTranslucentCull(getTextureLocation(animatable));
+        return RenderLayer.getEntityTranslucentCull(getTextureLocation(animatable));
     }
+
 }

@@ -25,6 +25,10 @@
 	"block.losgallysprops.phone": "Phone",
 	"block.losgallysprops.lava_lamp": "Lava Lamp",
 
+	"block.losgallysprops.fuse_box_type1": "Fuse Box (Style 1)",
+
+	"block.losgallysprops.cctv": "Security Camera",
+
 	"block.losgallysprops.brick_roof_slope": "Brick Roof Slope Block",
 	"block.losgallysprops.brick_roof_top": "Brick Roof Top Block",
 	"block.losgallysprops.smooth_stone_roof_slope": "Smooth Stone Roof Slope Block",

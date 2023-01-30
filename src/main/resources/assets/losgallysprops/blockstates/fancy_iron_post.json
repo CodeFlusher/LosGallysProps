@@ -8,7 +8,7 @@
         {
             "apply":
             {
-                "model": "losgallysprops:block/post/fancy_iron_post_cut",
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
                 "y": 0
             },
             "when":
@@ -19,7 +19,7 @@
         {
             "apply":
             {
-                "model": "losgallysprops:block/post/fancy_iron_post_cut",
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
                 "y": 90
             },
             "when":
@@ -30,7 +30,7 @@
         {
             "apply":
             {
-                "model": "losgallysprops:block/post/fancy_iron_post_cut",
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
                 "y": 180
             },
             "when":
@@ -41,7 +41,7 @@
         {
             "apply":
             {
-                "model": "losgallysprops:block/post/fancy_iron_post_cut",
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
                 "y": 270
             },
             "when":
@@ -52,7 +52,7 @@
         {
             "apply":
             {
-                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut"
+                "model": "losgallysprops:block/post/fancy_iron_post_cut"
             },
             "when":
             {
@@ -62,7 +62,7 @@
         {
             "apply":
             {
-                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
+                "model": "losgallysprops:block/post/fancy_iron_post_cut",
                 "x": 180
             },
             "when":

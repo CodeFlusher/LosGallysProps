@@ -5,11 +5,7 @@ import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtInt;
-import net.minecraft.nbt.NbtIntArray;
 import net.minecraft.util.math.BlockPos;
-
-import java.util.ArrayList;
 
 public class TrafficLightEntity extends BlockEntity {
 

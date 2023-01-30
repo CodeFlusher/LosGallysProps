@@ -2,6 +2,7 @@ package me.themiggergames.losgallysprops;
 
 import me.themiggergames.losgallysprops.block.ModBlockEntities;
 import me.themiggergames.losgallysprops.block.ModBlocks;
+import me.themiggergames.losgallysprops.block.decorative.cctv.CCTVEntityRenderer;
 import me.themiggergames.losgallysprops.block.decorative.lavalamp.LavaLampEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -49,6 +50,7 @@ public class LosGallysPropsClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LAVA_LAMP, RenderLayer.getTranslucent());
 
         BlockEntityRendererRegistry.register(ModBlockEntities.LAVA_LAMP_ENTITY, LavaLampEntityRenderer::new);
+        BlockEntityRendererRegistry.register(ModBlockEntities.CCTV_ENTITY, CCTVEntityRenderer::new);
 
 //        addHandrails();
 

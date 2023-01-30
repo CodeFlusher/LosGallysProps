@@ -1,20 +1,11 @@
 package me.themiggergames.losgallysprops.gui.trafficlight;
 
 import io.github.cottonmc.cotton.gui.client.LightweightGuiDescription;
-import io.github.cottonmc.cotton.gui.widget.*;
-import io.github.cottonmc.cotton.gui.widget.icon.ItemIcon;
-import io.github.cottonmc.cotton.gui.widget.icon.TextureIcon;
-import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightEntity;
+import io.github.cottonmc.cotton.gui.widget.WGridPanel;
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
-import me.themiggergames.losgallysprops.items.ModItems;
 import net.minecraft.block.BlockState;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import java.util.ArrayList;
-import java.util.function.BiConsumer;
 
 public class TrafficLightPhaseListDescription extends LightweightGuiDescription {
 

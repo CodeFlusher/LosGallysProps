@@ -6,7 +6,6 @@ import io.github.cottonmc.cotton.gui.widget.WGridPanel;
 import io.github.cottonmc.cotton.gui.widget.WLabel;
 import io.github.cottonmc.cotton.gui.widget.icon.ItemIcon;
 import me.themiggergames.losgallysprops.block.ModBlocks;
-import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightEntity;
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import net.minecraft.block.BlockState;

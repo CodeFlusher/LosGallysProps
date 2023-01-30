@@ -3,6 +3,7 @@ package me.themiggergames.losgallysprops.block;
 import me.themiggergames.losgallysprops.LosGallysProps;
 import me.themiggergames.losgallysprops.ModSounds;
 import me.themiggergames.losgallysprops.block.decorative.*;
+import me.themiggergames.losgallysprops.block.decorative.cctv.CCTVBlock;
 import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRail;
 import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRailEnd;
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRail;
@@ -15,13 +16,16 @@ import me.themiggergames.losgallysprops.block.decorative.roof.RoofTopBlock;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.BioToilet;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.DrainPipe;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
-import me.themiggergames.losgallysprops.debugtools.DebugBlock;
 import me.themiggergames.losgallysprops.block.trafficlightcontroller.TrafficLightControllerBlock;
+import me.themiggergames.losgallysprops.debugtools.DebugBlock;
 import me.themiggergames.losgallysprops.items.ModItemGroup;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.TrapdoorBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -187,7 +191,6 @@ public class ModBlocks {
     public static final LeftHandRail LEFT_HAND_QUARTZ_HANDRAIL = new LeftHandRail(FabricBlockSettings.of(Material.WOOD));
     public static final RightHandRailEnd RIGHT_HAND_QUARTZ_HANDRAIL_END = new RightHandRailEnd(FabricBlockSettings.of(Material.WOOD));
     public static final LeftHandRailEnd LEFT_HAND_QUARTZ_HANDRAIL_END = new LeftHandRailEnd(FabricBlockSettings.of(Material.WOOD));
-    public static final BioToilet BIO_TOILET = new BioToilet(FabricBlockSettings.of(Material.WOOD));
     public static final VerticalSlab BRICK_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE));
     public static final VerticalSlab OAK_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
     public static final VerticalSlab BIRCH_VERTICAL_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.WOOD));
@@ -204,16 +207,14 @@ public class ModBlocks {
     public static final RoofSlopeBlock BRICK_ROOF_SLOPE = new RoofSlopeBlock(FabricBlockSettings.of(Material.STONE));
     public static final LavaLamp LAVA_LAMP = new LavaLamp(FabricBlockSettings.of(Material.GLASS).nonOpaque());
     public static final PowerElements FUSE_BOX_TYPE_1 = new PowerElements(FabricBlockSettings.of(Material.METAL));
+    public static final CCTVBlock CCTV= new CCTVBlock(FabricBlockSettings.of(Material.METAL));
 
     public static void registerBlocks(){
         RegisterBlock("phone", PHONE, ModItemGroup.LOSGALLYS);
         RegisterBlock("metakom", METAKOM, ModItemGroup.LOSGALLYS);
         RegisterBlock("debugblock", DEBUG_BLOCK, null);
         RegisterBlock("fancy_iron_post",FANCY_IRON_POST, ModItemGroup.LOSGALLYS);
-        RegisterBlock("biotoilet",BIO_TOILET, ModItemGroup.LOSGALLYS);
         RegisterBlock("lava_lamp", LAVA_LAMP, ModItemGroup.LOSGALLYS);
-
-
 //        registerAmbientGenerators();
 
         registerDrains();
@@ -239,6 +240,8 @@ public class ModBlocks {
         registerRoofSlopes();
 
         registerPowerSupplies();
+
+        registerCCTVs();
     }
 
     public static Block RegisterBlock(String name, Block block, ItemGroup itemGroup){
@@ -318,6 +321,8 @@ public class ModBlocks {
         RegisterBlock("smooth_stone_roof_slope", SMOOTH_STONE_ROOF_SLOPE, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("brick_roof_top", BRICK_ROOF_TOP, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("brick_roof_slope", BRICK_ROOF_SLOPE, ModItemGroup.LGBUILDINGBLOCKS);
+    } private static void registerCCTVs(){
+        RegisterBlock("cctv", CCTV, ModItemGroup.LOSGALLYS);
     }
     private static void registerDecorPanels(){
         RegisterBlock("oak_decoration_panel", OAK_DECOR_PANEL, ModItemGroup.LGBUILDINGBLOCKS);

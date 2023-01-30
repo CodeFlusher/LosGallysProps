@@ -1,10 +1,12 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight;
 
+import me.themiggergames.losgallysprops.block.decorative.FancyPost;
+import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
-import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightPhaseEditorDescription;
 import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightPhaseListDescription;
 import me.themiggergames.losgallysprops.gui.trafficlight.TrafficLightScreen;
 import me.themiggergames.losgallysprops.items.ModItems;
+import me.themiggergames.losgallysprops.util.BlockConnactable;
 import me.themiggergames.losgallysprops.util.BlockRotatable;
 import me.themiggergames.losgallysprops.util.IntegerStatementManager;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
@@ -25,9 +27,10 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
-public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEntityProvider, BlockRotatable {
+public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEntityProvider, BlockRotatable, BlockConnactable {
 
     public static IntegerStatementManager manager = IntegerStatementManager.of(0,6);
     /*
@@ -44,6 +47,7 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEnt
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
         BlockRotatable.appendRotationProperties(stateManager);
+        BlockConnactable.appendConnectionProperties(stateManager, ConnectionTypes.EVERYTHING);
         stateManager.add(MODE);
     }
 
@@ -60,10 +64,42 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEnt
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw()));
+        BlockPos blockPos = ctx.getBlockPos();
+        return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw())).with(NORTH, canConnect(ctx.getWorld(), blockPos, Direction.NORTH))
+                .with(SOUTH, canConnect(ctx.getWorld(), blockPos, Direction.SOUTH))
+                .with(EAST, canConnect(ctx.getWorld(), blockPos, Direction.EAST))
+                .with(WEST, canConnect(ctx.getWorld(), blockPos, Direction.WEST))
+                .with(UP, canConnect(ctx.getWorld(), blockPos, Direction.UP))
+                .with(DOWN, canConnect(ctx.getWorld(), blockPos, Direction.DOWN));
     }
 
-    boolean addStatements;
+    public boolean canConnect(World world, BlockPos pos, Direction dir) {
+        BlockPos neighbourPos = pos.offset(dir);
+        BlockState neighbourState = world.getBlockState(neighbourPos);
+        Block block = world.getBlockState(neighbourPos).getBlock();
+        boolean bl1 = block instanceof TrafficLightBlock;
+        boolean bl2 = block instanceof RoadSign;
+        boolean bl3 = block instanceof FancyPost;
+        return (block.isShapeFullCube(neighbourState, world, neighbourPos) || bl2 || bl1 || bl3);
+    }
+    public boolean canConnect(WorldAccess world, BlockPos pos, Direction dir) {
+        BlockPos neighbourPos = pos.offset(dir);
+        BlockState neighbourState = world.getBlockState(neighbourPos);
+        Block block = world.getBlockState(neighbourPos).getBlock();
+        boolean bl1 = block instanceof TrafficLightBlock;
+        boolean bl2 = block instanceof RoadSign;
+        boolean bl3 = block instanceof FancyPost;
+        return (block.isShapeFullCube(neighbourState, world, neighbourPos) || bl2 || bl1 || bl3);
+    }
+
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        return state.with(NORTH, canConnect(world, pos, Direction.SOUTH))
+                .with(SOUTH, canConnect(world, pos, Direction.NORTH))
+                .with(EAST, canConnect(world, pos, Direction.EAST))
+                .with(WEST, canConnect(world, pos, Direction.WEST))
+                .with(UP, canConnect(world, pos, Direction.UP))
+                .with(DOWN, canConnect(world, pos, Direction.DOWN));
+    }
 
     public TrafficLightBlock(Settings settings) {
         super(settings);
@@ -98,11 +134,12 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEnt
         public OnWallTrafficLight(Settings settings, SymmetricVoxelShapeController shapeController) {
             super(settings);
             voxelShapeController = shapeController;
+            setDefaultState(this.getDefaultState().with(NORTH, false).with(SOUTH, false).with(UP, false).with(DOWN,false).with(EAST, false).with(WEST,false));
         }
 
         @Override
         public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
-            return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION,0);
+            return getDefaultState().with(FACING, ctx.getPlayerFacing()).with(ROTATION,0);
         }
 
         @Override
@@ -110,11 +147,12 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEnt
             Direction dir = state.get(FACING);
             return voxelShapeController.getVoxelOutline(dir);
         }
+
     }
     
     public static class PedestrianTrafficLight extends TrafficLightBlock {
 
-        public static IntegerStatementManager pedestrianmanager = IntegerStatementManager.of(0,4);
+        public static IntProperty MODES = IntProperty.of("statement", 0, 4);
 
         /*
         0-off
@@ -129,7 +167,13 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEnt
 
         @Override
         public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
-            return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION,BlockRotatable.getRotation(ctx.getPlayerYaw()));
+            BlockPos blockPos = ctx.getBlockPos();
+            return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION,BlockRotatable.getRotation(ctx.getPlayerYaw())).with(NORTH, canConnect(ctx.getWorld(), blockPos, Direction.NORTH))
+                    .with(SOUTH, canConnect(ctx.getWorld(), blockPos, Direction.SOUTH))
+                    .with(EAST, canConnect(ctx.getWorld(), blockPos, Direction.EAST))
+                    .with(WEST, canConnect(ctx.getWorld(), blockPos, Direction.WEST))
+                    .with(UP, canConnect(ctx.getWorld(), blockPos, Direction.UP))
+                    .with(DOWN, canConnect(ctx.getWorld(), blockPos, Direction.DOWN));
         }
 
         @Override
@@ -142,12 +186,21 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEnt
             DebugLogger.sendMessage("Click Spotted");
             if(placedBy.getInventory().getMainHandStack().getItem() == ModItems.CONFIGURATIOR){
                 DebugLogger.sendMessage("Click Spotted");
-                world.setBlockState(blockPos, blockState.with(MODE, pedestrianmanager.changeStatement()));
+                world.setBlockState(blockPos, blockState.with(MODE, blockState.get(MODE)));
             } else {
                 placedBy.sendMessage(Text.translatable("block.losgallysprops.pedestriantrafficlight.setstatement."+manager.getCurrentStatement()), true);
             }
 
             return ActionResult.SUCCESS;
+        }
+
+        public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+            return state.with(NORTH, canConnect(world, pos, Direction.SOUTH))
+                    .with(SOUTH, canConnect(world, pos, Direction.NORTH))
+                    .with(EAST, canConnect(world, pos, Direction.EAST))
+                    .with(WEST, canConnect(world, pos, Direction.WEST))
+                    .with(UP, canConnect(world, pos, Direction.UP))
+                    .with(DOWN, canConnect(world, pos, Direction.DOWN));
         }
 
     }

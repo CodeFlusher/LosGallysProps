@@ -1,7 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative;
 
 import me.themiggergames.losgallysprops.ModSounds;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -53,6 +52,6 @@ public class PowerElements extends HorizontalFacingBlock {
             boolean temp = !state.get(ISOPEN);
             world.setBlockState(pos, state.with(ISOPEN, temp));
         }
-        return ActionResult.PASS;
+        return ActionResult.SUCCESS;
     }
 }
