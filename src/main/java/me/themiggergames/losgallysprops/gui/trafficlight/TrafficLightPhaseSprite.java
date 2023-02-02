@@ -22,7 +22,7 @@ public class TrafficLightPhaseSprite extends WPlainPanel {
         button = button.setLabel(Text.translatable("ui.losgallysprops.trafficlight.statementmanager"));
         this.add(button, 6, 1, 18*18, 18);
         WLabel label = new WLabel(Text.literal(String.valueOf(number+1)));
-        label.setColor(0x000000).setDarkmodeColor(0xFFFFFF);
+        label.setColor(0x000000).setDarkmodeColor(0x000000);
         label.setSize(4,4);
         label.setHorizontalAlignment(HorizontalAlignment.CENTER);
         label.setVerticalAlignment(VerticalAlignment.CENTER);

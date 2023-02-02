@@ -3,7 +3,6 @@ package me.themiggergames.losgallysprops.block.decorative.cctv;
 import me.themiggergames.losgallysprops.block.ModBlockEntities;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;

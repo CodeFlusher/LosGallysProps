@@ -19,7 +19,7 @@ public class LavaLamp extends BlockWithEntity implements BlockEntityProvider {
     public static final BooleanProperty TEST = BooleanProperty.of("test");
 
     public LavaLamp(Settings settings) {
-        super(settings);
+        super(settings.nonOpaque());
     }
 
     @Override

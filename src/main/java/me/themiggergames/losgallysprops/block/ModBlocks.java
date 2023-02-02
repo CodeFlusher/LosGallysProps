@@ -9,11 +9,11 @@ import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRailE
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRail;
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRailEnd;
 import me.themiggergames.losgallysprops.block.decorative.lavalamp.LavaLamp;
+import me.themiggergames.losgallysprops.block.decorative.powerelements.PowerElements;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadMarking;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
 import me.themiggergames.losgallysprops.block.decorative.roof.RoofSlopeBlock;
 import me.themiggergames.losgallysprops.block.decorative.roof.RoofTopBlock;
-import me.themiggergames.losgallysprops.block.decorative.streetProps.BioToilet;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.DrainPipe;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
 import me.themiggergames.losgallysprops.block.trafficlightcontroller.TrafficLightControllerBlock;
@@ -215,7 +215,6 @@ public class ModBlocks {
         RegisterBlock("debugblock", DEBUG_BLOCK, null);
         RegisterBlock("fancy_iron_post",FANCY_IRON_POST, ModItemGroup.LOSGALLYS);
         RegisterBlock("lava_lamp", LAVA_LAMP, ModItemGroup.LOSGALLYS);
-//        registerAmbientGenerators();
 
         registerDrains();
 
@@ -254,10 +253,6 @@ public class ModBlocks {
         return Registry.register(Registry.ITEM, new Identifier(LosGallysProps.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(itemGroup)));
     }
-
-//    public static void registerAmbientGenerators(){
-//        RegisterBlock("electricity_ambient_generator", ELECTRICITY_AMBIENT_GEN,ModItemGroup.LOSGALLYS);
-//    }
 
     private static void registerHandRails(){
         RegisterBlock("right_hand_oak_handrail", RIGHT_HAND_OAK_HANDRAIL, ModItemGroup.LGBUILDINGBLOCKS);
@@ -321,7 +316,8 @@ public class ModBlocks {
         RegisterBlock("smooth_stone_roof_slope", SMOOTH_STONE_ROOF_SLOPE, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("brick_roof_top", BRICK_ROOF_TOP, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("brick_roof_slope", BRICK_ROOF_SLOPE, ModItemGroup.LGBUILDINGBLOCKS);
-    } private static void registerCCTVs(){
+    }
+    private static void registerCCTVs(){
         RegisterBlock("cctv", CCTV, ModItemGroup.LOSGALLYS);
     }
     private static void registerDecorPanels(){

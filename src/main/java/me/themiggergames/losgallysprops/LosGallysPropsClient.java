@@ -4,10 +4,10 @@ import me.themiggergames.losgallysprops.block.ModBlockEntities;
 import me.themiggergames.losgallysprops.block.ModBlocks;
 import me.themiggergames.losgallysprops.block.decorative.cctv.CCTVEntityRenderer;
 import me.themiggergames.losgallysprops.block.decorative.lavalamp.LavaLampEntityRenderer;
+import me.themiggergames.losgallysprops.block.decorative.powerelements.PowerElementsEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
-import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
 
 public class LosGallysPropsClient implements ClientModInitializer {
@@ -51,20 +51,8 @@ public class LosGallysPropsClient implements ClientModInitializer {
 
         BlockEntityRendererRegistry.register(ModBlockEntities.LAVA_LAMP_ENTITY, LavaLampEntityRenderer::new);
         BlockEntityRendererRegistry.register(ModBlockEntities.CCTV_ENTITY, CCTVEntityRenderer::new);
-
-//        addHandrails();
+        BlockEntityRendererRegistry.register(ModBlockEntities.POWER_ELEMENTS_ENTITY, PowerElementsEntityRenderer::new);
 
     }
-
-    public void getCutout(Block block){
-        BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutout());
-    }
-
-//    private void addHandrails(){
-//        getCutout(ModBlocks.RIGHT_HAND_ACACIA_HANDRAIL);
-//        getCutout(ModBlocks.LEFT_HAND_ACACIA_HANDRAIL);
-//        getCutout(ModBlocks.RIGHT_HAND_ACACIA_HANDRAIL_END);
-//        getCutout(ModBlocks.LEFT_HAND_ACACIA_HANDRAIL_END);
-//    }
 }
 

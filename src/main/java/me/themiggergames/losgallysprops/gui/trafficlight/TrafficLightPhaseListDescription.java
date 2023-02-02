@@ -12,7 +12,7 @@ public class TrafficLightPhaseListDescription extends LightweightGuiDescription 
     WGridPanel root = new WGridPanel();
 
     public TrafficLightPhaseListDescription(World world, BlockState state, BlockPos pos){
-        root.setSize(360, 400);
+        root.setSize(360, 36+18*10);
         setRootPanel(root);
 
         for(int i = 0; i<10; i++){

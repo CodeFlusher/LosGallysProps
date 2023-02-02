@@ -31,36 +31,22 @@ import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
 public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEntityProvider, BlockRotatable, BlockConnactable {
-
     public static IntegerStatementManager manager = IntegerStatementManager.of(0,6);
-    /*
-    0-off
-    1-broken(on)
-    2-always red
-    3-always yellow
-    4-always blinking yellow
-    5-always green
-    6-always blinking yellow
-     */
     public static final IntProperty MODE = IntProperty.of("statement", 0,6);
-
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
         BlockRotatable.appendRotationProperties(stateManager);
         BlockConnactable.appendConnectionProperties(stateManager, ConnectionTypes.EVERYTHING);
         stateManager.add(MODE);
     }
-
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new TrafficLightEntity(pos, state);
     }
-
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         return VoxelShapes.cuboid(0.25f,0f,0.25f, 0.75f, 1f, 0.75f);
     }
-
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
@@ -103,13 +89,6 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEnt
 
     public TrafficLightBlock(Settings settings) {
         super(settings);
-//        setDefaultState(this.getDefaultState().with(EAST, false)
-//                .with(WEST, false)
-//                .with(SOUTH, false)
-//                .with(NORTH, false)
-//                .with(UP, false)
-//                .with(DOWN, false)
-//        );
     }
 
 
@@ -117,7 +96,7 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEnt
     @Override
     public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity placedBy, Hand hand, BlockHitResult blockHitResult) {
         DebugLogger.sendMessage("Click Spotted");
-        if(placedBy.getInventory().getMainHandStack().getItem() == ModItems.CONFIGURATIOR){
+        if(placedBy.getInventory().getMainHandStack().getItem() == ModItems.CONFIGURATIOR && placedBy.isCreative()){
             DebugLogger.sendMessage("Click Spotted");
             MinecraftClient.getInstance().setScreen(new TrafficLightScreen(new TrafficLightPhaseListDescription(world, blockState, blockPos)));
             //world.setBlockState(blockPos, blockState.with(MODE, manager.changeStatement()));
@@ -158,8 +137,8 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockEnt
         0-off
         1-broken(on)
         2-always red
-        5-always green
-        6-always blinking yellow
+        3-always green
+        4-always blinking yellow
         */
         public PedestrianTrafficLight(Settings settings, boolean useAdditionalStates) {
             super(settings);

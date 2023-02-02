@@ -12,22 +12,12 @@ public class CCTVModel extends AnimatedGeoModel<CCTVEntity> {
 
     @Override
     public Identifier getModelResource(CCTVEntity object) {
-        switch(object.getCachedState().get(CCTVBlock.STYLE)){
-            case 0:
-                return getPlacement("geo/cctv_type_0", object);
-            default:
-                return getPlacement("geo/cctv_type_1", object);
-        }
+        return getPlacement("geo/cctv_type_"+object.getCachedState().get(CCTVBlock.STYLE), object);
     }
 
     @Override
     public Identifier getTextureResource(CCTVEntity object) {
-        switch(object.getCachedState().get(CCTVBlock.STYLE)){
-            case 0:
-                return new Identifier(LosGallysProps.MOD_ID, "textures/animated/cctv/cctv_type_0.png");
-            default:
-                return new Identifier(LosGallysProps.MOD_ID, "textures/animated/cctv/cctv_type_1.png");
-        }
+        return new Identifier(LosGallysProps.MOD_ID, "textures/animated/cctv/cctv_type_"+ object.getCachedState().get(CCTVBlock.STYLE)+".png");
     }
 
     @Override

@@ -7,6 +7,14 @@
       }
     ]
   },
+  "electricity_sound": {
+    "sounds": [
+      {
+        "name": "losgallysprops:electricity_sound",
+        "pitch": 1.0
+      }
+    ]
+  },
   "metakom_sound": {
     "sounds": [
       {
@@ -19,6 +27,34 @@
     "sounds": [
       {
         "name": "losgallysprops:lore",
+        "pitch": 1.0
+      }
+    ]
+  },"fuse_box_door_open": {
+    "sounds": [
+      {
+        "name": "losgallysprops:fuse_box_door_open",
+        "pitch": 1.0
+      }
+    ]
+  },"fuse_box_door_close": {
+    "sounds": [
+      {
+        "name": "losgallysprops:fuse_box_door_close",
+        "pitch": 1.0
+      }
+    ]
+  },"fuse_box_click_on": {
+    "sounds": [
+      {
+        "name": "losgallysprops:fuse_box_click_on",
+        "pitch": 1.0
+      }
+    ]
+  },"fuse_box_click_off": {
+    "sounds": [
+      {
+        "name": "losgallysprops:fuse_box_click_off",
         "pitch": 1.0
       }
     ]

@@ -12,7 +12,7 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.renderers.geo.GeoBlockRenderer;
 
 public class CCTVEntityRenderer extends GeoBlockRenderer<CCTVEntity> {
-public CCTVEntityRenderer(BlockEntityRendererFactory.Context context) {
+    public CCTVEntityRenderer(BlockEntityRendererFactory.Context context) {
         super(new CCTVModel());
         }
 
