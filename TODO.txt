@@ -12,3 +12,5 @@ DONE -Лава лампа
 -ТЦ Двери
 -Новые светофоры
 -Розетки
+ALMOST DONE -Style Editor
+ALMOST DONE -CAMERAS
