@@ -1,4 +1,4 @@
-WIP -Щитки
+DONE-Щитки
 WIP -Настройки сетофора
 DONE -Фикс лесниц
 WIP -Вертикальные полублоки
@@ -12,5 +12,5 @@ DONE -Лава лампа
 -ТЦ Двери
 -Новые светофоры
 -Розетки
-ALMOST DONE -Style Editor
-ALMOST DONE -CAMERAS
+DONE -Style Editor
+DONE -CAMERAS
