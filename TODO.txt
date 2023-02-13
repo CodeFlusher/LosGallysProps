@@ -15,3 +15,5 @@ DONE -Style Editor
 DONE -CAMERAS
 - Windows
 - Modern Architecture Things
+- Computer
+- TV
