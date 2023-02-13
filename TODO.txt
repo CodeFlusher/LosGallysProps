@@ -13,3 +13,5 @@ WIP -ТЦ Двери
 -Розетки
 DONE -Style Editor
 DONE -CAMERAS
+- Windows
+- Modern Architecture Things
