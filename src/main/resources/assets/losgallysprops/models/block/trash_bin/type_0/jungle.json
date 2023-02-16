@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/trash_bin/trash_bin_type_0_base",
+  "textures": {
+    "base": "block/jungle_log"
+  }
+}

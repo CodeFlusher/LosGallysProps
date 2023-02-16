@@ -1,5 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative;
 
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -22,6 +23,7 @@ public class HandRail extends HorizontalFacingBlock implements Waterloggable {
     VoxelShape voxelShape;
     public HandRail(Settings settings, Boolean doInverse) {
         super(settings);
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
         this.inverse = doInverse;
     }
 

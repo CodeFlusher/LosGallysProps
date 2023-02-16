@@ -1,6 +1,7 @@
 package me.themiggergames.losgallysprops.block.decorative;
 
 
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -27,6 +28,7 @@ public class Phone extends HorizontalFacingBlock {
         VoxelShape voxelShape;
         public Phone(Settings settings, SoundEvent sound, VoxelShape shape) {
             super(settings);
+            DebugLogger.sendMessage(this.getClass().getName()+" Init");
             soundEvent = sound;
             voxelShape = shape;
             setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));

@@ -1,23 +1,15 @@
 {
-	"ui.losgallysprops.trafficlight.setstatement0": "Set Disabled Statement",
-	"ui.losgallysprops.trafficlight.setstatement1": "Set Full Lit Statement",
-	"ui.losgallysprops.trafficlight.setstatement2": "Set Static Red Statement",
-	"ui.losgallysprops.trafficlight.setstatement3": "Set Static Yellow Statement",
-	"ui.losgallysprops.trafficlight.setstatement4": "Set Blinking Yellow Statement",
-	"ui.losgallysprops.trafficlight.setstatement5": "Set Static Green Statement",
-	"ui.losgallysprops.trafficlight.setstatement6": "Set Blinking Green Statement",
+	"ui.losgallysprops.trafficlight.setstatement_0": "Set Disabled Statement",
+	"ui.losgallysprops.trafficlight.setstatement_1": "Set Full Lit Statement",
+	"ui.losgallysprops.trafficlight.setstatement_2": "Set Static Red Statement",
+	"ui.losgallysprops.trafficlight.setstatement_3": "Set Static Yellow Statement",
+	"ui.losgallysprops.trafficlight.setstatement_4": "Set Blinking Yellow Statement",
+	"ui.losgallysprops.trafficlight.setstatement_5": "Set Static Green Statement",
+	"ui.losgallysprops.trafficlight.setstatement_6": "Set Blinking Green Statement",
 	"ui.losgallysprops.trafficlight.statementmanager": "Change This Phase Setup",
 
-	"ui.losgallysprops.style.style0": "Set Block To 1st style",
-	"ui.losgallysprops.style.style1": "Set Block To 2nd style",
-	"ui.losgallysprops.style.style2": "Set Block To 3rd style",
-	"ui.losgallysprops.style.style3": "Set Block To 4th style",
-	"ui.losgallysprops.style.style4": "Set Block To 5th style",
-	"ui.losgallysprops.style.style5": "Set Block To 6th style",
-	"ui.losgallysprops.style.style6": "Set Block To 7th style",
-	"ui.losgallysprops.style.style7": "Set Block To 8th style",
-	"ui.losgallysprops.style.style8": "Set Block To 9th style",
-	"ui.losgallysprops.style.style9": "Set Block To 10th style",
+	"ui.losgallysprops.style.style": "<- Switch to this style",
+	"ui.losgallysprops.style.available_styles": "Available Styles:",
 	"ui.losgallysprops.style.invalidblock": "This Block Doesn't Have Styles",
 
 	"item.losgallysprops.mce_one": "One MCE",
@@ -31,14 +23,18 @@
 	"item.losgallysprops.configurator": "Configurator",
 	"item.losgallysprops.style_editor": "Style Editor",
 
-	"itemGroup.losgallysprops.losgallys": "Los Gallys Props",
+	"itemGroup.losgallysprops.losgallys": "Los Gallys Props: Base",
 	"itemGroup.losgallysprops.lgroad": "Los Gallys Props: Road",
+	"itemGroup.losgallysprops.decoration_office": "Los Gallys Props: Work & Official Environment Decorations",
+	"itemGroup.losgallysprops.decoration_house": "Los Gallys Props: House Decorations",
+	"itemGroup.losgallysprops.decoration_building": "Los Gallys Props: Street Decorations",
 	"itemGroup.losgallysprops.lgbuildblock": "Los Gallys Props: Building Blocks",
+	"itemGroup.losgallysprops.special": "Los Gallys Props: Special Items & Experiments",
 
 	"block.losgallysprops.phone": "Phone",
 	"block.losgallysprops.lava_lamp": "Lava Lamp",
 
-	"block.losgallysprops.fuse_box_type1": "Fuse Box",
+	"block.losgallysprops.fuse_box": "Fuse Box",
 
 	"block.losgallysprops.cctv": "Security Camera",
 
@@ -161,6 +157,8 @@
 	"block.losgallysprops.drain_pipe_block_light_gray_concrete": "Drain Pipe (Light Gray Concrete)",
 	"block.losgallysprops.drain_pipe_block_gray_concrete": "Drain Pipe (Gray Concrete)",
 
+	"block.losgallysprops.power_socket_type_0": "Power Socket (Type 1)",
+
 	"block.losgallysprops.black_concrete_stairs": "Black Concrete Stairs",
 	"block.losgallysprops.blue_concrete_stairs": "Blue Concrete Stairs",
 	"block.losgallysprops.brown_concrete_stairs": "Brown Concrete Stairs",
@@ -225,6 +223,18 @@
 	"block.losgallysprops.left_arrow": "Left Only Marking",
 	"block.losgallysprops.right_arrow": "Right Only Marking",
 	"block.losgallysprops.left_right_arrow": "Left And Right Only Marking",
+
+	"block.losgallysprops.oak_trash_bin_type_0": "Oak Trash Bin (Type 1)",
+	"block.losgallysprops.spruce_trash_bin_type_0": "Spruce Trash Bin (Type 1)",
+	"block.losgallysprops.acacia_trash_bin_type_0": "Acacia Trash Bin (Type 1)",
+	"block.losgallysprops.jungle_trash_bin_type_0": "Jungle Trash Bin (Type 1)",
+	"block.losgallysprops.mangrove_trash_bin_type_0": "Mangrove Trash Bin (Type 1)",
+	"block.losgallysprops.birch_trash_bin_type_0": "Birch Trash Bin (Type 1)",
+	"block.losgallysprops.dark_oak_trash_bin_type_0": "Dark Oak Trash Bin (Type 1)",
+	"block.losgallysprops.warped_trash_bin_type_0": "Warped Trash Bin (Type 1)",
+	"block.losgallysprops.crimson_trash_bin_type_0": "Crimson Trash Bin (Type 1)",
+
+	"block.losgallysprops.trash_bin_type_1": "Trash Bin (Type 2)",
 
 	"subtitle.losgallysprops.phone": "Phone is calling"
 }

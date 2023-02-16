@@ -2,6 +2,7 @@ package me.themiggergames.losgallysprops.block.decorative;
 
 import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.BlockConnactable;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,6 +21,7 @@ public class FancyPost extends Block implements BlockConnactable {
 
     public FancyPost(Settings settings) {
         super(settings);
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
     }
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {

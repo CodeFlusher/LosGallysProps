@@ -1,5 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative;
 
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -19,6 +20,7 @@ public class DecorPanel extends HorizontalFacingBlock {
 
     public DecorPanel(Settings settings) {
         super(settings);
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
     }
 

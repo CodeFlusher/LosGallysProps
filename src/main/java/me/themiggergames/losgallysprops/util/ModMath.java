@@ -1,5 +1,7 @@
 package me.themiggergames.losgallysprops.util;
 
+import net.minecraft.util.math.Direction;
+
 public class ModMath {
     //Checks if num placed in range of two floats.
     //-----range1*******THIS********range2----
@@ -48,5 +50,25 @@ public class ModMath {
             return 0;
         }
         return (int)(n/((nMax-nMin)/nSectors))/1;
+    }
+
+    public static Direction rotateDirection(Direction dir, boolean inverse){
+        switch (dir){
+            case NORTH:
+                dir = Direction.EAST;
+                break;
+            case EAST:
+                dir = Direction.NORTH;
+                break;
+            case SOUTH:
+                dir = Direction.WEST;
+                break;
+            case WEST:
+                dir = Direction.SOUTH;
+                break;
+        }
+        if(inverse)
+            return dir.getOpposite();
+        return dir;
     }
 }

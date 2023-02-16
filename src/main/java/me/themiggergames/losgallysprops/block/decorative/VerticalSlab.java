@@ -1,5 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative;
 
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
@@ -59,5 +60,6 @@ public class VerticalSlab extends HorizontalFacingBlock implements Waterloggable
     public VerticalSlab(Settings settings) {
         super(settings);
         this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
     }
 }

@@ -1,5 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.roof;
 
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.BlockConnactable;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -18,6 +19,7 @@ public class RoofTopBlock extends Block implements BlockConnactable {
 
     public RoofTopBlock(Settings settings) {
         super(settings.nonOpaque());
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
         setDefaultState(this.getStateManager().getDefaultState().with(NORTH, false)
                 .with(WEST, false)
                 .with(SOUTH, false)

@@ -1,10 +1,11 @@
 package me.themiggergames.losgallysprops.block.trafficlightcontroller;
 
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
-import me.themiggergames.losgallysprops.items.ModItems;
 import me.themiggergames.losgallysprops.util.BlockRotatable;
-import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.HorizontalFacingBlock;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemPlacementContext;
@@ -12,40 +13,17 @@ import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.state.StateManager;
 import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class TrafficLightControllerBlock extends HorizontalFacingBlock implements BlockRotatable, BlockEntityProvider, NamedScreenHandlerFactory {
+public class TrafficLightControllerBlock extends HorizontalFacingBlock implements BlockRotatable, NamedScreenHandlerFactory {
 
     public TrafficLightControllerBlock(Settings settings) {
         super(settings);
-    }
-
-    @Nullable
-    @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new TrafficLightControllerEntity(pos, state);
-    }
-
-    @Override
-    public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity placedBy, Hand hand, BlockHitResult blockHitResult) {
-        DebugLogger.sendMessage("Click Spotted");
-        if(placedBy.getInventory().getMainHandStack().getItem() == ModItems.CONFIGURATIOR){
-            DebugLogger.sendMessage("Click Spotted");
-            //placedBy.openHandledScreen(blockState.createScreenHandlerFactory(world, blockPos));
-            placedBy.sendMessage(Text.translatable("block.losgallysprops.future_update_feature"), true);
-        } else {
-            placedBy.sendMessage(Text.translatable("block.losgallysprops.future_update_feature"), true);
-        }
-
-        return ActionResult.SUCCESS;
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
     }
 
     @Nullable

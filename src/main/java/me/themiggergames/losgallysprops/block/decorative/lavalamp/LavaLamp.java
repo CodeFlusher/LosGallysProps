@@ -1,5 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.lavalamp;
 
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,12 +15,15 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.function.ToIntFunction;
+
 public class LavaLamp extends BlockWithEntity implements BlockEntityProvider {
 
     public static final BooleanProperty TEST = BooleanProperty.of("test");
 
     public LavaLamp(Settings settings) {
-        super(settings.nonOpaque());
+        super(settings.nonOpaque().luminance(value -> 15));
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
     }
 
     @Override

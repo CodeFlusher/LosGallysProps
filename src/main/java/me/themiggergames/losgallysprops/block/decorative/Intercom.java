@@ -35,6 +35,7 @@ public class Intercom extends HorizontalFacingBlock {
         SymmetricVoxelShapeController controller;
         public Intercom(Settings settings, SoundEvent sound, SymmetricVoxelShapeController controller) {
             super(settings);
+            DebugLogger.sendMessage(this.getClass().getName()+" Init");
             soundEvent = sound;
             this.controller = controller;
             setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(ISPOWERED,false));

@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/trash_bin/type_0/birch"},
+        "facing=east":  { "model": "losgallysprops:block/trash_bin/type_0/birch", "y":  90},
+        "facing=south": { "model": "losgallysprops:block/trash_bin/type_0/birch", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/trash_bin/type_0/birch", "y": 270}
+    }
+}

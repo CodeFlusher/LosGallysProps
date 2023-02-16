@@ -1,5 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps;
 
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -25,6 +26,7 @@ public class DrainPipe extends Block implements Waterloggable {
     // Let default value of the WATERLOGGED property become ``false``
     public DrainPipe(Settings settings) {
         super(settings.noCollision());
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
         setDefaultState(this.stateManager.getDefaultState()
                 .with(WATERLOGGED, false));
     }

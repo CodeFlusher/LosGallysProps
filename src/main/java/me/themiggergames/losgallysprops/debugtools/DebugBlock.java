@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 public class DebugBlock extends HorizontalFacingBlock implements BlockRotatable {
     public DebugBlock(Settings settings) {
         super(settings);
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
     }
 
     @Override

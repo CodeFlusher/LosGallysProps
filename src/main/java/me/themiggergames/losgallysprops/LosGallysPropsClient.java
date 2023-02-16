@@ -3,6 +3,7 @@ package me.themiggergames.losgallysprops;
 import me.themiggergames.losgallysprops.block.ModBlockEntities;
 import me.themiggergames.losgallysprops.block.ModBlocks;
 import me.themiggergames.losgallysprops.block.decorative.cctv.CCTVEntityRenderer;
+import me.themiggergames.losgallysprops.block.decorative.doors.CustomDoorRenderer;
 import me.themiggergames.losgallysprops.block.decorative.lavalamp.LavaLampEntityRenderer;
 import me.themiggergames.losgallysprops.block.decorative.powerelements.PowerElementsEntityRenderer;
 import net.fabricmc.api.ClientModInitializer;
@@ -52,6 +53,7 @@ public class LosGallysPropsClient implements ClientModInitializer {
         BlockEntityRendererRegistry.register(ModBlockEntities.LAVA_LAMP_ENTITY, LavaLampEntityRenderer::new);
         BlockEntityRendererRegistry.register(ModBlockEntities.CCTV_ENTITY, CCTVEntityRenderer::new);
         BlockEntityRendererRegistry.register(ModBlockEntities.POWER_ELEMENTS_ENTITY, PowerElementsEntityRenderer::new);
+        BlockEntityRendererRegistry.register(ModBlockEntities.DOOR_ENTITY, CustomDoorRenderer::new);
 
     }
 }

@@ -1,5 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.cctv;
 
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.PlacingTypes;
 import me.themiggergames.losgallysprops.util.StyledBlock;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
@@ -9,22 +10,26 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.IntProperty;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+
 public class CCTVBlock extends HorizontalFacingBlock implements BlockEntityProvider, StyledBlock {
 
-    public static final Integer MAX_STYLE_COUNT = 1;
+    public static final Integer MAX_STYLE_COUNT = 2;
     public static final EnumProperty<PlacingTypes> TYPES = EnumProperty.of("placedon",PlacingTypes.class);
-    public static final IntProperty STYLE = IntProperty.of("style", 0, 1);
+    public static final IntProperty STYLE = IntProperty.of("style", 0, MAX_STYLE_COUNT-1);
     public final SymmetricVoxelShapeController controller = new SymmetricVoxelShapeController(0.4f,0.6f, 0.4f,0.3f, 0.3f, 0f);
     private Integer styleType;
 
     public CCTVBlock(Settings settings) {
         super(settings.nonOpaque());
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
         setDefaultState(getDefaultState().with(STYLE,0));
         this.styleType = 0;
     }
@@ -57,6 +62,12 @@ public class CCTVBlock extends HorizontalFacingBlock implements BlockEntityProvi
         }
     }
 
+
+    @Override
+    public String toString() {
+        return "Int Property " + getIntProperty().toString() + " Placing Property " + TYPES.toString() + " Max Style " + MAX_STYLE_COUNT;
+    }
+
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
@@ -76,5 +87,15 @@ public class CCTVBlock extends HorizontalFacingBlock implements BlockEntityProvi
     @Override
     public IntProperty getIntProperty() {
         return STYLE;
+    }
+
+    @Override
+    public boolean usuesUnstandartTiteling() {
+        return false;
+    }
+
+    @Override
+    public ArrayList<Text> getTitlesList() {
+        return null;
     }
 }

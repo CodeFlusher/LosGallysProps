@@ -58,5 +58,12 @@
         "pitch": 1.0
       }
     ]
+  },"wtf": {
+    "sounds": [
+      {
+        "name": "losgallysprops:lol",
+        "pitch": 1.0
+      }
+    ]
   }
 }

@@ -16,4 +16,12 @@ public class ModItemGroup {
 
     public static final ItemGroup LGBUILDINGBLOCKS = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "lgbuildblock"),
             () -> new ItemStack(ModBlocks.WHITE_CONCRETE_STAIRS));
+    public static final ItemGroup LGDECOOFFICE = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "decoration_office"),
+            () -> new ItemStack(ModBlocks.PHONE));
+    public static final ItemGroup LGDECOHOUSE = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "decoration_house"),
+            () -> new ItemStack(ModBlocks.LAVA_LAMP));
+    public static final ItemGroup LGOUTSIDE = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "decoration_building"),
+            () -> new ItemStack(ModBlocks.BRICK_ROOF_SLOPE));
+    public static final ItemGroup SPECIAL = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "special"),
+            () -> new ItemStack(ModItems.CONFIGURATIOR));
 }

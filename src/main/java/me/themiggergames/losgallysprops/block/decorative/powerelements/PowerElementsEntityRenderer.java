@@ -18,7 +18,7 @@ public class PowerElementsEntityRenderer extends GeoBlockRenderer<PowerElementsE
 
     @Override
     public RenderLayer getRenderType(PowerElementsEntity animatable, float partialTick, MatrixStack poseStack, @Nullable VertexConsumerProvider bufferSource, @Nullable VertexConsumer buffer, int packedLight, Identifier texture) {
-        return RenderLayer.getEntityTranslucentCull(getTextureLocation(animatable));
+        return RenderLayer.getEntityCutout(getTextureLocation(animatable));
     }
 
     @Override

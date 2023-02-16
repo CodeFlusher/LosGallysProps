@@ -2,6 +2,7 @@ package me.themiggergames.losgallysprops.block.decorative.road;
 
 import me.themiggergames.losgallysprops.block.decorative.FancyPost;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
+import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.BlockConnactable;
 import me.themiggergames.losgallysprops.util.BlockRotatable;
 import net.minecraft.block.*;
@@ -24,6 +25,7 @@ public class RoadSign extends HorizontalFacingBlock implements BlockRotatable, W
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
     public RoadSign(Settings settings) {
         super(settings);
+        DebugLogger.sendMessage(this.getClass().getName()+" Init");
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(WATERLOGGED, false));
     }
 
