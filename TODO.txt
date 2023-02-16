@@ -17,4 +17,4 @@ DONE -CAMERAS
 - Modern Architecture Things
 - Computer
 - TV
-WIP - Trash Bins
+DONE - Trash Bins
