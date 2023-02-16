@@ -1,20 +1,23 @@
 DONE-Щитки
 DONE -Настройки сетофора
 DONE -Фикс лесниц
-WIP -Вертикальные полублоки
--Домофоны
+MODEL ONLY -Вертикальные полублоки
 -Запраки(как проп)
 DONE -Фикс разметки
 DONE -Бетонный вариант канализации.
 DONE -Домофон излучает redstone signal
 DONE -Лава лампа
 WIP -ТЦ Двери
--Новые светофоры
+MODEL ONLY -Новые светофоры
 WIP -Розетки
 DONE -Style Editor
 DONE -CAMERAS
 - Windows
-- Modern Architecture Things
+мб отложу - Modern Architecture Things
 - Computer
 - TV
+- Pencil Storage
+- Table Lamp
+- Outside Lightning
+WIP - Benches
 DONE - Trash Bins
