@@ -1,5 +1,5 @@
 DONE-Щитки
-WIP -Настройки сетофора
+DONE -Настройки сетофора
 DONE -Фикс лесниц
 WIP -Вертикальные полублоки
 -Домофоны
@@ -10,10 +10,11 @@ DONE -Домофон излучает redstone signal
 DONE -Лава лампа
 WIP -ТЦ Двери
 -Новые светофоры
--Розетки
+WIP -Розетки
 DONE -Style Editor
 DONE -CAMERAS
 - Windows
 - Modern Architecture Things
 - Computer
 - TV
+- Trash Bins
