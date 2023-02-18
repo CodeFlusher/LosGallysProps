@@ -1,0 +1,6 @@
+{
+  "parent":"losgallysprops:block/pc/modern_monitor_matrix",
+  "textures":{
+    "base": "losgallysprops:block/pc/monitor_image_8"
+  }
+}

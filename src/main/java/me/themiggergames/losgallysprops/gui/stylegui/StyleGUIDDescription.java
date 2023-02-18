@@ -10,7 +10,6 @@ import me.themiggergames.losgallysprops.util.SpecialText;
 import me.themiggergames.losgallysprops.util.StyledBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -24,7 +23,7 @@ public class StyleGUIDDescription extends LightweightGuiDescription {
     BlockState state;
     BlockPos pos;
     Block block;
-    Boolean unstandartTitle;
+    Boolean unstandardTitle;
     ArrayList<Text> titles;
 
     BiConsumer<SpecialText, StyleGUIButton> configurator = (SpecialText text, StyleGUIButton destination) -> {
@@ -33,7 +32,7 @@ public class StyleGUIDDescription extends LightweightGuiDescription {
         destination.button.setOnClick(() -> {
             world.setBlockState(pos, world.getBlockState(pos).with(((StyledBlock)block).getIntProperty(), text.getNumber()));
         });
-        if(!this.unstandartTitle){
+        if(!this.unstandardTitle){
             destination.label.setText(Text.literal(String.valueOf(text.getNumber())));
         }else{
             destination.label.setText(Text.literal(""));
@@ -41,8 +40,8 @@ public class StyleGUIDDescription extends LightweightGuiDescription {
     };
 
     public StyleGUIDDescription(World world, BlockState state, BlockPos pos, int maxStyle){
-        this.unstandartTitle = ((StyledBlock)state.getBlock()).usuesUnstandartTiteling();
-        if (unstandartTitle)
+        this.unstandardTitle = ((StyledBlock)state.getBlock()).usuesUnstandartTiteling();
+        if (unstandardTitle)
             this.titles = ((StyledBlock)state.getBlock()).getTitlesList();
         this.world = world;
         this.state = state;
@@ -58,7 +57,7 @@ public class StyleGUIDDescription extends LightweightGuiDescription {
 //        }
         WListPanel<SpecialText, StyleGUIButton> listPanel;
         ArrayList<SpecialText> list = new ArrayList<SpecialText>();
-        if(this.unstandartTitle) {
+        if(this.unstandardTitle) {
             for (int i = 0; i < maxStyle; i++) {
                 list.add(new SpecialText(titles.get(i), i));
             }
@@ -80,7 +79,7 @@ public class StyleGUIDDescription extends LightweightGuiDescription {
                 world.setBlockState(pos, world.getBlockState(pos).with(((StyledBlock)block).getIntProperty(), n));
             }
         });
-        if(!this.unstandartTitle)
+        if(!this.unstandardTitle)
             button.setLabel(Text.translatable("ui.losgallysprops.style.style"+n));
         else
             button.setLabel(this.titles.get(n));

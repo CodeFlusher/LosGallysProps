@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/bench/bench_inventory",
+  "textures": {
+    "base": "block/acacia_planks"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "losgallysprops:block/marble",
+    "side": "losgallysprops:block/marble",
+    "top": "losgallysprops:block/marble"
+  }
+}

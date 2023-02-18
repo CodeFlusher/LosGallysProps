@@ -41,8 +41,8 @@ public class Bench extends HorizontalFacingBlock {
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return state.with(rightConnection, canConnect(pos.offset(ModMath.rotateDirection(state.get(FACING).getOpposite(), false)), (World) world, state))
-                .with(leftConnection, canConnect(pos.offset(ModMath.rotateDirection(state.get(FACING).getOpposite(), true)), (World) world, state));
+        return state.with(rightConnection, canConnect(pos.offset(ModMath.rotateDirection(state.get(FACING), false)), (World) world, state))
+                .with(leftConnection, canConnect(pos.offset(ModMath.rotateDirection(state.get(FACING), true)), (World) world, state));
     }
 
     private Boolean canConnect(BlockPos pos, World world, BlockState selfState){

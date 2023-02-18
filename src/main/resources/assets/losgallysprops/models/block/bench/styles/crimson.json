@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/bench/sit_base",
+  "textures": {
+    "base": "block/crimson_planks"
+  }
+}

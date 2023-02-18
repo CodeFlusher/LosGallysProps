@@ -52,19 +52,20 @@ public class ModMath {
         return (int)(n/((nMax-nMin)/nSectors))/1;
     }
 
+    //Rotates Direction by 90 or -90 Degrees(if inverse == true).
     public static Direction rotateDirection(Direction dir, boolean inverse){
         switch (dir){
             case NORTH:
                 dir = Direction.EAST;
                 break;
             case EAST:
-                dir = Direction.NORTH;
+                dir = Direction.SOUTH;
                 break;
             case SOUTH:
                 dir = Direction.WEST;
                 break;
             case WEST:
-                dir = Direction.SOUTH;
+                dir = Direction.NORTH;
                 break;
         }
         if(inverse)

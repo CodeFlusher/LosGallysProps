@@ -1,0 +1,24 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"texture_size": [128, 128],
+	"textures": {
+		"0": "losgallysprops:block/pc/tv_base",
+		"1": "losgallysprops:block/pc/monitor_image_0",
+		"particle": "losgallysprops:block/pc/tv_base"
+	},
+	"elements": [
+		{
+			"from": [-8.5, -1.5, 12.75],
+			"to": [24.5, 17.5, 12.75],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 4.5], "texture": "#base"},
+				"east": {"uv": [4.125, 2.5, 4.25, 4.875], "texture": "#0"},
+				"south": {"uv": [0, 2.375, 4.125, 4.75], "texture": "#0"},
+				"west": {"uv": [4.25, 2.5, 4.375, 4.875], "texture": "#0"},
+				"up": {"uv": [8.25, 2.125, 4.125, 2], "texture": "#0"},
+				"down": {"uv": [8.25, 2.125, 4.125, 2.25], "texture": "#0"}
+			}
+		}
+	]
+}

@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
@@ -43,7 +44,7 @@ public class TriggerBlock extends Block {
         DebugLogger.sendMessage(String.valueOf(world.isPlayerInRange(pos.getX(), pos.getY(), pos.getZ(), 2)));
         if(world.isPlayerInRange(pos.getX(), pos.getY(), pos.getZ(), 2)){
             world.setBlockState(pos, state.with(POWERED, true));
-            world.emitGameEvent(null, GameEvent.BLOCK_ACTIVATE, pos);
+            world.emitGameEvent(world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(),2, false), GameEvent.BLOCK_ACTIVATE, pos);
             this.updateNeighbors(state,world,pos);
         }else{
             world.setBlockState(pos, state.with(POWERED, false));
@@ -60,7 +61,8 @@ public class TriggerBlock extends Block {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return context.isHolding(this.asBlock().asItem()) ? VoxelShapes.fullCube() : VoxelShapes.empty();
+        //return context.isHolding(this.asBlock().asItem()) ? VoxelShapes.fullCube() : VoxelShapes.empty();
+        return VoxelShapes.fullCube();
     }
 
     @Override
@@ -70,7 +72,7 @@ public class TriggerBlock extends Block {
 
     @Override
     public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
-        return state.get(POWERED) ? 15:0;
+        return state.get(POWERED) ? 15 : 0;
     }
     @Override
     public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {

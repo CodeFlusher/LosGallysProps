@@ -10,6 +10,8 @@ import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRail;
 import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRailEnd;
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRail;
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRailEnd;
+import me.themiggergames.losgallysprops.block.decorative.house.ComputerMonitor;
+import me.themiggergames.losgallysprops.block.decorative.house.FlowerPot;
 import me.themiggergames.losgallysprops.block.decorative.lavalamp.LavaLamp;
 import me.themiggergames.losgallysprops.block.decorative.powerelements.PowerElements;
 import me.themiggergames.losgallysprops.block.decorative.powerelements.PowerSocket;
@@ -30,15 +32,13 @@ import me.themiggergames.losgallysprops.items.ModItemGroup;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Material;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.TrapdoorBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 
 public class ModBlocks {
@@ -195,7 +195,7 @@ public class ModBlocks {
     public static final PowerElements FUSE_BOX = new PowerElements(FabricBlockSettings.of(Material.METAL));
     public static final CCTVBlock CCTV = new CCTVBlock(FabricBlockSettings.of(Material.METAL));
     public static final CustomDoorBlock CUSTOM_DOOR_BLOCK = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL));
-    public static final TriggerBlock TRIGGER_BLOCK = new TriggerBlock(FabricBlockSettings.of(Material.AIR));
+//    public static final TriggerBlock TRIGGER_BLOCK = new TriggerBlock(FabricBlockSettings.of(Material.AIR));
     public static final TrashBin OAK_TRASH_BIN_TYPE_0 = new TrashBin(FabricBlockSettings.of(Material.WOOD));
     public static final TrashBin ACACIA_TRASH_BIN_TYPE_0 = new TrashBin(FabricBlockSettings.of(Material.WOOD));
     public static final TrashBin JUNGLE_TRASH_BIN_TYPE_0 = new TrashBin(FabricBlockSettings.of(Material.WOOD));
@@ -207,7 +207,34 @@ public class ModBlocks {
     public static final TrashBin CRIMSON_TRASH_BIN_TYPE_0 = new TrashBin(FabricBlockSettings.of(Material.WOOD));
     public static final TrashBin TRASH_BIN_TYPE_1 = new TrashBin(FabricBlockSettings.of(Material.METAL));
     public static final PowerSocket POWER_SOCKET_TYPE_0 = new PowerSocket(FabricBlockSettings.of(Material.METAL));
-    public static final Bench STONE_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final ComputerMonitor MODERN_COMPUTER_MONITOR = new ComputerMonitor(FabricBlockSettings.of(Material.METAL));
+    public static final ComputerMonitor MODERN_TV = new ComputerMonitor(FabricBlockSettings.of(Material.METAL));
+    public static final Prop PENCIL_STORAGE = new Prop(FabricBlockSettings.of(Material.GLASS), VoxelShapes.cuboid(0.35f, 0, 0.35f,0.7f,0.5f, 0.7f));
+    public static final Block ASPHALT_BLOCK = new Block(FabricBlockSettings.of(Material.STONE));
+    public static final SlabBlock ASPHALT_SLAB = new SlabBlock(FabricBlockSettings.of(Material.STONE));
+    public static final Block ASPHALT_STAIRS = new ModStairsBlock(ModBlocks.NO_TURN_LEFT.getDefaultState(), FabricBlockSettings.of(Material.STONE).strength(3f));
+    public static final VerticalSlab ASPHALT_V_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE).strength(3f));
+    public static final Block MARBLE_BLOCK = new Block(FabricBlockSettings.of(Material.STONE));
+    public static final SlabBlock MARBLE_SLAB = new SlabBlock(FabricBlockSettings.of(Material.STONE));
+    public static final Block MARBLE_STAIRS = new ModStairsBlock(ModBlocks.NO_TURN_LEFT.getDefaultState(), FabricBlockSettings.of(Material.STONE).strength(3f));
+    public static final VerticalSlab MARBLE_V_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE).strength(3f));
+    public static final Block FLOOR_TILES_BLOCK = new Block(FabricBlockSettings.of(Material.STONE));
+    public static final SlabBlock FLOOR_TILES_SLAB = new SlabBlock(FabricBlockSettings.of(Material.STONE));
+    public static final Block FLOOR_TILES_STAIRS = new ModStairsBlock(ModBlocks.NO_TURN_LEFT.getDefaultState(), FabricBlockSettings.of(Material.STONE).strength(3f));
+    public static final VerticalSlab FLOOR_TILES_V_SLAB = new VerticalSlab(FabricBlockSettings.of(Material.STONE).strength(3f));
+    public static final Bench SMOOTH_STONE_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench SMOOTH_SANDSTONE_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench SMOOTH_QUARTZ_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench ACACIA_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench OAK_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench DARK_OAK_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench JUNGLE_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench MANGROVE_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench BIRCH_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench SPRUCE_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench CRIMSON_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench WARPED_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final FlowerPot FLOWER_POT = new FlowerPot(FabricBlockSettings.of(Material.GLASS));
 
     public static void registerBlocks(){
         DebugLogger.sendMessage("Registering Blocks");
@@ -215,7 +242,7 @@ public class ModBlocks {
         RegisterBlock("metakom", METAKOM, ModItemGroup.LGDECOOFFICE);
         RegisterBlock("debugblock", DEBUG_BLOCK, ModItemGroup.SPECIAL);
         RegisterBlock("fancy_iron_post",FANCY_IRON_POST, ModItemGroup.LGROAD);
-        RegisterBlock("trigger_block",TRIGGER_BLOCK, ModItemGroup.SPECIAL);
+//        RegisterBlock("trigger_block",TRIGGER_BLOCK, ModItemGroup.SPECIAL);
         RegisterBlock("lava_lamp", LAVA_LAMP, ModItemGroup.LGDECOHOUSE);
         DebugLogger.sendMessage("Single Blocks Registered");
 
@@ -269,10 +296,19 @@ public class ModBlocks {
 
         registerBenches();
         DebugLogger.sendMessage("Benches Registered");
+
+        registerPCs();
+        DebugLogger.sendMessage("PCs Registered");
+
+        registerProps();
+        DebugLogger.sendMessage("Props Are Registered");
+
+        registerMaterialBlocks();
+        DebugLogger.sendMessage("Material Blocks Registered");
+
+        //registerFlowerPots();
+        DebugLogger.sendMessage("Flower Pots Registered");
     }
-
-
-
 
     public static Block RegisterBlock(String name, Block block, ItemGroup itemGroup){
         RegisterBlockItem(name, block, itemGroup);
@@ -343,7 +379,7 @@ public class ModBlocks {
     }
 
     private static void registerDoors() {
-        RegisterBlock("custom_door", CUSTOM_DOOR_BLOCK, ModItemGroup.LGDECOOFFICE);
+        RegisterBlock("custom_door", CUSTOM_DOOR_BLOCK, ModItemGroup.SPECIAL);
     }
 
     private static void registerRoofSlopes(){
@@ -497,10 +533,50 @@ public class ModBlocks {
     }
 
     private static void registerBenches(){
-        RegisterBlock("stone_bench",STONE_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("smooth_stone_bench",SMOOTH_STONE_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("smooth_quartz_bench",SMOOTH_QUARTZ_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("smooth_sandstone_bench",SMOOTH_SANDSTONE_BENCH, ModItemGroup.LGOUTSIDE);
+
+        RegisterBlock("acacia_bench",ACACIA_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("oak_bench",OAK_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("dark_oak_bench",DARK_OAK_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("spruce_bench",SPRUCE_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("mangrove_bench",MANGROVE_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("jungle_bench",JUNGLE_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("birch_bench",BIRCH_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("warped_bench",WARPED_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("crimson_bench",CRIMSON_BENCH, ModItemGroup.LGOUTSIDE);
     }
     private static void registerPowerSockets(){
         RegisterBlock("power_socket_type_0", POWER_SOCKET_TYPE_0, ModItemGroup.LGDECOHOUSE);
     }
 
+    private static void registerPCs(){
+        RegisterBlock("modern_computer_monitor", MODERN_COMPUTER_MONITOR, ModItemGroup.LGDECOOFFICE);
+        RegisterBlock("modern_tv", MODERN_TV, ModItemGroup.LGDECOOFFICE);
+    }
+    private static void registerProps(){
+        RegisterBlock("pencil_storage", PENCIL_STORAGE, ModItemGroup.LGDECOOFFICE);
+    }
+
+    private static void registerMaterialBlocks(){
+        RegisterBlock("asphalt_block", ASPHALT_BLOCK, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("asphalt_stairs", ASPHALT_STAIRS, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("asphalt_slab", ASPHALT_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("asphalt_vertical_slab", ASPHALT_V_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+
+        RegisterBlock("marble_block", MARBLE_BLOCK, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("marble_stairs", MARBLE_STAIRS, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("marble_slab", MARBLE_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("marble_vertical_slab", MARBLE_V_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+
+        RegisterBlock("floor_tiles_block", FLOOR_TILES_BLOCK, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("floor_tiles_stairs", FLOOR_TILES_STAIRS, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("floor_tiles_slab", FLOOR_TILES_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+        RegisterBlock("floor_tiles_vertical_slab", FLOOR_TILES_V_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
+    }
+
+    private static void registerFlowerPots(){
+        RegisterBlock("flower_pot",FLOWER_POT,ModItemGroup.LGOUTSIDE);
+    }
 }

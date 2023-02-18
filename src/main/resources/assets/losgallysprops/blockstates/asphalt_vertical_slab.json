@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/stairs/asphalt/vertical_slab"},
+        "facing=east":  { "model": "losgallysprops:block/stairs/asphalt/vertical_slab", "y":  90},
+        "facing=south": { "model": "losgallysprops:block/stairs/asphalt/vertical_slab", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/stairs/asphalt/vertical_slab", "y": 270}
+    }
+}

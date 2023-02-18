@@ -97,14 +97,6 @@ public class Intercom extends HorizontalFacingBlock {
         world.createAndScheduleBlockTick(pos, this, 20);
     }
 
-    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if ((Boolean)state.get(ISPOWERED)) {
-                world.setBlockState(pos, (BlockState)state.with(ISPOWERED, false), 3);
-                this.updateNeighbors(state,world,pos);
-                world.emitGameEvent((Entity)null, GameEvent.BLOCK_DEACTIVATE, pos);
-        }
-    }
-
     @Override
     public boolean emitsRedstonePower(BlockState state) {
         return true;
@@ -113,5 +105,12 @@ public class Intercom extends HorizontalFacingBlock {
     private void updateNeighbors(BlockState state, World world, BlockPos pos) {
         world.updateNeighborsAlways(pos, this);
         world.updateNeighborsAlways(pos.offset(state.get(FACING).getOpposite()), this);
+    }
+    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if ((Boolean)state.get(ISPOWERED)) {
+            world.setBlockState(pos, (BlockState)state.with(ISPOWERED, false), 3);
+            this.updateNeighbors(state,world,pos);
+            world.emitGameEvent((Entity)null, GameEvent.BLOCK_DEACTIVATE, pos);
+        }
     }
 }

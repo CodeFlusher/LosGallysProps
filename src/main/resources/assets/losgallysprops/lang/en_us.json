@@ -8,6 +8,19 @@
 	"ui.losgallysprops.trafficlight.setstatement_6": "Set Blinking Green Statement",
 	"ui.losgallysprops.trafficlight.statementmanager": "Change This Phase Setup",
 
+	"ui.losgallysprops.styles.monitor.0": "Disabled",
+	"ui.losgallysprops.styles.monitor.1": "Message For You",
+	"ui.losgallysprops.styles.monitor.2": "Capitalism",
+	"ui.losgallysprops.styles.monitor.3": "😮",
+	"ui.losgallysprops.styles.monitor.4": "Volodin",
+	"ui.losgallysprops.styles.monitor.5": "Poopie Woopie",
+	"ui.losgallysprops.styles.monitor.6": "L̶̘͇̳͂͗O̴͕̖͐̐̄B̵̧̻͔̀S̸̘͚͗T̸̤̣̎̄͆͜É̷͖͛̕R̷̯̬͔̊̌",
+	"ui.losgallysprops.styles.monitor.7": "That's Bad!!!",
+	"ui.losgallysprops.styles.monitor.8": "Finally.",
+	"ui.losgallysprops.styles.monitor.9": "Goodbye",
+	"ui.losgallysprops.styles.monitor.10": "Vologda People's Republic",
+	"ui.losgallysprops.styles.monitor.11": "BING CHILLING",
+
 	"ui.losgallysprops.style.style": "<- Switch to this style",
 	"ui.losgallysprops.style.available_styles": "Available Styles:",
 	"ui.losgallysprops.style.invalidblock": "This Block Doesn't Have Styles",
@@ -132,6 +145,25 @@
 	"block.losgallysprops.pedestrian_modern_traffic_light": "Modern Pedestrian Traffic Light",
 	"block.losgallysprops.on_wall_modern_traffic_light": "On Wall Modern Traffic Light",
 
+	"block.losgallysprops.asphalt_block": "Asphalt Block",
+	"block.losgallysprops.asphalt_slab": "Asphalt Slab",
+	"block.losgallysprops.asphalt_vertical_slab": "Asphalt Vertical Slab",
+	"block.losgallysprops.asphalt_stairs": "Asphalt Stairs",
+
+	"block.losgallysprops.marble_block": "Marble Block",
+	"block.losgallysprops.marble_slab": "Marble Slab",
+	"block.losgallysprops.marble_vertical_slab": "Marble Vertical Slab",
+	"block.losgallysprops.marble_stairs": "Marble Stairs",
+
+	"block.losgallysprops.floor_tiles_block": "Floor Tiles Block",
+	"block.losgallysprops.floor_tiles_slab": "Floor Tiles Slab",
+	"block.losgallysprops.floor_tiles_vertical_slab": "Floor Tiles Vertical Slab",
+	"block.losgallysprops.floor_tiles_stairs": "Floor Tiles Stairs",
+
+	"block.losgallysprops.pencil_storage": "Pencil Storage",
+
+	"block.losgallysprops.modern_computer_monitor": "Modern Computer Monitor",
+
 	"block.losgallysprops.traffic_light_controller": "Traffic Light Controller",
 
 	"block.losgallysprops.fancy_iron_post": "Fancy Iron Post",
@@ -236,5 +268,20 @@
 
 	"block.losgallysprops.trash_bin_type_1": "Trash Bin (Type 2)",
 
-	"subtitle.losgallysprops.phone": "Phone is calling"
+	"subtitle.losgallysprops.phone": "Phone is calling",
+
+	"block.losgallysprops.oak_bench":"Oak Bench",
+	"block.losgallysprops.birch_bench":"Birch Bench",
+	"block.losgallysprops.spruce_bench":"Spruce Bench",
+	"block.losgallysprops.dark_oak_bench":"Dark Oak Bench",
+	"block.losgallysprops.mangrove_bench":"Mangrove Bench",
+	"block.losgallysprops.acacia_bench":"Acacia Bench",
+	"block.losgallysprops.warped_bench":"Warped Bench",
+	"block.losgallysprops.crimson_bench":"Crimson Bench",
+	"block.losgallysprops.smooth_sandstone_bench":"Smooth Sandstone Bench",
+	"block.losgallysprops.smooth_stone_bench":"Smooth Stone Bench",
+	"block.losgallysprops.smooth_quartz_bench":"Smooth Quartz Bench",
+	"block.losgallysprops.jungle_bench":"Jungle Bench",
+
+	"block.losgallysprops.modern_tv":"Modern TV"
 }

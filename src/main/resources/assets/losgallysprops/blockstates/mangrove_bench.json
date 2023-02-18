@@ -1,0 +1,117 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/mangrove"
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/mangrove",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/mangrove",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/mangrove",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/left_border_base"
+      },
+      "when": {
+        "facing": "north",
+        "left": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/left_border_base",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "left": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/left_border_base",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "left": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/left_border_base",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "left": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/right_border_base"
+      },
+      "when": {
+        "facing": "north",
+        "right": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/right_border_base",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "right": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/right_border_base",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "right": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/right_border_base",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "right": false
+      }
+    }
+  ]
+}
