@@ -1,5 +1,4 @@
 DONE-Щитки
-DONE -Настройки сетофора
 DONE -Фикс лесниц
 MODEL ONLY -Вертикальные полублоки
 -Запраки(как проп)
@@ -9,15 +8,15 @@ DONE -Домофон излучает redstone signal
 DONE -Лава лампа
 WIP -ТЦ Двери
 MODEL ONLY -Новые светофоры
-WIP -Розетки
+DONE -Розетки
 DONE -Style Editor
 DONE -CAMERAS
 - Windows
-мб отложу - Modern Architecture Things
-- Computer
-- TV
-- Pencil Storage
+ОТЛОЖЕНО - Modern Architecture Things
+Parts of it. - Computer
+DONE - TV
+DONE - Pencil Storage
 - Table Lamp
 - Outside Lightning
-WIP - Benches
+DONE - Benches
 DONE - Trash Bins
