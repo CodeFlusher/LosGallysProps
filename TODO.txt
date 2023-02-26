@@ -7,11 +7,11 @@ DONE -Бетонный вариант канализации.
 DONE -Домофон излучает redstone signal
 DONE -Лава лампа
 WIP -ТЦ Двери
-MODEL ONLY -Новые светофоры
+DONE -Новые светофоры
 DONE -Розетки
 DONE -Style Editor
 DONE -CAMERAS
-- Windows
+DONE - Windows
 ОТЛОЖЕНО - Modern Architecture Things
 Parts of it. - Computer
 DONE - TV
