@@ -1,6 +1,5 @@
 package me.themiggergames.losgallysprops.block;
 
-import com.eliotlash.mclib.math.functions.classic.Mod;
 import me.themiggergames.losgallysprops.LosGallysProps;
 import me.themiggergames.losgallysprops.ModSounds;
 import me.themiggergames.losgallysprops.block.decorative.*;
@@ -32,13 +31,15 @@ import me.themiggergames.losgallysprops.items.ModItemGroup;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.TrapdoorBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 
 public class ModBlocks {
@@ -130,7 +131,9 @@ public class ModBlocks {
     public static final TrapdoorBlock STREET_DRAIN = new TrapdoorBlock(FabricBlockSettings.of(Material.WOOD).strength(4f).nonOpaque());
     public static final DebugBlock DEBUG_BLOCK = new DebugBlock(FabricBlockSettings.of(Material.STONE));
     public static final TrafficLightBlock MODERN_TRAFFIC_LIGHT = new TrafficLightBlock(FabricBlockSettings.of(Material.METAL).strength(4f));
+    public static final TrafficLightBlock OLD_TRAFFIC_LIGHT = new TrafficLightBlock(FabricBlockSettings.of(Material.METAL).strength(4f));
     public static final OnWallTrafficLight ONWALL_MODERN_TRAFFIC_LIGHT = new OnWallTrafficLight(FabricBlockSettings.of(Material.METAL).strength(4f), new SymmetricVoxelShapeController(0.7f,0.15f,2f,0.15f,-0.5f,0f));
+    public static final OnWallTrafficLight ONWALL_OLD_TRAFFIC_LIGHT = new OnWallTrafficLight(FabricBlockSettings.of(Material.METAL).strength(4f), new SymmetricVoxelShapeController(0.7f,0.15f,2f,0.15f,-0.5f,0f));
     public static final PedestrianTrafficLight PEDESTRIAN_MODERN_TRAFFIC_LIGHT = new PedestrianTrafficLight(FabricBlockSettings.of(Material.METAL), true);
     public static final TrafficLightControllerBlock TRAFFIC_LIGHT_CONTROLLER_BLOCK = new TrafficLightControllerBlock(FabricBlockSettings.of(Material.METAL));
     public static final RightHandRail RIGHT_HAND_OAK_HANDRAIL = new RightHandRail(FabricBlockSettings.of(Material.WOOD));
@@ -206,6 +209,7 @@ public class ModBlocks {
     public static final TrashBin WARPED_TRASH_BIN_TYPE_0 = new TrashBin(FabricBlockSettings.of(Material.WOOD));
     public static final TrashBin CRIMSON_TRASH_BIN_TYPE_0 = new TrashBin(FabricBlockSettings.of(Material.WOOD));
     public static final TrashBin TRASH_BIN_TYPE_1 = new TrashBin(FabricBlockSettings.of(Material.METAL));
+    public static final TrashBin TRASH_BIN_TYPE_2 = new TrashBin(FabricBlockSettings.of(Material.METAL));
     public static final PowerSocket POWER_SOCKET_TYPE_0 = new PowerSocket(FabricBlockSettings.of(Material.METAL));
     public static final ComputerMonitor MODERN_COMPUTER_MONITOR = new ComputerMonitor(FabricBlockSettings.of(Material.METAL));
     public static final ComputerMonitor MODERN_TV = new ComputerMonitor(FabricBlockSettings.of(Material.METAL));
@@ -225,6 +229,9 @@ public class ModBlocks {
     public static final Bench SMOOTH_STONE_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
     public static final Bench SMOOTH_SANDSTONE_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
     public static final Bench SMOOTH_QUARTZ_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench SMOOTH_STONE_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench SMOOTH_SANDSTONE_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench SMOOTH_QUARTZ_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
     public static final Bench ACACIA_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
     public static final Bench OAK_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
     public static final Bench DARK_OAK_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
@@ -234,7 +241,17 @@ public class ModBlocks {
     public static final Bench SPRUCE_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
     public static final Bench CRIMSON_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
     public static final Bench WARPED_BENCH = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench ACACIA_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench OAK_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench DARK_OAK_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench JUNGLE_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench MANGROVE_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench BIRCH_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench SPRUCE_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench CRIMSON_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
+    public static final Bench WARPED_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
     public static final FlowerPot FLOWER_POT = new FlowerPot(FabricBlockSettings.of(Material.GLASS));
+    public static final Window WINDOW = new Window(FabricBlockSettings.of(Material.GLASS));
 
     public static void registerBlocks(){
         DebugLogger.sendMessage("Registering Blocks");
@@ -306,7 +323,7 @@ public class ModBlocks {
         registerMaterialBlocks();
         DebugLogger.sendMessage("Material Blocks Registered");
 
-        //registerFlowerPots();
+        registerFlowerPots();
         DebugLogger.sendMessage("Flower Pots Registered");
     }
 
@@ -420,8 +437,10 @@ public class ModBlocks {
 
     private static void registerTrafficLights(){
         RegisterBlock("modern_traffic_light",MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
+        RegisterBlock("old_traffic_light",OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
         RegisterBlock("pedestrian_modern_traffic_light",PEDESTRIAN_MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
         RegisterBlock("on_wall_modern_traffic_light",ONWALL_MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
+        RegisterBlock("on_wall_old_traffic_light",ONWALL_OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
         RegisterBlock("traffic_light_controller", TRAFFIC_LIGHT_CONTROLLER_BLOCK, ModItemGroup.LGOUTSIDE);
     }
 
@@ -530,12 +549,17 @@ public class ModBlocks {
         RegisterBlock("warped_trash_bin_type_0",WARPED_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
         RegisterBlock("crimson_trash_bin_type_0",CRIMSON_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
         RegisterBlock("trash_bin_type_1",TRASH_BIN_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("trash_bin_type_2",TRASH_BIN_TYPE_2, ModItemGroup.LGOUTSIDE);
     }
 
     private static void registerBenches(){
         RegisterBlock("smooth_stone_bench",SMOOTH_STONE_BENCH, ModItemGroup.LGOUTSIDE);
         RegisterBlock("smooth_quartz_bench",SMOOTH_QUARTZ_BENCH, ModItemGroup.LGOUTSIDE);
         RegisterBlock("smooth_sandstone_bench",SMOOTH_SANDSTONE_BENCH, ModItemGroup.LGOUTSIDE);
+
+        RegisterBlock("smooth_stone_bench_type_1",SMOOTH_STONE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("smooth_quartz_bench_type_1",SMOOTH_QUARTZ_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("smooth_sandstone_bench_type_1",SMOOTH_SANDSTONE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
 
         RegisterBlock("acacia_bench",ACACIA_BENCH, ModItemGroup.LGOUTSIDE);
         RegisterBlock("oak_bench",OAK_BENCH, ModItemGroup.LGOUTSIDE);
@@ -546,6 +570,16 @@ public class ModBlocks {
         RegisterBlock("birch_bench",BIRCH_BENCH, ModItemGroup.LGOUTSIDE);
         RegisterBlock("warped_bench",WARPED_BENCH, ModItemGroup.LGOUTSIDE);
         RegisterBlock("crimson_bench",CRIMSON_BENCH, ModItemGroup.LGOUTSIDE);
+
+        RegisterBlock("acacia_bench_type_1",ACACIA_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("oak_bench_type_1",OAK_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("dark_oak_bench_type_1",DARK_OAK_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("spruce_bench_type_1",SPRUCE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("mangrove_bench_type_1",MANGROVE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("jungle_bench_type_1",JUNGLE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("birch_bench_type_1",BIRCH_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("warped_bench_type_1",WARPED_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("crimson_bench_type_1",CRIMSON_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
     }
     private static void registerPowerSockets(){
         RegisterBlock("power_socket_type_0", POWER_SOCKET_TYPE_0, ModItemGroup.LGDECOHOUSE);
@@ -557,6 +591,7 @@ public class ModBlocks {
     }
     private static void registerProps(){
         RegisterBlock("pencil_storage", PENCIL_STORAGE, ModItemGroup.LGDECOOFFICE);
+        RegisterBlock("window", WINDOW, ModItemGroup.LGDECOHOUSE);
     }
 
     private static void registerMaterialBlocks(){
@@ -577,6 +612,6 @@ public class ModBlocks {
     }
 
     private static void registerFlowerPots(){
-        RegisterBlock("flower_pot",FLOWER_POT,ModItemGroup.LGOUTSIDE);
+        RegisterBlock("flower_pot",FLOWER_POT,ModItemGroup.SPECIAL);
     }
 }

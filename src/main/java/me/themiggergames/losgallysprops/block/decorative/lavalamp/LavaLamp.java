@@ -15,8 +15,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.function.ToIntFunction;
-
 public class LavaLamp extends BlockWithEntity implements BlockEntityProvider {
 
     public static final BooleanProperty TEST = BooleanProperty.of("test");

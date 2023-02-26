@@ -1,6 +1,5 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps;
 
-import me.themiggergames.losgallysprops.util.ProgressionProperty;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -9,7 +8,6 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
-import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -21,7 +19,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class TrashBin extends HorizontalFacingBlock {
 
-    public static IntProperty filledStatement = IntProperty.of("fill", 0, 6);
+    public static final Integer MAX_FILLING = 12;
+    public static final IntProperty filledStatement = IntProperty.of("fill", 0, MAX_FILLING);
 
     public TrashBin(Settings settings) {
         super(settings.nonOpaque());
@@ -35,28 +34,21 @@ public class TrashBin extends HorizontalFacingBlock {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        ItemStack stack = player.getStackInHand(hand);
-        if(state.get(filledStatement) == 6){
+        if(state.get(filledStatement) == MAX_FILLING){
             return ActionResult.PASS;
         }
-        else if(stack.getCount()>1){
-            stack.setCount(stack.getCount()-1);
-            player.setStackInHand(hand, stack);
-            if(state.get(filledStatement)!=6){
-                world.setBlockState(pos, state.with(filledStatement, state.get(filledStatement)+1));
-                world.createAndScheduleBlockTick(pos, this, 40);
+        ItemStack stack = player.getStackInHand(hand);
+        if(stack.getCount()>=1){
+            if(stack.getCount() == 1)
+                player.setStackInHand(hand, ItemStack.EMPTY);
+            else{
+                stack.setCount(stack.getCount()-1);
+                player.setStackInHand(hand, stack);
             }
-            return ActionResult.SUCCESS;
-        } else if (stack.getCount()==1) {
-            player.setStackInHand(hand, ItemStack.EMPTY);
-            if(state.get(filledStatement)!=6){
-                world.setBlockState(pos, state.with(filledStatement, state.get(filledStatement)+1));
-                world.createAndScheduleBlockTick(pos, this, 40);
-            }
-            return ActionResult.SUCCESS;
-        }else{
-            return ActionResult.SUCCESS;
+            world.setBlockState(pos, state.with(filledStatement, state.get(filledStatement)+1));
+            world.createAndScheduleBlockTick(pos, this, 40);
         }
+        return ActionResult.SUCCESS;
     }
 
     @Nullable

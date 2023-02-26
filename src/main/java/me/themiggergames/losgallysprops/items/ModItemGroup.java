@@ -21,7 +21,7 @@ public class ModItemGroup {
     public static final ItemGroup LGDECOHOUSE = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "decoration_house"),
             () -> new ItemStack(ModBlocks.LAVA_LAMP));
     public static final ItemGroup LGOUTSIDE = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "decoration_building"),
-            () -> new ItemStack(ModBlocks.BRICK_ROOF_SLOPE));
+            () -> new ItemStack(ModBlocks.TRASH_BIN_TYPE_1));
     public static final ItemGroup SPECIAL = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "special"),
             () -> new ItemStack(ModItems.CONFIGURATIOR));
 }

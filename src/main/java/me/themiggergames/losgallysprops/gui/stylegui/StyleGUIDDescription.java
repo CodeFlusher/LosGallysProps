@@ -8,29 +8,34 @@ import io.github.cottonmc.cotton.gui.widget.WListPanel;
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.SpecialText;
 import me.themiggergames.losgallysprops.util.StyledBlock;
+import me.themiggergames.losgallysprops.util.SwitchListener;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.network.packet.s2c.play.BlockUpdateS2CPacket;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 
 import java.util.ArrayList;
 import java.util.function.BiConsumer;
 
 public class StyleGUIDDescription extends LightweightGuiDescription {
     WGridPanel root = new WGridPanel();
-    World world;
+    WorldAccess world;
     BlockState state;
     BlockPos pos;
     Block block;
     Boolean unstandardTitle;
     ArrayList<Text> titles;
+    SwitchListener listener;
 
     BiConsumer<SpecialText, StyleGUIButton> configurator = (SpecialText text, StyleGUIButton destination) -> {
         DebugLogger.sendMessage(text.getText().asOrderedText());
         destination.button.setLabel(text.getText());
         destination.button.setOnClick(() -> {
-            world.setBlockState(pos, world.getBlockState(pos).with(((StyledBlock)block).getIntProperty(), text.getNumber()));
+            listener.setSwitchable(text.getNumber());
+            //world.setBlockState(pos, world.getBlockState(pos).with(((StyledBlock)block).getIntProperty(), text.getNumber()), Block.NOTIFY_ALL);
         });
         if(!this.unstandardTitle){
             destination.label.setText(Text.literal(String.valueOf(text.getNumber())));
@@ -39,7 +44,8 @@ public class StyleGUIDDescription extends LightweightGuiDescription {
         }
     };
 
-    public StyleGUIDDescription(World world, BlockState state, BlockPos pos, int maxStyle){
+    public StyleGUIDDescription(WorldAccess world, BlockState state, BlockPos pos, int maxStyle, SwitchListener listener){
+        this.listener = listener;
         this.unstandardTitle = ((StyledBlock)state.getBlock()).usuesUnstandartTiteling();
         if (unstandardTitle)
             this.titles = ((StyledBlock)state.getBlock()).getTitlesList();
@@ -52,9 +58,6 @@ public class StyleGUIDDescription extends LightweightGuiDescription {
         root.add(new WLabel(Text.translatable("item.losgallysprops.style_editor")),1,1);
 
         this.setRootPanel(root);
-//        for(int i = 0; i<maxStyle; i++){
-//            addStyleButton(i);
-//        }
         WListPanel<SpecialText, StyleGUIButton> listPanel;
         ArrayList<SpecialText> list = new ArrayList<SpecialText>();
         if(this.unstandardTitle) {
@@ -76,7 +79,7 @@ public class StyleGUIDDescription extends LightweightGuiDescription {
         WButton button = new WButton();
         button.setOnClick(() -> {
             if(block instanceof StyledBlock) {
-                world.setBlockState(pos, world.getBlockState(pos).with(((StyledBlock)block).getIntProperty(), n));
+                world.setBlockState(pos, world.getBlockState(pos).with(((StyledBlock)block).getIntProperty(), n), Block.NOTIFY_ALL);
             }
         });
         if(!this.unstandardTitle)

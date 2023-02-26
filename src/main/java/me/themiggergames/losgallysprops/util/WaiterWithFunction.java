@@ -3,7 +3,7 @@ package me.themiggergames.losgallysprops.util;
 import java.util.concurrent.TimeUnit;
 
 public abstract class WaiterWithFunction extends Thread{
-    private Integer time;
+    private final Integer time;
 
     public WaiterWithFunction(int time){
        this.time = time;

@@ -1,6 +1,7 @@
 package me.themiggergames.losgallysprops;
 
 
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -26,7 +27,7 @@ public class ModSounds {
     public static SoundEvent WTF_EVENT = new SoundEvent(WTF);
 
     public static void registerSounds () {
-        LosGallysProps.LOGGER.info("Registering sounds for " + LosGallysProps.MOD_ID);
+        InformativeLogger.info("Registering sounds for " + LosGallysProps.MOD_ID);
         Registry.register(Registry.SOUND_EVENT, PHONE_SOUND, PHONE_SOUND_EVENT);
         Registry.register(Registry.SOUND_EVENT, ELECTRICITY_SOUND, ELECTRICITY_EVENT);
         Registry.register(Registry.SOUND_EVENT, METAKOM_SOUND, METAKOM_SOUND_EVENT);

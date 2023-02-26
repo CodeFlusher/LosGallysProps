@@ -6,8 +6,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class DebugLogger {
-    private static final Logger DEBUGLOGGER = LogManager.getLogger(LosGallysProps.MOD_ID);
+    private static Logger DEBUGLOGGER = LogManager.getLogger(LosGallysProps.MOD_ID);;
     public static void sendMessage(Object object){
+        DEBUGLOGGER.info(object);
     }
-
 }

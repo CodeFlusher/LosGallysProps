@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/bench/right_sit_base",
+  "textures": {
+    "base": "block/spruce_planks"
+  }
+}

@@ -23,9 +23,13 @@
     ],
     "client": [
       "me.themiggergames.losgallysprops.LosGallysPropsClient"
+    ],
+    "server": [
+      "me.themiggergames.losgallysprops.LosGallysPropsServer"
     ]
   },
   "mixins": [
+    "losgallysprops.mixins.json"
   ],
 
   "depends": {
