@@ -2,34 +2,36 @@ package me.themiggergames.losgallysprops.block;
 
 import me.themiggergames.losgallysprops.LosGallysProps;
 import me.themiggergames.losgallysprops.ModSounds;
-import me.themiggergames.losgallysprops.block.decorative.*;
 import me.themiggergames.losgallysprops.block.decorative.cctv.CCTVBlock;
 import me.themiggergames.losgallysprops.block.decorative.doors.CustomDoorBlock;
 import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRail;
 import me.themiggergames.losgallysprops.block.decorative.handrails.LeftHandRailEnd;
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRail;
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRailEnd;
-import me.themiggergames.losgallysprops.block.decorative.house.ComputerMonitor;
-import me.themiggergames.losgallysprops.block.decorative.house.FlowerPot;
+import me.themiggergames.losgallysprops.block.decorative.house.*;
 import me.themiggergames.losgallysprops.block.decorative.lavalamp.LavaLamp;
 import me.themiggergames.losgallysprops.block.decorative.powerelements.PowerElements;
 import me.themiggergames.losgallysprops.block.decorative.powerelements.PowerSocket;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadMarking;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
+import me.themiggergames.losgallysprops.block.decorative.road.RoadSignNotRotatable;
 import me.themiggergames.losgallysprops.block.decorative.roof.RoofSlopeBlock;
 import me.themiggergames.losgallysprops.block.decorative.roof.RoofTopBlock;
-import me.themiggergames.losgallysprops.block.decorative.streetProps.Bench;
-import me.themiggergames.losgallysprops.block.decorative.streetProps.DrainPipe;
-import me.themiggergames.losgallysprops.block.decorative.streetProps.TrashBin;
+import me.themiggergames.losgallysprops.block.decorative.streetProps.*;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.OnWallTrafficLight;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.PedestrianTrafficLight;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
+import me.themiggergames.losgallysprops.block.decorative.tunnel.SubwayPowerRail;
+import me.themiggergames.losgallysprops.block.decorative.tunnel.TunnelBlock;
+import me.themiggergames.losgallysprops.block.decorative.tunnel.TunnelCornerConnector;
+import me.themiggergames.losgallysprops.block.decorative.tunnel.TunnelEnd;
 import me.themiggergames.losgallysprops.block.trafficlightcontroller.TrafficLightControllerBlock;
 import me.themiggergames.losgallysprops.debugtools.DebugBlock;
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.items.ModItemGroup;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.networking.v1.S2CPlayChannelEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -135,6 +137,7 @@ public class ModBlocks {
     public static final OnWallTrafficLight ONWALL_MODERN_TRAFFIC_LIGHT = new OnWallTrafficLight(FabricBlockSettings.of(Material.METAL).strength(4f), new SymmetricVoxelShapeController(0.7f,0.15f,2f,0.15f,-0.5f,0f));
     public static final OnWallTrafficLight ONWALL_OLD_TRAFFIC_LIGHT = new OnWallTrafficLight(FabricBlockSettings.of(Material.METAL).strength(4f), new SymmetricVoxelShapeController(0.7f,0.15f,2f,0.15f,-0.5f,0f));
     public static final PedestrianTrafficLight PEDESTRIAN_MODERN_TRAFFIC_LIGHT = new PedestrianTrafficLight(FabricBlockSettings.of(Material.METAL), true);
+    public static final PedestrianTrafficLight PEDESTRIAN_OLD_TRAFFIC_LIGHT = new PedestrianTrafficLight(FabricBlockSettings.of(Material.METAL), true);
     public static final TrafficLightControllerBlock TRAFFIC_LIGHT_CONTROLLER_BLOCK = new TrafficLightControllerBlock(FabricBlockSettings.of(Material.METAL));
     public static final RightHandRail RIGHT_HAND_OAK_HANDRAIL = new RightHandRail(FabricBlockSettings.of(Material.WOOD));
     public static final LeftHandRail LEFT_HAND_OAK_HANDRAIL = new LeftHandRail(FabricBlockSettings.of(Material.WOOD));
@@ -211,6 +214,7 @@ public class ModBlocks {
     public static final TrashBin TRASH_BIN_TYPE_1 = new TrashBin(FabricBlockSettings.of(Material.METAL));
     public static final TrashBin TRASH_BIN_TYPE_2 = new TrashBin(FabricBlockSettings.of(Material.METAL));
     public static final PowerSocket POWER_SOCKET_TYPE_0 = new PowerSocket(FabricBlockSettings.of(Material.METAL));
+    public static final PowerSocket POWER_SOCKET_TYPE_1 = new PowerSocket(FabricBlockSettings.of(Material.METAL));
     public static final ComputerMonitor MODERN_COMPUTER_MONITOR = new ComputerMonitor(FabricBlockSettings.of(Material.METAL));
     public static final ComputerMonitor MODERN_TV = new ComputerMonitor(FabricBlockSettings.of(Material.METAL));
     public static final Prop PENCIL_STORAGE = new Prop(FabricBlockSettings.of(Material.GLASS), VoxelShapes.cuboid(0.35f, 0, 0.35f,0.7f,0.5f, 0.7f));
@@ -252,6 +256,15 @@ public class ModBlocks {
     public static final Bench WARPED_BENCH_TYPE_1 = new Bench(FabricBlockSettings.of(Material.METAL));
     public static final FlowerPot FLOWER_POT = new FlowerPot(FabricBlockSettings.of(Material.GLASS));
     public static final Window WINDOW = new Window(FabricBlockSettings.of(Material.GLASS));
+    public static final TunnelBlock TUNNEL_BLOCK = new TunnelBlock(FabricBlockSettings.of(Material.STONE));
+    public static final TunnelCornerConnector TUNNEL_CORNER_CONNECTOR = new TunnelCornerConnector(FabricBlockSettings.of(Material.STONE));
+    public static final TunnelEnd TUNNEL_END = new TunnelEnd(FabricBlockSettings.of(Material.STONE));
+    public static final SubwayPowerRail POWER_RAIL_WITHOUT_POST = new SubwayPowerRail(FabricBlockSettings.of(Material.STONE));
+    public static final SubwayPowerRail POWER_RAIL_WITH_POST = new SubwayPowerRail(FabricBlockSettings.of(Material.STONE));
+    public static final SubwayPowerRail DOUBLE_SIDE_POWER_RAIL_WITHOUT_POST = new SubwayPowerRail(FabricBlockSettings.of(Material.STONE));
+    public static final SubwayPowerRail DOUBLE_SIDE_POWER_RAIL_WITH_POST = new SubwayPowerRail(FabricBlockSettings.of(Material.STONE));
+    public static final RoadSignNotRotatable SUBWAY_LOGO = new RoadSignNotRotatable(FabricBlockSettings.of(Material.GLASS));
+    public static final ScaffoldingBlock IRON_SCAFFOLDING = new ScaffoldingBlock(FabricBlockSettings.of(Material.METAL));
 
     public static void registerBlocks(){
         DebugLogger.sendMessage("Registering Blocks");
@@ -261,6 +274,7 @@ public class ModBlocks {
         RegisterBlock("fancy_iron_post",FANCY_IRON_POST, ModItemGroup.LGROAD);
 //        RegisterBlock("trigger_block",TRIGGER_BLOCK, ModItemGroup.SPECIAL);
         RegisterBlock("lava_lamp", LAVA_LAMP, ModItemGroup.LGDECOHOUSE);
+        RegisterBlock("iron_scaffolding", IRON_SCAFFOLDING, ModItemGroup.LGBUILDINGBLOCKS);
         DebugLogger.sendMessage("Single Blocks Registered");
 
         registerDrains();
@@ -325,6 +339,10 @@ public class ModBlocks {
 
         registerFlowerPots();
         DebugLogger.sendMessage("Flower Pots Registered");
+
+        registerTunels();
+        DebugLogger.sendMessage("Tunnels Registered");
+
     }
 
     public static Block RegisterBlock(String name, Block block, ItemGroup itemGroup){
@@ -439,6 +457,7 @@ public class ModBlocks {
         RegisterBlock("modern_traffic_light",MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
         RegisterBlock("old_traffic_light",OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
         RegisterBlock("pedestrian_modern_traffic_light",PEDESTRIAN_MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
+        RegisterBlock("pedestrian_old_traffic_light",PEDESTRIAN_OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
         RegisterBlock("on_wall_modern_traffic_light",ONWALL_MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
         RegisterBlock("on_wall_old_traffic_light",ONWALL_OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
         RegisterBlock("traffic_light_controller", TRAFFIC_LIGHT_CONTROLLER_BLOCK, ModItemGroup.LGOUTSIDE);
@@ -503,6 +522,8 @@ public class ModBlocks {
         RegisterBlock("no_turn_left",NO_TURN_LEFT, ModItemGroup.LGROAD);
         RegisterBlock("no_turn_right",NO_TURN_RIGHT, ModItemGroup.LGROAD);
         RegisterBlock("crossing",CROSSING, ModItemGroup.LGROAD);
+
+        RegisterBlock("subway_logo",SUBWAY_LOGO, ModItemGroup.LGOUTSIDE);
     }
 
     private static void registerRoadMarks(){
@@ -583,6 +604,7 @@ public class ModBlocks {
     }
     private static void registerPowerSockets(){
         RegisterBlock("power_socket_type_0", POWER_SOCKET_TYPE_0, ModItemGroup.LGDECOHOUSE);
+        RegisterBlock("power_socket_type_1", POWER_SOCKET_TYPE_1, ModItemGroup.LGDECOHOUSE);
     }
 
     private static void registerPCs(){
@@ -613,5 +635,14 @@ public class ModBlocks {
 
     private static void registerFlowerPots(){
         RegisterBlock("flower_pot",FLOWER_POT,ModItemGroup.SPECIAL);
+    }
+    private static void registerTunels() {
+        RegisterBlock("tunnel_block", TUNNEL_BLOCK, ModItemGroup.LGSUBWAY);
+        RegisterBlock("tunnel_connector", TUNNEL_CORNER_CONNECTOR, ModItemGroup.LGSUBWAY);
+        RegisterBlock("tunnel_end", TUNNEL_END, ModItemGroup.LGSUBWAY);
+        RegisterBlock("contact_rail_without_post", POWER_RAIL_WITHOUT_POST, ModItemGroup.LGSUBWAY);
+        RegisterBlock("contact_rail_with_post", POWER_RAIL_WITH_POST, ModItemGroup.LGSUBWAY);
+        RegisterBlock("double_side_contact_rail_without_post", DOUBLE_SIDE_POWER_RAIL_WITHOUT_POST, ModItemGroup.LGSUBWAY);
+        RegisterBlock("double_side_contact_rail_with_post", DOUBLE_SIDE_POWER_RAIL_WITH_POST, ModItemGroup.LGSUBWAY);
     }
 }

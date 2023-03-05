@@ -1,0 +1,78 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_connector_lower_part"
+      },
+      "when": {
+        "north": true,
+        "down": true
+      }
+    },{
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_connector_lower_part",
+        "y": 90
+      },
+      "when": {
+        "east": true,
+        "down": true
+      }
+    },{
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_connector_lower_part",
+        "y": 180
+      },
+      "when": {
+        "south": true,
+        "down": true
+      }
+    },{
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_connector_lower_part",
+        "y": 270
+      },
+      "when": {
+        "west": true,
+        "down": true
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_connector_upper_part"
+      },
+      "when": {
+        "north": true,
+        "up": true
+      }
+    },{
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_connector_upper_part",
+        "y": 90
+      },
+      "when": {
+        "east": true,
+        "up": true
+      }
+    },{
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_connector_upper_part",
+        "y": 180
+      },
+      "when": {
+        "south": true,
+        "up": true
+      }
+    },{
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_connector_upper_part",
+        "y": 270
+      },
+      "when": {
+        "west": true,
+        "up": true
+      }
+    }
+
+  ]
+
+}

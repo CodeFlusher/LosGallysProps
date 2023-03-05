@@ -1,8 +1,9 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "block/block",
 	"textures": {
-		"0": "block/texture",
-		"particle": "block/texture"
+		"0": "losgallysprops:block/power_socket/power_socket_type_1",
+		"particle": "losgallysprops:block/power_socket/power_socket_type_1"
 	},
 	"elements": [
 		{

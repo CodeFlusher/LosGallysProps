@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/power_socket/power_socket_type_1"},
+        "facing=east":  { "model": "losgallysprops:block/power_socket/power_socket_type_1", "y":  90},
+        "facing=south": { "model": "losgallysprops:block/power_socket/power_socket_type_1", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/power_socket/power_socket_type_1", "y": 270}
+    }
+}

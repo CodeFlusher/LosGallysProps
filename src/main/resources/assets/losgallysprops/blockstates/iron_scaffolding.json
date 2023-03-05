@@ -1,0 +1,79 @@
+{
+  "multipart": [
+    {
+      "apply":{
+        "model": "losgallysprops:block/scaffolding/scaffolding_base"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/scaffolding/scaffolding_base_extended"
+      },
+      "when": {
+        "north": "extended"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/scaffolding/scaffolding_base_extended",
+        "y": 90
+      },
+      "when": {
+        "east": "extended"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/scaffolding/scaffolding_base_extended",
+        "y": 180
+      },
+      "when": {
+        "south": "extended"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/scaffolding/scaffolding_base_extended",
+        "y": 270
+      },
+      "when": {
+        "west": "extended"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/scaffolding/scaffolding_arm"
+      },
+      "when": {
+        "north": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/scaffolding/scaffolding_arm",
+        "y": 90
+      },
+      "when": {
+        "east": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/scaffolding/scaffolding_arm",
+        "y": 180
+      },
+      "when": {
+        "south": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/scaffolding/scaffolding_arm",
+        "y": 270
+      },
+      "when": {
+        "west": "none"
+      }
+    }
+  ]
+}

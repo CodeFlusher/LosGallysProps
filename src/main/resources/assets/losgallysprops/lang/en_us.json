@@ -11,7 +11,7 @@
 	"ui.losgallysprops.styles.monitor.0": "Disabled",
 	"ui.losgallysprops.styles.monitor.1": "Message For You",
 	"ui.losgallysprops.styles.monitor.2": "Capitalism",
-	"ui.losgallysprops.styles.monitor.3": "😮",
+	"ui.losgallysprops.styles.monitor.3": "I was shocked, do you?",
 	"ui.losgallysprops.styles.monitor.4": "Volodin",
 	"ui.losgallysprops.styles.monitor.5": "Poopie Woopie",
 	"ui.losgallysprops.styles.monitor.6": "L̶̘͇̳͂͗O̴͕̖͐̐̄B̵̧̻͔̀S̸̘͚͗T̸̤̣̎̄͆͜É̷͖͛̕R̷̯̬͔̊̌",
@@ -20,6 +20,10 @@
 	"ui.losgallysprops.styles.monitor.9": "Goodbye",
 	"ui.losgallysprops.styles.monitor.10": "Vologda People's Republic",
 	"ui.losgallysprops.styles.monitor.11": "BING CHILLING",
+
+	"ui.losgallysprops.styles.tunnel_block.style.0": "Bald Subway Wall",
+	"ui.losgallysprops.styles.tunnel_block.style.1": "Small Amount Of Wires On Subway Wall",
+	"ui.losgallysprops.styles.tunnel_block.style.2": "Huge Amount Of Wires On Subway Wall",
 
 	"ui.losgallysprops.style.style": "<- Switch to this style",
 	"ui.losgallysprops.style.available_styles": "Available Styles:",
@@ -43,6 +47,7 @@
 	"itemGroup.losgallysprops.decoration_building": "Los Gallys Props: Street Decorations",
 	"itemGroup.losgallysprops.lgbuildblock": "Los Gallys Props: Building Blocks",
 	"itemGroup.losgallysprops.special": "Los Gallys Props: Special Items & Experiments",
+	"itemGroup.losgallysprops.subway": "Los Gallys Props: Subway Blocks",
 
 	"block.losgallysprops.phone": "Phone",
 	"block.losgallysprops.lava_lamp": "Lava Lamp",
@@ -194,6 +199,7 @@
 	"block.losgallysprops.drain_pipe_block_gray_concrete": "Drain Pipe (Gray Concrete)",
 
 	"block.losgallysprops.power_socket_type_0": "Power Socket (Type 1)",
+	"block.losgallysprops.power_socket_type_1": "Power Socket (Type 2)",
 
 	"block.losgallysprops.black_concrete_stairs": "Black Concrete Stairs",
 	"block.losgallysprops.blue_concrete_stairs": "Blue Concrete Stairs",
@@ -301,7 +307,19 @@
 	"block.losgallysprops.smooth_quartz_bench_type_1":"Smooth Quartz Bench (Type 2)",
 	"block.losgallysprops.jungle_bench_type_1":"Jungle Bench (Type 2)",
 
+	"block.losgallysprops.tunnel_block": "Subway Tunnel Block",
+	"block.losgallysprops.tunnel_connector": "Subway Tunnel Connector",
+	"block.losgallysprops.tunnel_end": "Subway Tunnel Special Block",
+	"block.losgallysprops.contact_rail_without_post": "Contact Rail",
+	"block.losgallysprops.contact_rail_with_post": "Contact Rail With Post",
+	"block.losgallysprops.double_side_contact_rail_with_post": "Double Sided Contact Rail With Post",
+	"block.losgallysprops.double_side_contact_rail_without_post": "Double Sided Contact Rail With Post",
+
+	"block.losgallysprops.subway_logo": "Subway Logo",
+
 	"block.losgallysprops.window": "Window",
+
+	"block.losgallysprops.iron_scaffolding": "Iron Scaffolding",
 
 	"block.losgallysprops.modern_tv":"Modern TV"
 }

@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight;
 
-import me.themiggergames.losgallysprops.block.decorative.FancyPost;
+import me.themiggergames.losgallysprops.block.decorative.streetProps.FancyPost;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.BlockConnactable;

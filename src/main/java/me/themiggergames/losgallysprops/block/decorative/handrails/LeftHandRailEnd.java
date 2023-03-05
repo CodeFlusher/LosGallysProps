@@ -1,6 +1,5 @@
 package me.themiggergames.losgallysprops.block.decorative.handrails;
 
-import me.themiggergames.losgallysprops.block.decorative.HandRail;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.util.math.BlockPos;

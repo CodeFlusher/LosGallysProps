@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.road;
 
-import me.themiggergames.losgallysprops.block.decorative.FancyPost;
+import me.themiggergames.losgallysprops.block.decorative.streetProps.FancyPost;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
 import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.BlockConnactable;
@@ -36,8 +36,8 @@ public class RoadSign extends HorizontalFacingBlock implements BlockRotatable, W
     @Override
     public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockPos blockPos = ctx.getBlockPos();
-        return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw())).with(NORTH, canConnect(ctx.getWorld(), blockPos, Direction.NORTH))
-                .with(SOUTH, canConnect(ctx.getWorld(), blockPos, Direction.SOUTH))
+        return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw())).with(NORTH, canConnect(ctx.getWorld(), blockPos, Direction.SOUTH))
+                .with(SOUTH, canConnect(ctx.getWorld(), blockPos, Direction.NORTH))
                 .with(EAST, canConnect(ctx.getWorld(), blockPos, Direction.EAST))
                 .with(WEST, canConnect(ctx.getWorld(), blockPos, Direction.WEST))
                 .with(UP, canConnect(ctx.getWorld(), blockPos, Direction.UP))
@@ -82,8 +82,8 @@ public class RoadSign extends HorizontalFacingBlock implements BlockRotatable, W
             world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
-            return state.with(NORTH, canConnect(world, pos, Direction.SOUTH))
-                    .with(SOUTH, canConnect(world, pos, Direction.NORTH))
+            return state.with(NORTH, canConnect(world, pos, Direction.NORTH))
+                    .with(SOUTH, canConnect(world, pos, Direction.SOUTH))
                     .with(EAST, canConnect(world, pos, Direction.EAST))
                     .with(WEST, canConnect(world, pos, Direction.WEST))
                     .with(UP, canConnect(world, pos, Direction.UP))

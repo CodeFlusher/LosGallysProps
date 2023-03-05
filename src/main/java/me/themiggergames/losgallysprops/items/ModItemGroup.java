@@ -24,4 +24,6 @@ public class ModItemGroup {
             () -> new ItemStack(ModBlocks.TRASH_BIN_TYPE_1));
     public static final ItemGroup SPECIAL = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "special"),
             () -> new ItemStack(ModItems.CONFIGURATIOR));
+    public static final ItemGroup LGSUBWAY = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "subway"),
+            () -> new ItemStack(ModBlocks.POWER_RAIL_WITH_POST));
 }

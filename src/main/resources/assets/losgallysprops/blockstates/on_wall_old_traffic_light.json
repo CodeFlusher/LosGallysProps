@@ -5,7 +5,7 @@
         "facing": "north"
       },
       "apply":{
-        "model": "losgallysprops:block/traffic_light/old/on_wall_old_traffic_light_base"
+        "model": "losgallysprops:block/traffic_light/on_wall_old/onwall_old_traffic_light"
       }
     },
     {
@@ -13,7 +13,7 @@
         "facing": "east"
       },
       "apply":{
-        "model": "losgallysprops:block/traffic_light/old/on_wall_old_traffic_light_base",
+        "model": "losgallysprops:block/traffic_light/on_wall_old/onwall_old_traffic_light",
         "y": 90
       }
     },
@@ -22,7 +22,7 @@
         "facing": "south"
       },
       "apply":{
-        "model": "losgallysprops:block/traffic_light/old/on_wall_old_traffic_light_base",
+        "model": "losgallysprops:block/traffic_light/on_wall_old/onwall_old_traffic_light",
         "y": 180
       }
     },
@@ -31,7 +31,7 @@
         "facing": "west"
       },
       "apply":{
-        "model": "losgallysprops:block/traffic_light/old/on_wall_old_traffic_light_base",
+        "model": "losgallysprops:block/traffic_light/on_wall_old/onwall_old_traffic_light",
         "y": 270
       }
     },

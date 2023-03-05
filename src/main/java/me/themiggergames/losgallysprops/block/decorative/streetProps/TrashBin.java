@@ -19,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class TrashBin extends HorizontalFacingBlock {
 
-    public static final Integer MAX_FILLING = 12;
+    public static final int MAX_FILLING = 12;
     public static final IntProperty filledStatement = IntProperty.of("fill", 0, MAX_FILLING);
 
     public TrashBin(Settings settings) {
@@ -34,8 +34,11 @@ public class TrashBin extends HorizontalFacingBlock {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (player.isCreative())
+            return super.onUse(state, world, pos, player, hand, hit);
+
         if(state.get(filledStatement) == MAX_FILLING){
-            return ActionResult.PASS;
+            return super.onUse(state, world, pos, player, hand, hit);
         }
         ItemStack stack = player.getStackInHand(hand);
         if(stack.getCount()>=1){
