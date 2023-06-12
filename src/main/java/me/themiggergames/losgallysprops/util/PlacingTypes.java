@@ -10,17 +10,12 @@ public enum PlacingTypes implements StringIdentifiable {
 
     private final String str;
 
-    PlacingTypes(String string){
+    PlacingTypes(String string) {
         this.str = string;
     }
 
-    @Override
-    public String asString() {
-        return str;
-    }
-
-    public static PlacingTypes getPlacement(Direction dir){
-        switch (dir){
+    public static PlacingTypes getPlacement(Direction dir) {
+        switch (dir) {
             case UP:
                 return TOP;
             case DOWN:
@@ -28,5 +23,10 @@ public enum PlacingTypes implements StringIdentifiable {
             default:
                 return WALL;
         }
+    }
+
+    @Override
+    public String asString() {
+        return str;
     }
 }

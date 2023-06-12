@@ -16,6 +16,6 @@ public class Post extends Block {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(0.4f,0f,0.4f,0.6f,1f,0.6);
+        return VoxelShapes.cuboid(0.4f, 0f, 0.4f, 0.6f, 1f, 0.6);
     }
 }

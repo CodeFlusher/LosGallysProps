@@ -3,6 +3,7 @@ package me.themiggergames.losgallysprops.debugtools;
 import me.themiggergames.losgallysprops.LosGallysProps;
 import me.themiggergames.losgallysprops.ModSounds;
 import me.themiggergames.losgallysprops.util.BlockRotatable;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -21,14 +22,14 @@ import org.jetbrains.annotations.Nullable;
 public class DebugBlock extends HorizontalFacingBlock implements BlockRotatable {
     public DebugBlock(Settings settings) {
         super(settings);
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
     }
 
     @Override
     public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity placedBy, Hand hand, BlockHitResult blockHitResult) {
-        if(LosGallysProps.isDebugEnabled())
+        if (LosGallysProps.isDebugEnabled())
             placedBy.sendMessage(Text.of(blockState.toString() + " " + blockPos.toString() + " " + placedBy.getHeadYaw()), true);
-        if(!world.isClient)
+        if (!world.isClient)
             world.playSound(null, blockPos, ModSounds.LORE_SOUND_EVENT, SoundCategory.BLOCKS, 1f, 1f);
         return ActionResult.SUCCESS;
     }

@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.cctv;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import me.themiggergames.losgallysprops.util.PlacingTypes;
 import me.themiggergames.losgallysprops.util.StyledBlock;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
@@ -22,15 +22,15 @@ import java.util.ArrayList;
 public class CCTVBlock extends HorizontalFacingBlock implements BlockEntityProvider, StyledBlock {
 
     public static final Integer MAX_STYLE_COUNT = 2;
-    public static final EnumProperty<PlacingTypes> TYPES = EnumProperty.of("placedon",PlacingTypes.class);
-    public static final IntProperty STYLE = IntProperty.of("style", 0, MAX_STYLE_COUNT-1);
-    public final SymmetricVoxelShapeController controller = new SymmetricVoxelShapeController(0.4f,0.6f, 0.4f,0.3f, 0.3f, 0f);
-    private Integer styleType;
+    public static final EnumProperty<PlacingTypes> TYPES = EnumProperty.of("placedon", PlacingTypes.class);
+    public static final IntProperty STYLE = IntProperty.of("style", 0, MAX_STYLE_COUNT - 1);
+    public final SymmetricVoxelShapeController controller = new SymmetricVoxelShapeController(0.4f, 0.6f, 0.4f, 0.3f, 0.3f, 0f);
+    private final Integer styleType;
 
     public CCTVBlock(Settings settings) {
         super(settings.nonOpaque());
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
-        setDefaultState(getDefaultState().with(STYLE,0));
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
+        setDefaultState(getDefaultState().with(STYLE, 0));
         this.styleType = 0;
     }
 
@@ -45,19 +45,20 @@ public class CCTVBlock extends HorizontalFacingBlock implements BlockEntityProvi
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockPos blockPos = ctx.getBlockPos();
-        if(ctx.getSide() != Direction.UP && ctx.getSide() != Direction.DOWN) {
+        if (ctx.getSide() != Direction.UP && ctx.getSide() != Direction.DOWN) {
             return getDefaultState().with(STYLE, styleType).with(FACING, ctx.getSide().getOpposite()).with(TYPES, PlacingTypes.WALL);
-        }else{
-            return getDefaultState().with(STYLE, styleType).with(FACING, ctx.getPlayerFacing()).with(TYPES,PlacingTypes.getPlacement(ctx.getSide().getOpposite()));
+        } else {
+            return getDefaultState().with(STYLE, styleType).with(FACING, ctx.getPlayerFacing()).with(TYPES, PlacingTypes.getPlacement(ctx.getSide().getOpposite()));
         }
     }
+
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        if(state.get(TYPES) == PlacingTypes.WALL)
+        if (state.get(TYPES) == PlacingTypes.WALL)
             return controller.getVoxelOutline(state.get(FACING));
         else if (state.get(TYPES) == PlacingTypes.TOP) {
             return controller.getVoxelOutline(Direction.UP);
-        }else{
+        } else {
             return controller.getVoxelOutline(Direction.DOWN);
         }
     }
@@ -65,7 +66,7 @@ public class CCTVBlock extends HorizontalFacingBlock implements BlockEntityProvi
 
     @Override
     public String toString() {
-        return "Int Property " + getIntProperty().toString() + " Placing Property " + TYPES.toString() + " Max Style " + MAX_STYLE_COUNT;
+        return "Int Property " + getIntProperty().toString() + " Placing Property " + TYPES + " Max Style " + MAX_STYLE_COUNT;
     }
 
     @Nullable

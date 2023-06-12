@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/roadmarking_base_45",
+  "textures":{
+    "mark":"losgallysprops:block/markings/bus_text_en"
+  }
+}

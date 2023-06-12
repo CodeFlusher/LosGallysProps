@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.doors;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import me.themiggergames.losgallysprops.util.ProgressionProperty;
 import me.themiggergames.losgallysprops.util.StyledBlock;
 import net.minecraft.block.Block;
@@ -29,7 +29,7 @@ public class CustomDoorBlock extends HorizontalFacingBlock implements BlockEntit
 
     public CustomDoorBlock(Settings settings) {
         super(settings);
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
     }
 
     @Override
@@ -44,22 +44,22 @@ public class CustomDoorBlock extends HorizontalFacingBlock implements BlockEntit
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if(neighborState.emitsRedstonePower()){
-            if(neighborState.getWeakRedstonePower(world, neighborPos, direction)>=1){
-               return onPower(world, state, pos);
+        if (neighborState.emitsRedstonePower()) {
+            if (neighborState.getWeakRedstonePower(world, neighborPos, direction) >= 1) {
+                return onPower(world, state, pos);
             }
         }
         return state;
     }
 
-    private BlockState onPower(WorldAccess world,BlockState state, BlockPos pos){
-        switch (state.get(ISOPEN)){
+    private BlockState onPower(WorldAccess world, BlockState state, BlockPos pos) {
+        switch (state.get(ISOPEN)) {
             case DISABLED, BEING_DISABLED:
-                world.setBlockState(pos, state.with(ISOPEN, ProgressionProperty.BEING_ENABLED),0);
+                world.setBlockState(pos, state.with(ISOPEN, ProgressionProperty.BEING_ENABLED), 0);
                 world.createAndScheduleBlockTick(pos, state.getBlock(), 10);
                 return state.with(ISOPEN, ProgressionProperty.BEING_ENABLED);
             case BEING_ENABLED:
-                world.setBlockState(pos,state.with(ISOPEN, ProgressionProperty.ENABLED), 0);
+                world.setBlockState(pos, state.with(ISOPEN, ProgressionProperty.ENABLED), 0);
                 world.createAndScheduleBlockTick(pos, state.getBlock(), 10);
                 return state.with(ISOPEN, ProgressionProperty.ENABLED);
             default:
@@ -67,6 +67,7 @@ public class CustomDoorBlock extends HorizontalFacingBlock implements BlockEntit
                 return state;
         }
     }
+
     @Override
     public int getMaxStyle() {
         return MAX_STYLE;

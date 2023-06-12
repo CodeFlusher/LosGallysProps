@@ -1,7 +1,7 @@
 package me.themiggergames.losgallysprops.block.trafficlightcontroller;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.BlockRotatable;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -23,7 +23,7 @@ public class TrafficLightControllerBlock extends HorizontalFacingBlock implement
 
     public TrafficLightControllerBlock(Settings settings) {
         super(settings);
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
     }
 
     @Nullable
@@ -37,13 +37,13 @@ public class TrafficLightControllerBlock extends HorizontalFacingBlock implement
         BlockRotatable.appendRotationProperties(builder);
     }
 
-    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context){
-        return VoxelShapes.cuboid(0.2f,0f,0.2f,0.8f,1f,0.8f);
+    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
+        return VoxelShapes.cuboid(0.2f, 0f, 0.2f, 0.8f, 1f, 0.8f);
     }
 
     @Override
     public Text getDisplayName() {
-            return Text.translatable(getTranslationKey());
+        return Text.translatable(getTranslationKey());
     }
 
     @Nullable

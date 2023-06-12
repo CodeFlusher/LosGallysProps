@@ -2,7 +2,6 @@ package me.themiggergames.losgallysprops.block.decorative.tunnel;
 
 import me.themiggergames.losgallysprops.block.decorative.streetProps.VerticalSlab;
 import me.themiggergames.losgallysprops.util.StyledBlock;
-import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
@@ -24,13 +23,14 @@ public class TunnelBlock extends HorizontalFacingBlock implements StyledBlock {
     public static final Integer MAX_STYLE = 3;
     public static final BooleanProperty STATE_LOCK = BooleanProperty.of("state_lock");
     public static final BooleanProperty IS_CEILING = BooleanProperty.of("is_ceiling");
-    public static final IntProperty STYLES = IntProperty.of("tunnel_type", 0, MAX_STYLE-1);
-    private static final ArrayList<Text> titles = new ArrayList<>(){
+    public static final IntProperty STYLES = IntProperty.of("tunnel_type", 0, MAX_STYLE - 1);
+    private static final ArrayList<Text> titles = new ArrayList<>() {
         {
-            for(int i = 0; i<MAX_STYLE; i++)
-                add(Text.translatable("ui.losgallysprops.styles.tunnel_block.style."+i));
+            for (int i = 0; i < MAX_STYLE; i++)
+                add(Text.translatable("ui.losgallysprops.styles.tunnel_block.style." + i));
         }
     };
+
     public TunnelBlock(Settings settings) {
         super(settings.nonOpaque());
     }
@@ -54,23 +54,23 @@ public class TunnelBlock extends HorizontalFacingBlock implements StyledBlock {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        if(state.get(IS_CEILING)){
-            return VoxelShapes.cuboid(0,0.5f,0, 1, 1, 1);
+        if (state.get(IS_CEILING)) {
+            return VoxelShapes.cuboid(0, 0.5f, 0, 1, 1, 1);
         }
         return VerticalSlab.voxelShapeController.getVoxelOutline(state.get(FACING).getOpposite());
     }
 
-    protected int getStyle(World world, BlockPos pos){
+    protected int getStyle(World world, BlockPos pos) {
         BlockState stateUp = world.getBlockState(pos.offset(Direction.UP));
         BlockState stateDown = world.getBlockState(pos.offset(Direction.DOWN));
-        if(!(stateUp.getBlock() instanceof TunnelBlock) || !(stateDown.getBlock() instanceof TunnelBlock)){
+        if (!(stateUp.getBlock() instanceof TunnelBlock) || !(stateDown.getBlock() instanceof TunnelBlock)) {
             return 0;
         }
         int minimumOfTwoStates = Math.min(stateUp.get(STYLES), stateDown.get(STYLES));
-        return minimumOfTwoStates == 2 ? 2 : minimumOfTwoStates+1;
+        return minimumOfTwoStates == 2 ? 2 : minimumOfTwoStates + 1;
     }
 
-    protected boolean isCeiling(World world, BlockPos pos){
+    protected boolean isCeiling(World world, BlockPos pos) {
         return world.getBlockState(pos.offset(Direction.DOWN)).getBlock() instanceof AirBlock;
     }
 

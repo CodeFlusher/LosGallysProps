@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.house;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -20,7 +20,7 @@ public class DecorPanel extends HorizontalFacingBlock {
 
     public DecorPanel(Settings settings) {
         super(settings);
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
     }
 
@@ -28,6 +28,7 @@ public class DecorPanel extends HorizontalFacingBlock {
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite());
     }
+
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return controller.getVoxelOutline(state.get(FACING));

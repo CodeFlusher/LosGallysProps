@@ -17,15 +17,29 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
-public class TunnelEnd extends HorizontalFacingBlock{
+public class TunnelEnd extends HorizontalFacingBlock {
 
-    public static final IntProperty LEFT_PROPERTY = IntProperty.of("left", 0, TunnelBlock.MAX_STYLE-1);
-    public static final IntProperty RIGHT_PROPERTY = IntProperty.of("right", 0, TunnelBlock.MAX_STYLE-1);
+    public static final IntProperty LEFT_PROPERTY = IntProperty.of("left", 0, TunnelBlock.MAX_STYLE - 1);
+    public static final IntProperty RIGHT_PROPERTY = IntProperty.of("right", 0, TunnelBlock.MAX_STYLE - 1);
     public static final BooleanProperty TOP_PROPERTY = BooleanProperty.of("up");
     public static final BooleanProperty BOTTOM_PROPERTY = BooleanProperty.of("down");
 
     public TunnelEnd(Settings settings) {
         super(settings);
+    }
+
+    public static Integer getNeighbourType(BlockState state) {
+        if (state.getBlock() instanceof TunnelEnd) {
+            return 2;
+        }
+        if (!(state.getBlock() instanceof TunnelBlock)) {
+            return 0;
+        }
+        return state.get(TunnelBlock.STYLES);
+    }
+
+    public static boolean canConnect(BlockState block) {
+        return block.getBlock() instanceof TunnelEnd;
     }
 
     @Override
@@ -63,30 +77,16 @@ public class TunnelEnd extends HorizontalFacingBlock{
     }
 
     @Override
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos){
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 
         Direction dir = state.get(FACING);
-            BlockState leftBlock = world.getBlockState(pos.offset(ModMath.rotateDirection(dir, true)));
-            BlockState rightBlock = world.getBlockState(pos.offset(ModMath.rotateDirection(dir, false)));
-            BlockState topBlock = world.getBlockState(pos.offset(Direction.UP));
-            BlockState bottomBlock = world.getBlockState(pos.offset(Direction.DOWN));
-            return state.with(LEFT_PROPERTY, getNeighbourType(leftBlock))
-                    .with(RIGHT_PROPERTY, getNeighbourType(rightBlock))
-                    .with(TOP_PROPERTY, canConnect(topBlock))
-                    .with(BOTTOM_PROPERTY, canConnect(bottomBlock));
-        }
-
-        public static Integer getNeighbourType(BlockState state){
-            if (state.getBlock() instanceof TunnelEnd) {
-                return 2;
-            }
-            if (!(state.getBlock() instanceof TunnelBlock)){
-                return 0;
-            }
-            return state.get(TunnelBlock.STYLES);
-        }
-
-    public static boolean canConnect(BlockState block){
-        return block.getBlock() instanceof TunnelEnd;
+        BlockState leftBlock = world.getBlockState(pos.offset(ModMath.rotateDirection(dir, true)));
+        BlockState rightBlock = world.getBlockState(pos.offset(ModMath.rotateDirection(dir, false)));
+        BlockState topBlock = world.getBlockState(pos.offset(Direction.UP));
+        BlockState bottomBlock = world.getBlockState(pos.offset(Direction.DOWN));
+        return state.with(LEFT_PROPERTY, getNeighbourType(leftBlock))
+                .with(RIGHT_PROPERTY, getNeighbourType(rightBlock))
+                .with(TOP_PROPERTY, canConnect(topBlock))
+                .with(BOTTOM_PROPERTY, canConnect(bottomBlock));
     }
 }

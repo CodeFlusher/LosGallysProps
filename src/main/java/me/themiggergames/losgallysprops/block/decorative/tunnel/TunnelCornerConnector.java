@@ -27,8 +27,8 @@ public class TunnelCornerConnector extends Block implements BlockConnactable {
         BlockState state = getDefaultState();
         World world = ctx.getWorld();
         BlockPos pos = ctx.getBlockPos();
-        return state.with(NORTH, canConnect(world, pos, Direction.SOUTH))
-                .with(SOUTH, canConnect(world, pos, Direction.NORTH))
+        return state.with(NORTH, canConnect(world, pos, Direction.NORTH))
+                .with(SOUTH, canConnect(world, pos, Direction.SOUTH))
                 .with(EAST, canConnect(world, pos, Direction.EAST))
                 .with(UP, canConnect(world, pos, Direction.UP))
                 .with(DOWN, canConnect(world, pos, Direction.DOWN))
@@ -37,8 +37,8 @@ public class TunnelCornerConnector extends Block implements BlockConnactable {
 
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return state.with(NORTH, canConnect(world, pos, Direction.SOUTH))
-                .with(SOUTH, canConnect(world, pos, Direction.NORTH))
+        return state.with(NORTH, canConnect(world, pos, Direction.NORTH))
+                .with(SOUTH, canConnect(world, pos, Direction.SOUTH))
                 .with(EAST, canConnect(world, pos, Direction.EAST))
                 .with(UP, canConnect(world, pos, Direction.UP))
                 .with(DOWN, canConnect(world, pos, Direction.DOWN))

@@ -22,7 +22,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(FenceBlock.class)
 abstract class FenceBlockMixin extends HorizontalConnectingBlock {
-    @Shadow public abstract boolean canConnect(BlockState state, boolean neighborIsFullSquare, Direction dir);
     @Final
     private static final BooleanProperty NW = BooleanProperty.of("north_west");
     @Final
@@ -30,27 +29,28 @@ abstract class FenceBlockMixin extends HorizontalConnectingBlock {
     @Final
     private static final BooleanProperty SW = BooleanProperty.of("south_west");
     @Final
-    private static final  BooleanProperty SE = BooleanProperty.of("south_east");
-
+    private static final BooleanProperty SE = BooleanProperty.of("south_east");
     private static final SymmetricVoxelShapeController stdController = new SymmetricVoxelShapeController(0.25f, 0.4f, 1f, 0.375f, 0, 0.6f);
     private static final SymmetricVoxelShapeController diagonalController = new SymmetricVoxelShapeController(0.4f, 0.4f, 1f, 0.6f, 0, 0.6f);
-
     public FenceBlockMixin(float radius1, float radius2, float boundingHeight1, float boundingHeight2, float collisionHeight, Settings settings) {
         super(2.0F, 2.0F, 16.0F, 16.0F, 24.0F, settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(NORTH, false).with(EAST, false).with(SOUTH, false).with(WEST, false).with(WATERLOGGED, false)
-                .with(NW, false).with(NE,false).with(SW,false).with(SE,false)
+                .with(NW, false).with(NE, false).with(SW, false).with(SE, false)
         );
     }
+
+    @Shadow
+    public abstract boolean canConnect(BlockState state, boolean neighborIsFullSquare, Direction dir);
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void init(AbstractBlock.Settings settings, CallbackInfo info) {
         this.setDefaultState(this.stateManager.getDefaultState().with(NORTH, false).with(EAST, false).with(SOUTH, false).with(WEST, false).with(WATERLOGGED, false)
-                .with(NW, false).with(NE,false).with(SW,false).with(SE,false)
+                .with(NW, false).with(NE, false).with(SW, false).with(SE, false)
         );
     }
 
     @Inject(method = "appendProperties", at = @At("HEAD"))
-    private void injectedAppendedProperties(StateManager.Builder<Block, BlockState> builder, CallbackInfo ci){
+    private void injectedAppendedProperties(StateManager.Builder<Block, BlockState> builder, CallbackInfo ci) {
         builder.add(NE).add(NW).add(SW).add(SE);
     }
 
@@ -135,9 +135,9 @@ abstract class FenceBlockMixin extends HorizontalConnectingBlock {
         return state;
     }
 
-    private void updateNeighbours(BlockPos pos, World world){
+    private void updateNeighbours(BlockPos pos, World world) {
         world.updateNeighbors(pos, this);
-        for(Direction dir : DIRECTIONS){
+        for (Direction dir : DIRECTIONS) {
             world.updateNeighborsAlways(pos.offset(dir), this);
         }
     }

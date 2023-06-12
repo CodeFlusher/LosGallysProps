@@ -1,7 +1,7 @@
 package me.themiggergames.losgallysprops.block.decorative.roof;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.BlockConnactable;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -20,7 +20,7 @@ public class RoofTopBlock extends Block implements BlockConnactable {
 
     public RoofTopBlock(Settings settings) {
         super(settings.nonOpaque());
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
         setDefaultState(this.getStateManager().getDefaultState().with(NORTH, false)
                 .with(WEST, false)
                 .with(SOUTH, false)
@@ -46,22 +46,22 @@ public class RoofTopBlock extends Block implements BlockConnactable {
         boolean east_con = false;
         boolean south_con = false;
         boolean west_con = false;
-        if(blockState3.getBlock() instanceof RoofTopBlock){
+        if (blockState1.getBlock() instanceof RoofTopBlock) {
             north_con = true;
         }
-        if(blockState2.getBlock() instanceof RoofTopBlock){
+        if (blockState2.getBlock() instanceof RoofTopBlock) {
             east_con = true;
         }
-        if(blockState1.getBlock() instanceof RoofTopBlock){
+        if (blockState3.getBlock() instanceof RoofTopBlock) {
             south_con = true;
         }
-        if(blockState4.getBlock() instanceof RoofTopBlock){
+        if (blockState4.getBlock() instanceof RoofTopBlock) {
             west_con = true;
         }
 
         return getDefaultState().with(NORTH, north_con)
                 .with(EAST, east_con)
-                .with(SOUTH,south_con)
+                .with(SOUTH, south_con)
                 .with(WEST, west_con);
     }
 
@@ -75,28 +75,28 @@ public class RoofTopBlock extends Block implements BlockConnactable {
         boolean east_con = false;
         boolean south_con = false;
         boolean west_con = false;
-        if(blockState3.getBlock() instanceof RoofTopBlock){
+        if (blockState3.getBlock() instanceof RoofTopBlock) {
             north_con = true;
         }
-        if(blockState2.getBlock() instanceof RoofTopBlock){
+        if (blockState2.getBlock() instanceof RoofTopBlock) {
             east_con = true;
         }
-        if(blockState1.getBlock() instanceof RoofTopBlock){
+        if (blockState1.getBlock() instanceof RoofTopBlock) {
             south_con = true;
         }
-        if(blockState4.getBlock() instanceof RoofTopBlock){
+        if (blockState4.getBlock() instanceof RoofTopBlock) {
             west_con = true;
         }
 
         return state.with(NORTH, north_con)
                 .with(EAST, east_con)
-                .with(SOUTH,south_con)
+                .with(SOUTH, south_con)
                 .with(WEST, west_con);
     }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(0,0,0,1,0.5,1);
+        return VoxelShapes.cuboid(0, 0, 0, 1, 0.5, 1);
     }
 
     @Override

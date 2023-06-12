@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroup {
     public static final ItemGroup LOSGALLYS = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "losgallys"),
-        () -> new ItemStack(ModItems.MCE_ONE));
+            () -> new ItemStack(ModItems.MCE_ONE));
 
     public static final ItemGroup LGROAD = FabricItemGroupBuilder.build(new Identifier(LosGallysProps.MOD_ID, "lgroad"),
             () -> new ItemStack(ModBlocks.LIMIT30));

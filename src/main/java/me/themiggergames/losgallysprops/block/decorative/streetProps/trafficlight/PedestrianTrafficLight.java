@@ -1,5 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight;
 
+import me.themiggergames.losgallysprops.block.decorative.streetProps.FancyPost;
 import me.themiggergames.losgallysprops.util.BlockConnactable;
 import me.themiggergames.losgallysprops.util.BlockRotatable;
 import net.minecraft.block.Block;
@@ -12,7 +13,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
@@ -55,7 +55,7 @@ public class PedestrianTrafficLight extends TrafficLightBlock {
     @Override
     public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockPos blockPos = ctx.getBlockPos();
-        return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION,BlockRotatable.getRotation(ctx.getPlayerYaw())).with(NORTH, canConnect(ctx.getWorld(), blockPos, Direction.NORTH))
+        return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw())).with(NORTH, canConnect(ctx.getWorld(), blockPos, Direction.NORTH))
                 .with(SOUTH, canConnect(ctx.getWorld(), blockPos, Direction.SOUTH))
                 .with(EAST, canConnect(ctx.getWorld(), blockPos, Direction.EAST))
                 .with(WEST, canConnect(ctx.getWorld(), blockPos, Direction.WEST))
@@ -65,12 +65,12 @@ public class PedestrianTrafficLight extends TrafficLightBlock {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(0.4f, 0f, 0.4f, 0.6f, 1f, 0.6f);
+        return FancyPost.combiner.getShape(state);
     }
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return state.with(NORTH, canConnect(world, pos, Direction.SOUTH))
-                .with(SOUTH, canConnect(world, pos, Direction.NORTH))
+        return state.with(SOUTH, canConnect(world, pos, Direction.SOUTH))
+                .with(NORTH, canConnect(world, pos, Direction.NORTH))
                 .with(EAST, canConnect(world, pos, Direction.EAST))
                 .with(WEST, canConnect(world, pos, Direction.WEST))
                 .with(UP, canConnect(world, pos, Direction.UP))

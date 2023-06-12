@@ -1,0 +1,17 @@
+{
+    "variants":
+    {
+        "facing=north,state=0": { "model": "losgallysprops:block/lighting/wall_grid_lantern_on"},
+        "facing=north,state=1": { "model": "losgallysprops:block/lighting/wall_grid_lantern_blinking"},
+        "facing=north,state=2": { "model": "losgallysprops:block/lighting/wall_grid_lantern_disabled"},
+        "facing=east,state=0": { "model": "losgallysprops:block/lighting/wall_grid_lantern_on", "y": 90},
+        "facing=east,state=1": { "model": "losgallysprops:block/lighting/wall_grid_lantern_blinking","y": 90},
+        "facing=east,state=2": { "model": "losgallysprops:block/lighting/wall_grid_lantern_disabled", "y": 90},
+        "facing=south,state=0": { "model": "losgallysprops:block/lighting/wall_grid_lantern_on", "y": 180},
+        "facing=south,state=1": { "model": "losgallysprops:block/lighting/wall_grid_lantern_blinking","y": 180},
+        "facing=south,state=2": { "model": "losgallysprops:block/lighting/wall_grid_lantern_disabled", "y": 180},
+        "facing=west,state=0": { "model": "losgallysprops:block/lighting/wall_grid_lantern_on", "y": 270},
+        "facing=west,state=1": { "model": "losgallysprops:block/lighting/wall_grid_lantern_blinking","y": 270},
+        "facing=west,state=2": { "model": "losgallysprops:block/lighting/wall_grid_lantern_disabled", "y": 270}
+    }
+}

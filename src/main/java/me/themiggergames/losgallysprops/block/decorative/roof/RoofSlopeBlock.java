@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.roof;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -18,7 +18,7 @@ public class RoofSlopeBlock extends HorizontalFacingBlock {
 
     public RoofSlopeBlock(Settings settings) {
         super(settings.nonOpaque());
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
         setDefaultState(getDefaultState().with(FACING, Direction.NORTH));
     }
 

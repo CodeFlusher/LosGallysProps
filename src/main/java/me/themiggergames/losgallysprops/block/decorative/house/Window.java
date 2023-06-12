@@ -19,7 +19,8 @@ import org.jetbrains.annotations.Nullable;
 public class Window extends HorizontalFacingBlock {
     public static final BooleanProperty TOP_STATE = BooleanProperty.of("top");
     public static final BooleanProperty BOTTOM_STATE = BooleanProperty.of("bottom");
-    public static final SymmetricVoxelShapeController controller = new SymmetricVoxelShapeController(1, 0.125f, 1, 0,0,0.4375f);
+    public static final SymmetricVoxelShapeController controller = new SymmetricVoxelShapeController(1, 0.125f, 1, 0, 0, 0.4375f);
+
     public Window(Settings settings) {
         super(settings.nonOpaque());
     }
@@ -40,9 +41,9 @@ public class Window extends HorizontalFacingBlock {
             return state;
         }
         boolean valid;
-        if(neighborState.getBlock() instanceof Window){
+        if (neighborState.getBlock() instanceof Window) {
             valid = (neighborState.get(FACING) == state.get(FACING));
-        }else {
+        } else {
             valid = false;
         }
         return state.with(direction == Direction.UP ? TOP_STATE : BOTTOM_STATE, valid);

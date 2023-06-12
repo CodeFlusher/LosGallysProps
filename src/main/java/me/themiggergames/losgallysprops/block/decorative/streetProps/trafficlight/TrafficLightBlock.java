@@ -1,10 +1,10 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight;
 
-import me.themiggergames.losgallysprops.block.decorative.streetProps.FancyPost;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.block.decorative.streetProps.FancyPost;
 import me.themiggergames.losgallysprops.util.BlockConnactable;
 import me.themiggergames.losgallysprops.util.BlockRotatable;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import me.themiggergames.losgallysprops.util.StyledBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -17,7 +17,6 @@ import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
@@ -27,7 +26,7 @@ import java.util.ArrayList;
 
 public class TrafficLightBlock extends HorizontalFacingBlock implements BlockRotatable, BlockConnactable, StyledBlock {
     public static final Integer MAX_STYLE = 7;
-    public static final IntProperty STATES = IntProperty.of("statement",0,MAX_STYLE-1);
+    public static final IntProperty STATES = IntProperty.of("statement", 0, MAX_STYLE - 1);
 
     ArrayList<Text> titles = new ArrayList<>() {
         {
@@ -43,17 +42,20 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockRot
 
     public TrafficLightBlock(Settings settings) {
         super(settings);
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
     }
+
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
         BlockRotatable.appendRotationProperties(stateManager);
         BlockConnactable.appendConnectionProperties(stateManager, ConnectionTypes.EVERYTHING);
         stateManager.add(STATES);
     }
+
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(0.25f,0f,0.25f, 0.75f, 1f, 0.75f);
+        return FancyPost.combiner.getShape(state);
     }
+
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
@@ -64,7 +66,7 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockRot
                 .with(WEST, canConnect(ctx.getWorld(), blockPos, Direction.WEST))
                 .with(UP, canConnect(ctx.getWorld(), blockPos, Direction.UP))
                 .with(DOWN, canConnect(ctx.getWorld(), blockPos, Direction.DOWN))
-                .with(STATES,0);
+                .with(STATES, 0);
     }
 
     public boolean canConnect(World world, BlockPos pos, Direction dir) {
@@ -88,8 +90,8 @@ public class TrafficLightBlock extends HorizontalFacingBlock implements BlockRot
     }
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        return state.with(NORTH, canConnect(world, pos, Direction.SOUTH))
-                .with(SOUTH, canConnect(world, pos, Direction.NORTH))
+        return state.with(NORTH, canConnect(world, pos, Direction.NORTH))
+                .with(SOUTH, canConnect(world, pos, Direction.SOUTH))
                 .with(EAST, canConnect(world, pos, Direction.EAST))
                 .with(WEST, canConnect(world, pos, Direction.WEST))
                 .with(UP, canConnect(world, pos, Direction.UP))

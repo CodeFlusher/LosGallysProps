@@ -20,12 +20,12 @@ import java.util.ArrayList;
 public class ComputerMonitor extends HorizontalFacingBlock implements StyledBlock {
 
     public static final Integer MAX_STYLE_COUNT = 12;
-    public static final IntProperty STYLES = IntProperty.of("styles",0,MAX_STYLE_COUNT-1);
+    public static final IntProperty STYLES = IntProperty.of("styles", 0, MAX_STYLE_COUNT - 1);
 
-    private static final ArrayList<Text> titles = new ArrayList<Text>(){
+    private static final ArrayList<Text> titles = new ArrayList<Text>() {
         {
-            for(int i = 0; i<=MAX_STYLE_COUNT-1; i++)
-                add(Text.translatable("ui.losgallysprops.styles.monitor."+i));
+            for (int i = 0; i <= MAX_STYLE_COUNT - 1; i++)
+                add(Text.translatable("ui.losgallysprops.styles.monitor." + i));
         }
     };
 
@@ -36,12 +36,12 @@ public class ComputerMonitor extends HorizontalFacingBlock implements StyledBloc
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite()).with(STYLES,0);
+        return getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite()).with(STYLES, 0);
     }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(0.2f,0,0.2f,0.8f,1f,0.8f);
+        return VoxelShapes.cuboid(0.2f, 0, 0.2f, 0.8f, 1f, 0.8f);
     }
 
     @Override

@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/lighting/wall_grid_lantern",
+  "textures": {
+    "texture": "losgallysprops:block/lighting/wall_grid_lantern_disabled"
+  }
+}

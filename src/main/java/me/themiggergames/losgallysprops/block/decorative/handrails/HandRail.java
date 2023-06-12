@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.handrails;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -19,11 +19,12 @@ import net.minecraft.world.WorldAccess;
 public class HandRail extends HorizontalFacingBlock implements Waterloggable {
 
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-    private Boolean inverse;
     VoxelShape voxelShape;
+    private final Boolean inverse;
+
     public HandRail(Settings settings, Boolean doInverse) {
         super(settings);
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
         this.inverse = doInverse;
     }
 
@@ -34,9 +35,9 @@ public class HandRail extends HorizontalFacingBlock implements Waterloggable {
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        if(inverse) {
+        if (inverse) {
             return this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite()).with(WATERLOGGED, false);
-        } else{
+        } else {
             return this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing()).with(WATERLOGGED, false);
         }
     }
@@ -45,6 +46,7 @@ public class HandRail extends HorizontalFacingBlock implements Waterloggable {
     public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
+
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(WATERLOGGED)) {

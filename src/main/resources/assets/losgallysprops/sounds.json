@@ -65,5 +65,12 @@
         "pitch": 1.0
       }
     ]
+  },"lantern_blinking": {
+    "sounds": [
+      {
+        "name": "losgallysprops:lantern_blinking",
+        "pitch": 1.0
+      }
+    ]
   }
 }

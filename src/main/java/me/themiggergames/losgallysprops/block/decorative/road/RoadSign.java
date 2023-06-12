@@ -2,9 +2,9 @@ package me.themiggergames.losgallysprops.block.decorative.road;
 
 import me.themiggergames.losgallysprops.block.decorative.streetProps.FancyPost;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.trafficlight.TrafficLightBlock;
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.BlockConnactable;
 import me.themiggergames.losgallysprops.util.BlockRotatable;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -23,21 +23,22 @@ import org.jetbrains.annotations.Nullable;
 
 public class RoadSign extends HorizontalFacingBlock implements BlockRotatable, Waterloggable, BlockConnactable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
+
     public RoadSign(Settings settings) {
         super(settings);
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(WATERLOGGED, false));
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(0f, 0f, 0f, 1f,1f, 1f);
+        return VoxelShapes.cuboid(0f, 0f, 0f, 1f, 1f, 1f);
     }
 
     @Override
     public @Nullable BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockPos blockPos = ctx.getBlockPos();
-        return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw())).with(NORTH, canConnect(ctx.getWorld(), blockPos, Direction.SOUTH))
-                .with(SOUTH, canConnect(ctx.getWorld(), blockPos, Direction.NORTH))
+        return getDefaultState().with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw())).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw())).with(NORTH, canConnect(ctx.getWorld(), blockPos, Direction.NORTH))
+                .with(SOUTH, canConnect(ctx.getWorld(), blockPos, Direction.SOUTH))
                 .with(EAST, canConnect(ctx.getWorld(), blockPos, Direction.EAST))
                 .with(WEST, canConnect(ctx.getWorld(), blockPos, Direction.WEST))
                 .with(UP, canConnect(ctx.getWorld(), blockPos, Direction.UP))
@@ -65,6 +66,7 @@ public class RoadSign extends HorizontalFacingBlock implements BlockRotatable, W
         boolean bl3 = block instanceof FancyPost;
         return (block.isShapeFullCube(neighbourState, world, neighbourPos) || bl2 || bl1 || bl3);
     }
+
     public boolean canConnect(WorldAccess world, BlockPos pos, Direction dir) {
         BlockPos neighbourPos = pos.offset(dir);
         BlockState neighbourState = world.getBlockState(neighbourPos);
@@ -82,12 +84,12 @@ public class RoadSign extends HorizontalFacingBlock implements BlockRotatable, W
             world.createAndScheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
-            return state.with(NORTH, canConnect(world, pos, Direction.NORTH))
-                    .with(SOUTH, canConnect(world, pos, Direction.SOUTH))
-                    .with(EAST, canConnect(world, pos, Direction.EAST))
-                    .with(WEST, canConnect(world, pos, Direction.WEST))
-                    .with(UP, canConnect(world, pos, Direction.UP))
-                    .with(DOWN, canConnect(world, pos, Direction.DOWN));
+        return state.with(NORTH, canConnect(world, pos, Direction.NORTH))
+                .with(SOUTH, canConnect(world, pos, Direction.SOUTH))
+                .with(EAST, canConnect(world, pos, Direction.EAST))
+                .with(WEST, canConnect(world, pos, Direction.WEST))
+                .with(UP, canConnect(world, pos, Direction.UP))
+                .with(DOWN, canConnect(world, pos, Direction.DOWN));
     }
 }
 

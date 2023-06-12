@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.house;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -28,18 +28,17 @@ import net.minecraft.world.event.GameEvent;
 
 
 public class Intercom extends HorizontalFacingBlock {
-        SoundEvent soundEvent;
+    public static BooleanProperty ISPOWERED = BooleanProperty.of("ispowered");
+    SoundEvent soundEvent;
+    SymmetricVoxelShapeController controller;
 
-        public static BooleanProperty ISPOWERED = BooleanProperty.of("ispowered");
-
-        SymmetricVoxelShapeController controller;
-        public Intercom(Settings settings, SoundEvent sound, SymmetricVoxelShapeController controller) {
-            super(settings);
-            DebugLogger.sendMessage(this.getClass().getName()+" Init");
-            soundEvent = sound;
-            this.controller = controller;
-            setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(ISPOWERED,false));
-        }
+    public Intercom(Settings settings, SoundEvent sound, SymmetricVoxelShapeController controller) {
+        super(settings);
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
+        soundEvent = sound;
+        this.controller = controller;
+        setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(ISPOWERED, false));
+    }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
@@ -49,9 +48,9 @@ public class Intercom extends HorizontalFacingBlock {
 
 
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-            Direction dir = state.get(FACING);
-            return controller.getVoxelOutline(dir);
-        }
+        Direction dir = state.get(FACING);
+        return controller.getVoxelOutline(dir);
+    }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
@@ -61,7 +60,7 @@ public class Intercom extends HorizontalFacingBlock {
     @Override
     public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity placedBy, Hand hand, BlockHitResult blockHitResult) {
         if (!world.isClient) {
-            if(!blockState.get(ISPOWERED))
+            if (!blockState.get(ISPOWERED))
                 onPowered(blockState, world, blockPos);
             world.emitGameEvent(placedBy, GameEvent.BLOCK_DEACTIVATE, blockPos);
 
@@ -72,28 +71,28 @@ public class Intercom extends HorizontalFacingBlock {
 
     @Override
     public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
-            return state.get(ISPOWERED) ? 15 : 0;
+        return state.get(ISPOWERED) ? 15 : 0;
     }
 
     public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
-            DebugLogger.sendMessage("Current Block Facing " + state.get(FACING));
-            DebugLogger.sendMessage("Direction "+direction.asString());
-        return (Boolean)state.get(ISPOWERED) && state.get(FACING) == direction ? 15 : 0;
+        InformativeLogger.debugMessage("Current Block Facing " + state.get(FACING));
+        InformativeLogger.debugMessage("Direction " + direction.asString());
+        return state.get(ISPOWERED) && state.get(FACING) == direction ? 15 : 0;
     }
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-            DebugLogger.sendMessage("Block Updated");
-            if(state.get(ISPOWERED)){
-                DebugLogger.sendMessage("Block is powered");
-                this.updateNeighbors(state,world,pos);
-            }
+        InformativeLogger.debugMessage("Block Updated");
+        if (state.get(ISPOWERED)) {
+            InformativeLogger.debugMessage("Block is powered");
+            this.updateNeighbors(state, world, pos);
+        }
         super.onStateReplaced(state, world, pos, newState, moved);
     }
 
-    public void onPowered(BlockState state, World world, BlockPos pos){
-        world.setBlockState(pos, (BlockState)state.with(ISPOWERED, true));
-        this.updateNeighbors(state,world,pos);
+    public void onPowered(BlockState state, World world, BlockPos pos) {
+        world.setBlockState(pos, state.with(ISPOWERED, true));
+        this.updateNeighbors(state, world, pos);
         world.createAndScheduleBlockTick(pos, this, 20);
     }
 
@@ -106,11 +105,12 @@ public class Intercom extends HorizontalFacingBlock {
         world.updateNeighborsAlways(pos, this);
         world.updateNeighborsAlways(pos.offset(state.get(FACING).getOpposite()), this);
     }
+
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if ((Boolean)state.get(ISPOWERED)) {
-            world.setBlockState(pos, (BlockState)state.with(ISPOWERED, false), 3);
-            this.updateNeighbors(state,world,pos);
-            world.emitGameEvent((Entity)null, GameEvent.BLOCK_DEACTIVATE, pos);
+        if (state.get(ISPOWERED)) {
+            world.setBlockState(pos, state.with(ISPOWERED, false), 3);
+            this.updateNeighbors(state, world, pos);
+            world.emitGameEvent(null, GameEvent.BLOCK_DEACTIVATE, pos);
         }
     }
 }

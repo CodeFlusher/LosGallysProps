@@ -14,12 +14,12 @@ import software.bernie.geckolib3.renderers.geo.GeoBlockRenderer;
 public class CCTVEntityRenderer extends GeoBlockRenderer<CCTVEntity> {
     public CCTVEntityRenderer(BlockEntityRendererFactory.Context context) {
         super(new CCTVModel());
-        }
+    }
 
     @Override
     public RenderLayer getRenderType(CCTVEntity animatable, float partialTick, MatrixStack poseStack, @Nullable VertexConsumerProvider bufferSource, @Nullable VertexConsumer buffer, int packedLight, Identifier texture) {
         return RenderLayer.getEntityTranslucentCull(getTextureLocation(animatable));
-        }
+    }
 
     @Override
     protected void rotateBlock(Direction facing, MatrixStack poseStack) {

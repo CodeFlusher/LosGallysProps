@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.lavalamp;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,7 +21,7 @@ public class LavaLamp extends BlockWithEntity implements BlockEntityProvider {
 
     public LavaLamp(Settings settings) {
         super(settings.nonOpaque().luminance(value -> 15));
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
     }
 
     @Override
@@ -32,7 +32,7 @@ public class LavaLamp extends BlockWithEntity implements BlockEntityProvider {
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new LavaLampEntity(pos,state);
+        return new LavaLampEntity(pos, state);
     }
 
     @Override
@@ -42,9 +42,9 @@ public class LavaLamp extends BlockWithEntity implements BlockEntityProvider {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(!world.isClient){
-            if(!state.get(TEST))
-                world.setBlockState(pos, state.with(TEST,true));
+        if (!world.isClient) {
+            if (!state.get(TEST))
+                world.setBlockState(pos, state.with(TEST, true));
             else
                 world.setBlockState(pos, state.with(TEST, false));
         }

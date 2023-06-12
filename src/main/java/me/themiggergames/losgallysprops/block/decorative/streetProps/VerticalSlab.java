@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
@@ -19,20 +19,25 @@ import org.jetbrains.annotations.Nullable;
 
 public class VerticalSlab extends HorizontalFacingBlock implements Waterloggable {
 
+    public static final SymmetricVoxelShapeController voxelShapeController = new SymmetricVoxelShapeController(1, 0.5f, 1, 0, 0, 0);
     protected static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
     protected static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
-    public static final SymmetricVoxelShapeController voxelShapeController = new SymmetricVoxelShapeController(1, 0.5f, 1,0, 0,0);
+
+    public VerticalSlab(Settings settings) {
+        super(settings);
+        this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
+    }
+
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        BlockPos blockPos = ctx.getBlockPos();
         return this.getDefaultState().with(FACING, ctx.getPlayerFacing()).with(WATERLOGGED, false);
-
     }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-            return voxelShapeController.getVoxelOutline(state.get(FACING));
+        return voxelShapeController.getVoxelOutline(state.get(FACING));
     }
 
     @Override
@@ -54,11 +59,5 @@ public class VerticalSlab extends HorizontalFacingBlock implements Waterloggable
         }
 
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
-    }
-
-    public VerticalSlab(Settings settings) {
-        super(settings);
-        this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.NORTH));
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
     }
 }

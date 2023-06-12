@@ -10,11 +10,13 @@ import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRail
 import me.themiggergames.losgallysprops.block.decorative.handrails.RightHandRailEnd;
 import me.themiggergames.losgallysprops.block.decorative.house.*;
 import me.themiggergames.losgallysprops.block.decorative.lavalamp.LavaLamp;
+import me.themiggergames.losgallysprops.block.decorative.lighting.OldLamp;
 import me.themiggergames.losgallysprops.block.decorative.powerelements.PowerElements;
 import me.themiggergames.losgallysprops.block.decorative.powerelements.PowerSocket;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadMarking;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadSign;
 import me.themiggergames.losgallysprops.block.decorative.road.RoadSignNotRotatable;
+import me.themiggergames.losgallysprops.block.decorative.road.SpeedBump;
 import me.themiggergames.losgallysprops.block.decorative.roof.RoofSlopeBlock;
 import me.themiggergames.losgallysprops.block.decorative.roof.RoofTopBlock;
 import me.themiggergames.losgallysprops.block.decorative.streetProps.*;
@@ -27,11 +29,10 @@ import me.themiggergames.losgallysprops.block.decorative.tunnel.TunnelCornerConn
 import me.themiggergames.losgallysprops.block.decorative.tunnel.TunnelEnd;
 import me.themiggergames.losgallysprops.block.trafficlightcontroller.TrafficLightControllerBlock;
 import me.themiggergames.losgallysprops.debugtools.DebugBlock;
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.items.ModItemGroup;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import me.themiggergames.losgallysprops.util.SymmetricVoxelShapeController;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.networking.v1.S2CPlayChannelEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -47,12 +48,21 @@ import net.minecraft.util.shape.VoxelShapes;
 public class ModBlocks {
 
     public static final Phone PHONE = new Phone(FabricBlockSettings.of(Material.REDSTONE_LAMP).strength(2f),
-           ModSounds.PHONE_SOUND_EVENT,
-           VoxelShapes.cuboid(0.1, 0, 0.1f, 0.9f, 0.3f, 0.9f));
+            ModSounds.PHONE_SOUND_EVENT,
+            VoxelShapes.cuboid(0.1, 0, 0.1f, 0.9f, 0.3f, 0.9f));
     public static final Intercom METAKOM = new Intercom(FabricBlockSettings.of(Material.METAL).strength(2f).nonOpaque(),
             ModSounds.METAKOM_SOUND_EVENT,
             new SymmetricVoxelShapeController(0.5f, 0.1f, 1f, 0.25f, 0f, 0.9f));
     public static final FancyPost FANCY_IRON_POST = new FancyPost(FabricBlockSettings.of(Material.METAL).strength(3f));
+    public static final RoadMarking TAXI_MARKING = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
+    public static final RoadMarking ONLY_MARKING = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
+    public static final RoadMarking ROAD_MARKING = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
+    public static final RoadMarking TOLL_MARKING = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
+    public static final RoadMarking GIVE_WAY_MARKING = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
+    public static final RoadMarking BUS_MARKING = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
+    public static final RoadMarking TRAM_MARKING = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
+    public static final RoadMarking STOP_MARKING = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
+    public static final RoadMarking DISABLED_MARKING = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
     public static final RoadMarking STRAIGHT_ARROW = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
     public static final RoadMarking STRAIGHT_RIGHT_ARROW = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
     public static final RoadMarking STRAIGHT_LEFT_ARROW = new RoadMarking(FabricBlockSettings.of(Material.METAL).strength(2f).noCollision().nonOpaque());
@@ -134,8 +144,8 @@ public class ModBlocks {
     public static final DebugBlock DEBUG_BLOCK = new DebugBlock(FabricBlockSettings.of(Material.STONE));
     public static final TrafficLightBlock MODERN_TRAFFIC_LIGHT = new TrafficLightBlock(FabricBlockSettings.of(Material.METAL).strength(4f));
     public static final TrafficLightBlock OLD_TRAFFIC_LIGHT = new TrafficLightBlock(FabricBlockSettings.of(Material.METAL).strength(4f));
-    public static final OnWallTrafficLight ONWALL_MODERN_TRAFFIC_LIGHT = new OnWallTrafficLight(FabricBlockSettings.of(Material.METAL).strength(4f), new SymmetricVoxelShapeController(0.7f,0.15f,2f,0.15f,-0.5f,0f));
-    public static final OnWallTrafficLight ONWALL_OLD_TRAFFIC_LIGHT = new OnWallTrafficLight(FabricBlockSettings.of(Material.METAL).strength(4f), new SymmetricVoxelShapeController(0.7f,0.15f,2f,0.15f,-0.5f,0f));
+    public static final OnWallTrafficLight ONWALL_MODERN_TRAFFIC_LIGHT = new OnWallTrafficLight(FabricBlockSettings.of(Material.METAL).strength(4f), new SymmetricVoxelShapeController(0.7f, 0.15f, 2f, 0.15f, -0.5f, 0f));
+    public static final OnWallTrafficLight ONWALL_OLD_TRAFFIC_LIGHT = new OnWallTrafficLight(FabricBlockSettings.of(Material.METAL).strength(4f), new SymmetricVoxelShapeController(0.7f, 0.15f, 2f, 0.15f, -0.5f, 0f));
     public static final PedestrianTrafficLight PEDESTRIAN_MODERN_TRAFFIC_LIGHT = new PedestrianTrafficLight(FabricBlockSettings.of(Material.METAL), true);
     public static final PedestrianTrafficLight PEDESTRIAN_OLD_TRAFFIC_LIGHT = new PedestrianTrafficLight(FabricBlockSettings.of(Material.METAL), true);
     public static final TrafficLightControllerBlock TRAFFIC_LIGHT_CONTROLLER_BLOCK = new TrafficLightControllerBlock(FabricBlockSettings.of(Material.METAL));
@@ -201,7 +211,7 @@ public class ModBlocks {
     public static final PowerElements FUSE_BOX = new PowerElements(FabricBlockSettings.of(Material.METAL));
     public static final CCTVBlock CCTV = new CCTVBlock(FabricBlockSettings.of(Material.METAL));
     public static final CustomDoorBlock CUSTOM_DOOR_BLOCK = new CustomDoorBlock(FabricBlockSettings.of(Material.METAL));
-//    public static final TriggerBlock TRIGGER_BLOCK = new TriggerBlock(FabricBlockSettings.of(Material.AIR));
+    //    public static final TriggerBlock TRIGGER_BLOCK = new TriggerBlock(FabricBlockSettings.of(Material.AIR));
     public static final TrashBin OAK_TRASH_BIN_TYPE_0 = new TrashBin(FabricBlockSettings.of(Material.WOOD));
     public static final TrashBin ACACIA_TRASH_BIN_TYPE_0 = new TrashBin(FabricBlockSettings.of(Material.WOOD));
     public static final TrashBin JUNGLE_TRASH_BIN_TYPE_0 = new TrashBin(FabricBlockSettings.of(Material.WOOD));
@@ -217,7 +227,7 @@ public class ModBlocks {
     public static final PowerSocket POWER_SOCKET_TYPE_1 = new PowerSocket(FabricBlockSettings.of(Material.METAL));
     public static final ComputerMonitor MODERN_COMPUTER_MONITOR = new ComputerMonitor(FabricBlockSettings.of(Material.METAL));
     public static final ComputerMonitor MODERN_TV = new ComputerMonitor(FabricBlockSettings.of(Material.METAL));
-    public static final Prop PENCIL_STORAGE = new Prop(FabricBlockSettings.of(Material.GLASS), VoxelShapes.cuboid(0.35f, 0, 0.35f,0.7f,0.5f, 0.7f));
+    public static final Prop PENCIL_STORAGE = new Prop(FabricBlockSettings.of(Material.GLASS), VoxelShapes.cuboid(0.35f, 0, 0.35f, 0.7f, 0.5f, 0.7f));
     public static final Block ASPHALT_BLOCK = new Block(FabricBlockSettings.of(Material.STONE));
     public static final SlabBlock ASPHALT_SLAB = new SlabBlock(FabricBlockSettings.of(Material.STONE));
     public static final Block ASPHALT_STAIRS = new ModStairsBlock(ModBlocks.NO_TURN_LEFT.getDefaultState(), FabricBlockSettings.of(Material.STONE).strength(3f));
@@ -265,98 +275,106 @@ public class ModBlocks {
     public static final SubwayPowerRail DOUBLE_SIDE_POWER_RAIL_WITH_POST = new SubwayPowerRail(FabricBlockSettings.of(Material.STONE));
     public static final RoadSignNotRotatable SUBWAY_LOGO = new RoadSignNotRotatable(FabricBlockSettings.of(Material.GLASS));
     public static final ScaffoldingBlock IRON_SCAFFOLDING = new ScaffoldingBlock(FabricBlockSettings.of(Material.METAL));
+    public static final SpeedBump SPEED_BUMP = new SpeedBump(FabricBlockSettings.of(Material.STONE));
+    public static final OldLamp WALL_GRID_LANTERN = new OldLamp(FabricBlockSettings.of(Material.REDSTONE_LAMP));
 
-    public static void registerBlocks(){
-        DebugLogger.sendMessage("Registering Blocks");
+    public static void registerBlocks() {
+        InformativeLogger.debugMessage("Registering Blocks");
         RegisterBlock("phone", PHONE, ModItemGroup.LGDECOOFFICE);
         RegisterBlock("metakom", METAKOM, ModItemGroup.LGDECOOFFICE);
         RegisterBlock("debugblock", DEBUG_BLOCK, ModItemGroup.SPECIAL);
-        RegisterBlock("fancy_iron_post",FANCY_IRON_POST, ModItemGroup.LGROAD);
+        RegisterBlock("fancy_iron_post", FANCY_IRON_POST, ModItemGroup.LGROAD);
 //        RegisterBlock("trigger_block",TRIGGER_BLOCK, ModItemGroup.SPECIAL);
         RegisterBlock("lava_lamp", LAVA_LAMP, ModItemGroup.LGDECOHOUSE);
         RegisterBlock("iron_scaffolding", IRON_SCAFFOLDING, ModItemGroup.LGBUILDINGBLOCKS);
-        DebugLogger.sendMessage("Single Blocks Registered");
+        InformativeLogger.debugMessage("Single Blocks Registered");
 
         registerDrains();
-        DebugLogger.sendMessage("Drains Registered");
+        InformativeLogger.debugMessage("Drains Registered");
 
         registerRoadSigns();
-        DebugLogger.sendMessage("Road Signs Registered");
+        InformativeLogger.debugMessage("Road Signs Registered");
 
         registerSpeedLimitMarkings();
-        DebugLogger.sendMessage("Speed Limit Markings Registered");
+        InformativeLogger.debugMessage("Speed Limit Markings Registered");
 
         registerSpeedLimitBlocks();
-        DebugLogger.sendMessage("Speed Limit Signs Registered");
+        InformativeLogger.debugMessage("Speed Limit Signs Registered");
 
         registerRoadMarks();
-        DebugLogger.sendMessage("Road Markings Registered");
+        InformativeLogger.debugMessage("Road Markings Registered");
 
         registerModConcrete();
-        DebugLogger.sendMessage("Mod Concrete Blocks Registered");
+        InformativeLogger.debugMessage("Mod Concrete Blocks Registered");
 
         registerDecorPanels();
-        DebugLogger.sendMessage("Decoration Panels Registered");
+        InformativeLogger.debugMessage("Decoration Panels Registered");
 
         registerTrafficLights();
-        DebugLogger.sendMessage("Traffic Lights Registered");
+        InformativeLogger.debugMessage("Traffic Lights Registered");
 
         registerHandRails();
-        DebugLogger.sendMessage("Handrails Registered");
+        InformativeLogger.debugMessage("Handrails Registered");
 
         registerVerticalSlabs();
-        DebugLogger.sendMessage("VSlabs Registered");
+        InformativeLogger.debugMessage("VSlabs Registered");
 
         registerRoofSlopes();
-        DebugLogger.sendMessage("Roof Slopes Registered");
+        InformativeLogger.debugMessage("Roof Slopes Registered");
 
         registerPowerSupplies();
-        DebugLogger.sendMessage("Power Supplies Registered");
+        InformativeLogger.debugMessage("Power Supplies Registered");
 
         registerCCTVs();
-        DebugLogger.sendMessage("CCTV's Registered");
+        InformativeLogger.debugMessage("CCTV's Registered");
 
         registerDoors();
-        DebugLogger.sendMessage("Doors Registered");
+        InformativeLogger.debugMessage("Doors Registered");
 
         registerTrashBins();
-        DebugLogger.sendMessage("Trash Bins Registered");
+        InformativeLogger.debugMessage("Trash Bins Registered");
 
         registerPowerSockets();
-        DebugLogger.sendMessage("Power Sockets Registered");
+        InformativeLogger.debugMessage("Power Sockets Registered");
 
         registerBenches();
-        DebugLogger.sendMessage("Benches Registered");
+        InformativeLogger.debugMessage("Benches Registered");
 
         registerPCs();
-        DebugLogger.sendMessage("PCs Registered");
+        InformativeLogger.debugMessage("PCs Registered");
 
         registerProps();
-        DebugLogger.sendMessage("Props Are Registered");
+        InformativeLogger.debugMessage("Props Are Registered");
 
         registerMaterialBlocks();
-        DebugLogger.sendMessage("Material Blocks Registered");
+        InformativeLogger.debugMessage("Material Blocks Registered");
 
         registerFlowerPots();
-        DebugLogger.sendMessage("Flower Pots Registered");
+        InformativeLogger.debugMessage("Flower Pots Registered");
 
         registerTunels();
-        DebugLogger.sendMessage("Tunnels Registered");
+        InformativeLogger.debugMessage("Tunnels Registered");
 
+        registerSpeedBumps();
+        InformativeLogger.debugMessage("Speed Bumps Registered");
+
+        registerLanterns();
     }
 
-    public static Block RegisterBlock(String name, Block block, ItemGroup itemGroup){
+
+    public static Block RegisterBlock(String name, Block block, ItemGroup itemGroup) {
+        InformativeLogger.debugMessage(block);
         RegisterBlockItem(name, block, itemGroup);
         return Registry.register(Registry.BLOCK, new Identifier(LosGallysProps.MOD_ID, name), block);
     }
 
     //Registering block item
-    public static Item RegisterBlockItem(String name, Block block, ItemGroup itemGroup){
+    public static Item RegisterBlockItem(String name, Block block, ItemGroup itemGroup) {
         return Registry.register(Registry.ITEM, new Identifier(LosGallysProps.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings().group(itemGroup)));
     }
 
-    private static void registerHandRails(){
+    private static void registerHandRails() {
         RegisterBlock("right_hand_oak_handrail", RIGHT_HAND_OAK_HANDRAIL, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("left_hand_oak_handrail", LEFT_HAND_OAK_HANDRAIL, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("right_hand_oak_handrail_end", RIGHT_HAND_OAK_HANDRAIL_END, ModItemGroup.LGBUILDINGBLOCKS);
@@ -417,16 +435,18 @@ public class ModBlocks {
         RegisterBlock("custom_door", CUSTOM_DOOR_BLOCK, ModItemGroup.SPECIAL);
     }
 
-    private static void registerRoofSlopes(){
+    private static void registerRoofSlopes() {
         RegisterBlock("smooth_stone_roof_top", SMOOTH_STONE_ROOF_TOP, ModItemGroup.LGOUTSIDE);
         RegisterBlock("smooth_stone_roof_slope", SMOOTH_STONE_ROOF_SLOPE, ModItemGroup.LGOUTSIDE);
         RegisterBlock("brick_roof_top", BRICK_ROOF_TOP, ModItemGroup.LGOUTSIDE);
         RegisterBlock("brick_roof_slope", BRICK_ROOF_SLOPE, ModItemGroup.LGOUTSIDE);
     }
-    private static void registerCCTVs(){
+
+    private static void registerCCTVs() {
         RegisterBlock("cctv", CCTV, ModItemGroup.LGOUTSIDE);
     }
-    private static void registerDecorPanels(){
+
+    private static void registerDecorPanels() {
         RegisterBlock("oak_decoration_panel", OAK_DECOR_PANEL, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("spruce_decoration_panel", SPRUCE_DECOR_PANEL, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("birch_decoration_panel", BIRCH_DECOR_PANEL, ModItemGroup.LGBUILDINGBLOCKS);
@@ -440,7 +460,7 @@ public class ModBlocks {
         RegisterBlock("stone_decoration_panel", STONE_DECOR_PANEL, ModItemGroup.LGBUILDINGBLOCKS);
     }
 
-    private static void registerVerticalSlabs(){
+    private static void registerVerticalSlabs() {
         RegisterBlock("brick_vertical_slab", BRICK_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("acacia_vertical_slab", ACACIA_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("warped_vertical_slab", WARPED_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
@@ -453,17 +473,17 @@ public class ModBlocks {
         RegisterBlock("mangrove_vertical_slab", MANGROVE_VERTICAL_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
     }
 
-    private static void registerTrafficLights(){
-        RegisterBlock("modern_traffic_light",MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
-        RegisterBlock("old_traffic_light",OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
-        RegisterBlock("pedestrian_modern_traffic_light",PEDESTRIAN_MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
-        RegisterBlock("pedestrian_old_traffic_light",PEDESTRIAN_OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
-        RegisterBlock("on_wall_modern_traffic_light",ONWALL_MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
-        RegisterBlock("on_wall_old_traffic_light",ONWALL_OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
+    private static void registerTrafficLights() {
+        RegisterBlock("modern_traffic_light", MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
+        RegisterBlock("old_traffic_light", OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
+        RegisterBlock("pedestrian_modern_traffic_light", PEDESTRIAN_MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
+        RegisterBlock("pedestrian_old_traffic_light", PEDESTRIAN_OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
+        RegisterBlock("on_wall_modern_traffic_light", ONWALL_MODERN_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
+        RegisterBlock("on_wall_old_traffic_light", ONWALL_OLD_TRAFFIC_LIGHT, ModItemGroup.LGROAD);
         RegisterBlock("traffic_light_controller", TRAFFIC_LIGHT_CONTROLLER_BLOCK, ModItemGroup.LGOUTSIDE);
     }
 
-    private static void registerDrains(){
+    private static void registerDrains() {
         RegisterBlock("drain_t", DRAIN_T, ModItemGroup.LGOUTSIDE);
         RegisterBlock("drain", DRAIN, ModItemGroup.LGOUTSIDE);
         RegisterBlock("manhole", MANHOLE, ModItemGroup.LGOUTSIDE);
@@ -476,7 +496,7 @@ public class ModBlocks {
 
     }
 
-    private static void registerModConcrete(){
+    private static void registerModConcrete() {
         RegisterBlock("white_concrete_stairs", WHITE_CONCRETE_STAIRS, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("orange_concrete_stairs", ORANGE_CONCRETE_STAIRS, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("magenta_concrete_stairs", MAGENTA_CONCRETE_STAIRS, ModItemGroup.LGBUILDINGBLOCKS);
@@ -513,40 +533,50 @@ public class ModBlocks {
 
     }
 
-    private static void registerRoadSigns(){
-        RegisterBlock("give_way",GIVE_WAY, ModItemGroup.LGROAD);
-        RegisterBlock("one_way",ONE_WAY, ModItemGroup.LGROAD);
-        RegisterBlock("one_way_end",ONE_WAY_END, ModItemGroup.LGROAD);
-        RegisterBlock("majority_road",MAJORITY_ROAD, ModItemGroup.LGROAD);
-        RegisterBlock("majority_road_end",MAJORITY_ROAD_END, ModItemGroup.LGROAD);
-        RegisterBlock("no_turn_left",NO_TURN_LEFT, ModItemGroup.LGROAD);
-        RegisterBlock("no_turn_right",NO_TURN_RIGHT, ModItemGroup.LGROAD);
-        RegisterBlock("crossing",CROSSING, ModItemGroup.LGROAD);
+    private static void registerRoadSigns() {
+        RegisterBlock("give_way", GIVE_WAY, ModItemGroup.LGROAD);
+        RegisterBlock("one_way", ONE_WAY, ModItemGroup.LGROAD);
+        RegisterBlock("one_way_end", ONE_WAY_END, ModItemGroup.LGROAD);
+        RegisterBlock("majority_road", MAJORITY_ROAD, ModItemGroup.LGROAD);
+        RegisterBlock("majority_road_end", MAJORITY_ROAD_END, ModItemGroup.LGROAD);
+        RegisterBlock("no_turn_left", NO_TURN_LEFT, ModItemGroup.LGROAD);
+        RegisterBlock("no_turn_right", NO_TURN_RIGHT, ModItemGroup.LGROAD);
+        RegisterBlock("crossing", CROSSING, ModItemGroup.LGROAD);
 
-        RegisterBlock("subway_logo",SUBWAY_LOGO, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("subway_logo", SUBWAY_LOGO, ModItemGroup.LGOUTSIDE);
     }
 
-    private static void registerRoadMarks(){
+    private static void registerRoadMarks() {
         RegisterBlock("straight_arrow", STRAIGHT_ARROW, ModItemGroup.LGROAD);
         RegisterBlock("straight_right_arrow", STRAIGHT_RIGHT_ARROW, ModItemGroup.LGROAD);
         RegisterBlock("straight_left_arrow", STRAIGHT_LEFT_ARROW, ModItemGroup.LGROAD);
         RegisterBlock("straight_both_arrow", STRAIGHT_BOTH_ARROW, ModItemGroup.LGROAD);
+
+        RegisterBlock("give_way_marking", GIVE_WAY_MARKING, ModItemGroup.LGROAD);
+        RegisterBlock("stop_marking", STOP_MARKING, ModItemGroup.LGROAD);
+        RegisterBlock("bus_marking", BUS_MARKING, ModItemGroup.LGROAD);
+        RegisterBlock("tram_marking", TRAM_MARKING, ModItemGroup.LGROAD);
+        RegisterBlock("toll_marking", TOLL_MARKING, ModItemGroup.LGROAD);
+        RegisterBlock("only_marking", ONLY_MARKING, ModItemGroup.LGROAD);
+        RegisterBlock("taxi_marking", TAXI_MARKING, ModItemGroup.LGROAD);
+        RegisterBlock("road_marking", ROAD_MARKING, ModItemGroup.LGROAD);
+        RegisterBlock("disabled_marking", DISABLED_MARKING, ModItemGroup.LGROAD);
 
         RegisterBlock("left_right_arrow", LEFT_RIGHT_ARROW, ModItemGroup.LGROAD);
         RegisterBlock("right_arrow", RIGHT_ARROW, ModItemGroup.LGROAD);
         RegisterBlock("left_arrow", LEFT_ARROW, ModItemGroup.LGROAD);
     }
 
-    private static void registerSpeedLimitMarkings(){
-        RegisterBlock("limit_30_mark",LIMIT30MARK, ModItemGroup.LGROAD);
-        RegisterBlock("limit_60_mark",LIMIT60MARK, ModItemGroup.LGROAD);
-        RegisterBlock("limit_70_mark",LIMIT70MARK, ModItemGroup.LGROAD);
-        RegisterBlock("limit_90_mark",LIMIT90MARK, ModItemGroup.LGROAD);
-        RegisterBlock("limit_100_mark",LIMIT100MARK, ModItemGroup.LGROAD);
-        RegisterBlock("limit_120_mark",LIMIT120MARK, ModItemGroup.LGROAD);
+    private static void registerSpeedLimitMarkings() {
+        RegisterBlock("limit_30_mark", LIMIT30MARK, ModItemGroup.LGROAD);
+        RegisterBlock("limit_60_mark", LIMIT60MARK, ModItemGroup.LGROAD);
+        RegisterBlock("limit_70_mark", LIMIT70MARK, ModItemGroup.LGROAD);
+        RegisterBlock("limit_90_mark", LIMIT90MARK, ModItemGroup.LGROAD);
+        RegisterBlock("limit_100_mark", LIMIT100MARK, ModItemGroup.LGROAD);
+        RegisterBlock("limit_120_mark", LIMIT120MARK, ModItemGroup.LGROAD);
     }
 
-    private static void registerSpeedLimitBlocks(){
+    private static void registerSpeedLimitBlocks() {
         RegisterBlock("limit_30", LIMIT30, ModItemGroup.LGROAD);
         RegisterBlock("limit_60", LIMIT60, ModItemGroup.LGROAD);
         RegisterBlock("limit_70", LIMIT70, ModItemGroup.LGROAD);
@@ -555,68 +585,70 @@ public class ModBlocks {
         RegisterBlock("limit_120", LIMIT120, ModItemGroup.LGROAD);
     }
 
-    private static void registerPowerSupplies(){
+    private static void registerPowerSupplies() {
         RegisterBlock("fuse_box", FUSE_BOX, ModItemGroup.LGOUTSIDE);
     }
 
     private static void registerTrashBins() {
-        RegisterBlock("oak_trash_bin_type_0",OAK_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("birch_trash_bin_type_0",BIRCH_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("acacia_trash_bin_type_0",ACACIA_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("spruce_trash_bin_type_0",SPRUCE_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("dark_oak_trash_bin_type_0",DARK_OAK_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("mangrove_trash_bin_type_0",MANGROVE_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("jungle_trash_bin_type_0",JUNGLE_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("warped_trash_bin_type_0",WARPED_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("crimson_trash_bin_type_0",CRIMSON_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("trash_bin_type_1",TRASH_BIN_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("trash_bin_type_2",TRASH_BIN_TYPE_2, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("oak_trash_bin_type_0", OAK_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("birch_trash_bin_type_0", BIRCH_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("acacia_trash_bin_type_0", ACACIA_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("spruce_trash_bin_type_0", SPRUCE_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("dark_oak_trash_bin_type_0", DARK_OAK_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("mangrove_trash_bin_type_0", MANGROVE_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("jungle_trash_bin_type_0", JUNGLE_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("warped_trash_bin_type_0", WARPED_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("crimson_trash_bin_type_0", CRIMSON_TRASH_BIN_TYPE_0, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("trash_bin_type_1", TRASH_BIN_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("trash_bin_type_2", TRASH_BIN_TYPE_2, ModItemGroup.LGOUTSIDE);
     }
 
-    private static void registerBenches(){
-        RegisterBlock("smooth_stone_bench",SMOOTH_STONE_BENCH, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("smooth_quartz_bench",SMOOTH_QUARTZ_BENCH, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("smooth_sandstone_bench",SMOOTH_SANDSTONE_BENCH, ModItemGroup.LGOUTSIDE);
+    private static void registerBenches() {
+        RegisterBlock("smooth_stone_bench", SMOOTH_STONE_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("smooth_quartz_bench", SMOOTH_QUARTZ_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("smooth_sandstone_bench", SMOOTH_SANDSTONE_BENCH, ModItemGroup.LGOUTSIDE);
 
-        RegisterBlock("smooth_stone_bench_type_1",SMOOTH_STONE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("smooth_quartz_bench_type_1",SMOOTH_QUARTZ_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("smooth_sandstone_bench_type_1",SMOOTH_SANDSTONE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("smooth_stone_bench_type_1", SMOOTH_STONE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("smooth_quartz_bench_type_1", SMOOTH_QUARTZ_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("smooth_sandstone_bench_type_1", SMOOTH_SANDSTONE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
 
-        RegisterBlock("acacia_bench",ACACIA_BENCH, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("oak_bench",OAK_BENCH, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("dark_oak_bench",DARK_OAK_BENCH, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("spruce_bench",SPRUCE_BENCH, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("mangrove_bench",MANGROVE_BENCH, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("jungle_bench",JUNGLE_BENCH, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("birch_bench",BIRCH_BENCH, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("warped_bench",WARPED_BENCH, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("crimson_bench",CRIMSON_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("acacia_bench", ACACIA_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("oak_bench", OAK_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("dark_oak_bench", DARK_OAK_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("spruce_bench", SPRUCE_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("mangrove_bench", MANGROVE_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("jungle_bench", JUNGLE_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("birch_bench", BIRCH_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("warped_bench", WARPED_BENCH, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("crimson_bench", CRIMSON_BENCH, ModItemGroup.LGOUTSIDE);
 
-        RegisterBlock("acacia_bench_type_1",ACACIA_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("oak_bench_type_1",OAK_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("dark_oak_bench_type_1",DARK_OAK_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("spruce_bench_type_1",SPRUCE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("mangrove_bench_type_1",MANGROVE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("jungle_bench_type_1",JUNGLE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("birch_bench_type_1",BIRCH_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("warped_bench_type_1",WARPED_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
-        RegisterBlock("crimson_bench_type_1",CRIMSON_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("acacia_bench_type_1", ACACIA_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("oak_bench_type_1", OAK_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("dark_oak_bench_type_1", DARK_OAK_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("spruce_bench_type_1", SPRUCE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("mangrove_bench_type_1", MANGROVE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("jungle_bench_type_1", JUNGLE_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("birch_bench_type_1", BIRCH_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("warped_bench_type_1", WARPED_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
+        RegisterBlock("crimson_bench_type_1", CRIMSON_BENCH_TYPE_1, ModItemGroup.LGOUTSIDE);
     }
-    private static void registerPowerSockets(){
+
+    private static void registerPowerSockets() {
         RegisterBlock("power_socket_type_0", POWER_SOCKET_TYPE_0, ModItemGroup.LGDECOHOUSE);
         RegisterBlock("power_socket_type_1", POWER_SOCKET_TYPE_1, ModItemGroup.LGDECOHOUSE);
     }
 
-    private static void registerPCs(){
+    private static void registerPCs() {
         RegisterBlock("modern_computer_monitor", MODERN_COMPUTER_MONITOR, ModItemGroup.LGDECOOFFICE);
         RegisterBlock("modern_tv", MODERN_TV, ModItemGroup.LGDECOOFFICE);
     }
-    private static void registerProps(){
+
+    private static void registerProps() {
         RegisterBlock("pencil_storage", PENCIL_STORAGE, ModItemGroup.LGDECOOFFICE);
         RegisterBlock("window", WINDOW, ModItemGroup.LGDECOHOUSE);
     }
 
-    private static void registerMaterialBlocks(){
+    private static void registerMaterialBlocks() {
         RegisterBlock("asphalt_block", ASPHALT_BLOCK, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("asphalt_stairs", ASPHALT_STAIRS, ModItemGroup.LGBUILDINGBLOCKS);
         RegisterBlock("asphalt_slab", ASPHALT_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
@@ -633,9 +665,10 @@ public class ModBlocks {
         RegisterBlock("floor_tiles_vertical_slab", FLOOR_TILES_V_SLAB, ModItemGroup.LGBUILDINGBLOCKS);
     }
 
-    private static void registerFlowerPots(){
-        RegisterBlock("flower_pot",FLOWER_POT,ModItemGroup.SPECIAL);
+    private static void registerFlowerPots() {
+        RegisterBlock("flower_pot", FLOWER_POT, ModItemGroup.SPECIAL);
     }
+
     private static void registerTunels() {
         RegisterBlock("tunnel_block", TUNNEL_BLOCK, ModItemGroup.LGSUBWAY);
         RegisterBlock("tunnel_connector", TUNNEL_CORNER_CONNECTOR, ModItemGroup.LGSUBWAY);
@@ -644,5 +677,12 @@ public class ModBlocks {
         RegisterBlock("contact_rail_with_post", POWER_RAIL_WITH_POST, ModItemGroup.LGSUBWAY);
         RegisterBlock("double_side_contact_rail_without_post", DOUBLE_SIDE_POWER_RAIL_WITHOUT_POST, ModItemGroup.LGSUBWAY);
         RegisterBlock("double_side_contact_rail_with_post", DOUBLE_SIDE_POWER_RAIL_WITH_POST, ModItemGroup.LGSUBWAY);
+    }
+
+    private static void registerSpeedBumps() {
+        RegisterBlock("speed_bump", SPEED_BUMP, ModItemGroup.LGROAD);
+    }
+    private static void registerLanterns() {
+        RegisterBlock("wall_grid_lantern", WALL_GRID_LANTERN, ModItemGroup.LGOUTSIDE);
     }
 }

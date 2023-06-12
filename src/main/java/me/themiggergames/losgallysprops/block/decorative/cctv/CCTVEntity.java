@@ -13,7 +13,8 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class CCTVEntity extends BlockEntity implements IAnimatable {
-    private AnimationFactory factory = new AnimationFactory(this);
+    private final AnimationFactory factory = new AnimationFactory(this);
+
     public CCTVEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.CCTV_ENTITY, pos, state);
     }
@@ -29,6 +30,7 @@ public class CCTVEntity extends BlockEntity implements IAnimatable {
 
         return PlayState.CONTINUE;
     }
+
     @Override
     public AnimationFactory getFactory() {
         return factory;

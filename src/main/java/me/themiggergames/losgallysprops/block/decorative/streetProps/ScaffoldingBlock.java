@@ -2,7 +2,6 @@ package me.themiggergames.losgallysprops.block.decorative.streetProps;
 
 import me.themiggergames.losgallysprops.block.decorative.tunnel.TunnelBlock;
 import me.themiggergames.losgallysprops.block.decorative.tunnel.TunnelEnd;
-import me.themiggergames.losgallysprops.util.BlockConnactable;
 import me.themiggergames.losgallysprops.util.ScaffoldingPropertyTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -59,15 +58,15 @@ public class ScaffoldingBlock extends Block {
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.cuboid(0,0.9375f, 0, 1, 1, 1);
+        return VoxelShapes.cuboid(0, 0.9375f, 0, 1, 1, 1);
     }
 
-    public ScaffoldingPropertyTypes getNeighbourType(WorldAccess world, BlockPos pos, Direction dir){
-        if (!canConnect(world, pos, dir)){
+    public ScaffoldingPropertyTypes getNeighbourType(WorldAccess world, BlockPos pos, Direction dir) {
+        if (!canConnect(world, pos, dir)) {
             return ScaffoldingPropertyTypes.NONE;
         }
         Block block = world.getBlockState(pos.offset(dir)).getBlock();
-        if(block instanceof TunnelEnd || block instanceof TunnelBlock){
+        if (block instanceof TunnelEnd || block instanceof TunnelBlock) {
             return ScaffoldingPropertyTypes.EXTENDED;
         }
         return ScaffoldingPropertyTypes.STANDARD;

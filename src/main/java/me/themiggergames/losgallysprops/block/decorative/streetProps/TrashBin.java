@@ -24,7 +24,7 @@ public class TrashBin extends HorizontalFacingBlock {
 
     public TrashBin(Settings settings) {
         super(settings.nonOpaque());
-        setDefaultState(getDefaultState().with(filledStatement,0));
+        setDefaultState(getDefaultState().with(filledStatement, 0));
     }
 
     @Override
@@ -37,18 +37,18 @@ public class TrashBin extends HorizontalFacingBlock {
         if (player.isCreative())
             return super.onUse(state, world, pos, player, hand, hit);
 
-        if(state.get(filledStatement) == MAX_FILLING){
+        if (state.get(filledStatement) == MAX_FILLING) {
             return super.onUse(state, world, pos, player, hand, hit);
         }
         ItemStack stack = player.getStackInHand(hand);
-        if(stack.getCount()>=1){
-            if(stack.getCount() == 1)
+        if (stack.getCount() >= 1) {
+            if (stack.getCount() == 1)
                 player.setStackInHand(hand, ItemStack.EMPTY);
-            else{
-                stack.setCount(stack.getCount()-1);
+            else {
+                stack.setCount(stack.getCount() - 1);
                 player.setStackInHand(hand, stack);
             }
-            world.setBlockState(pos, state.with(filledStatement, state.get(filledStatement)+1));
+            world.setBlockState(pos, state.with(filledStatement, state.get(filledStatement) + 1));
             world.createAndScheduleBlockTick(pos, this, 40);
         }
         return ActionResult.SUCCESS;
@@ -57,13 +57,13 @@ public class TrashBin extends HorizontalFacingBlock {
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(filledStatement,0).with(FACING, ctx.getPlayerFacing().getOpposite());
+        return this.getDefaultState().with(filledStatement, 0).with(FACING, ctx.getPlayerFacing().getOpposite());
     }
 
     @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
-        if(state.get(filledStatement)!=0){
-            world.setBlockState(pos,state.with(filledStatement,state.get(filledStatement)-1));
+        if (state.get(filledStatement) != 0) {
+            world.setBlockState(pos, state.with(filledStatement, state.get(filledStatement) - 1));
             world.createAndScheduleBlockTick(pos, this, 40);
         }
     }

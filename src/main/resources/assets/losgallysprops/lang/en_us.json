@@ -244,6 +244,17 @@
 	"block.losgallysprops.no_turn_right": "No Turn Right Sign",
 	"block.losgallysprops.crossing": "Crossing Sign",
 
+	"block.losgallysprops.stop_marking": "Stop Marking",
+	"block.losgallysprops.bus_marking": "Bus Marking",
+	"block.losgallysprops.tram_marking": "Tram Marking",
+	"block.losgallysprops.give_way_marking": "Give Way Marking",
+
+	"block.losgallysprops.disabled_marking": "Disabled Marking",
+	"block.losgallysprops.taxi_marking": "Taxi Marking",
+	"block.losgallysprops.toll_marking": "Toll Marking",
+	"block.losgallysprops.only_marking": "Only Marking",
+	"block.losgallysprops.road_marking": "Road Marking",
+
 	"block.losgallysprops.limit_30": "Speed Limit Sign 30 kmph",
 	"block.losgallysprops.limit_60": "Speed Limit Sign 60 kmph",
 	"block.losgallysprops.limit_70": "Speed Limit Sign 70 kmph",

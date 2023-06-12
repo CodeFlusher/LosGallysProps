@@ -25,7 +25,7 @@ public class SymmetricVoxelShapeController {
     //------------------------------------>x
     //Same with Z axis.
 
-    public SymmetricVoxelShapeController(float wide, float thick, float h, float dx,float dy, float dz){
+    public SymmetricVoxelShapeController(float wide, float thick, float h, float dx, float dy, float dz) {
         wideness = wide;
         thickness = thick;
         height = h;
@@ -36,22 +36,22 @@ public class SymmetricVoxelShapeController {
 
     //This function returns voxel shape of model.
     //Voxel shape can be changed(rotated), but still have form of north outline.
-    public VoxelShape getVoxelOutline(Direction direction){
-        switch (direction){
+    public VoxelShape getVoxelOutline(Direction direction) {
+        switch (direction) {
             case NORTH:
-                return VoxelShapes.cuboid(x, y, z, x+wideness, y+height, z+thickness);
+                return VoxelShapes.cuboid(x, y, z, x + wideness, y + height, z + thickness);
             case WEST:
-                return VoxelShapes.cuboid(z, y, x, z+thickness, y+height, x+wideness);
+                return VoxelShapes.cuboid(z, y, x, z + thickness, y + height, x + wideness);
             case SOUTH:
-                return VoxelShapes.cuboid(x,y,1-(thickness+z), x+wideness, y+height, 1-z);
+                return VoxelShapes.cuboid(x, y, 1 - (thickness + z), x + wideness, y + height, 1 - z);
             case EAST:
-                return VoxelShapes.cuboid(1-(thickness+z), y, x, 1-z, y+height, x+wideness);
+                return VoxelShapes.cuboid(1 - (thickness + z), y, x, 1 - z, y + height, x + wideness);
             case DOWN:
-                return VoxelShapes.cuboid(x,z,y, x+wideness, z+thickness, y+height);
-                case UP:
-                return VoxelShapes.cuboid(x,1-(thickness+z),y, x+wideness, 1-z, y+height);
+                return VoxelShapes.cuboid(x, z, y, x + wideness, z + thickness, y + height);
+            case UP:
+                return VoxelShapes.cuboid(x, 1 - (thickness + z), y, x + wideness, 1 - z, y + height);
             default:
-                return VoxelShapes.cuboid(x, y, z, x+wideness, y+height, z+thickness);
+                return VoxelShapes.cuboid(x, y, z, x + wideness, y + height, z + thickness);
         }
     }
 

@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.streetProps;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -22,15 +22,6 @@ import java.util.stream.Stream;
 
 public class DrainPipe extends Block implements Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-
-    // Let default value of the WATERLOGGED property become ``false``
-    public DrainPipe(Settings settings) {
-        super(settings.noCollision());
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
-        setDefaultState(this.stateManager.getDefaultState()
-                .with(WATERLOGGED, false));
-    }
-
     public static final VoxelShape SHAPE_N = Stream.of(
             Block.createCuboidShape(0, 0, 15, 16, 16, 16),
             Block.createCuboidShape(0, 0, 0, 16, 16, 1),
@@ -58,6 +49,14 @@ public class DrainPipe extends Block implements Waterloggable {
             Block.createCuboidShape(14, 0, 9, 15, 16, 11)
     ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
 
+    // Let default value of the WATERLOGGED property become ``false``
+    public DrainPipe(Settings settings) {
+        super(settings.noCollision());
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
+        setDefaultState(this.stateManager.getDefaultState()
+                .with(WATERLOGGED, false));
+    }
+
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE_N;
@@ -73,6 +72,7 @@ public class DrainPipe extends Block implements Waterloggable {
     public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
+
     @Override
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(WATERLOGGED)) {

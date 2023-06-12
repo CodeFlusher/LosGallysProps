@@ -18,16 +18,6 @@ import org.jetbrains.annotations.Nullable;
 public class BioToilet extends HorizontalFacingBlock {
     public static final BooleanProperty ISOPEN = BooleanProperty.of("open");
 
-    @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-        stateManager.add(ISOPEN).add(Properties.HORIZONTAL_FACING);
-    }
-    @Nullable
-    @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerLookDirection().getOpposite()).with(ISOPEN, false);
-    }
-
     public BioToilet(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState()
@@ -35,12 +25,22 @@ public class BioToilet extends HorizontalFacingBlock {
     }
 
     @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
+        stateManager.add(ISOPEN).add(Properties.HORIZONTAL_FACING);
+    }
+
+    @Nullable
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getPlayerLookDirection().getOpposite()).with(ISOPEN, false);
+    }
+
+    @Override
     public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity placedBy, Hand hand, BlockHitResult blockHitResult) {
         if (!world.isClient) {
-            if(blockState.get(ISOPEN)) {
+            if (blockState.get(ISOPEN)) {
                 getDefaultState().with(ISOPEN, false);
-            }
-            else {
+            } else {
                 getDefaultState().with(ISOPEN, true);
             }
         }

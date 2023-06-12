@@ -1,7 +1,7 @@
 package me.themiggergames.losgallysprops.block.decorative.road;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
 import me.themiggergames.losgallysprops.util.BlockRotatable;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -19,11 +19,13 @@ import org.jetbrains.annotations.Nullable;
 
 public class RoadMarking extends HorizontalFacingBlock implements BlockRotatable, Waterloggable {
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
+
     public RoadMarking(Settings settings) {
         super(settings);
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
         setDefaultState(getDefaultState().with(WATERLOGGED, false));
     }
+
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         return VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.1f, 1f);
     }

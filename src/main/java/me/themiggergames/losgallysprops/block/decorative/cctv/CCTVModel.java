@@ -6,18 +6,18 @@ import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class CCTVModel extends AnimatedGeoModel<CCTVEntity> {
 
-    private Identifier getPlacement(String base, CCTVEntity object){
-        return new Identifier(LosGallysProps.MOD_ID, base+"_"+object.getCachedState().get(CCTVBlock.TYPES).asString()+".geo.json");
+    private Identifier getPlacement(String base, CCTVEntity object) {
+        return new Identifier(LosGallysProps.MOD_ID, base + "_" + object.getCachedState().get(CCTVBlock.TYPES).asString() + ".geo.json");
     }
 
     @Override
     public Identifier getModelResource(CCTVEntity object) {
-        return getPlacement("geo/cctv_type_"+object.getCachedState().get(CCTVBlock.STYLE), object);
+        return getPlacement("geo/cctv_type_" + object.getCachedState().get(CCTVBlock.STYLE), object);
     }
 
     @Override
     public Identifier getTextureResource(CCTVEntity object) {
-        return new Identifier(LosGallysProps.MOD_ID, "textures/animated/cctv/cctv_type_"+ object.getCachedState().get(CCTVBlock.STYLE)+".png");
+        return new Identifier(LosGallysProps.MOD_ID, "textures/animated/cctv/cctv_type_" + object.getCachedState().get(CCTVBlock.STYLE) + ".png");
     }
 
     @Override

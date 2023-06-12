@@ -8,20 +8,20 @@ public class ModMath {
     //Or when range1>range2 check if num placed outside of
     //****THIS*****range2--------------range1******OR THIS****
     //When including is true, range1 and range2 can return true, when n equals them.
-    public static boolean isInRange(double x, float range1, float range2, boolean including){
-       if(including){
-        if (range1<range2){
-            return x >= range1 && x <= range2;
-        }else{
-            return x >= range1 || x <= range2;
+    public static boolean isInRange(double x, float range1, float range2, boolean including) {
+        if (including) {
+            if (range1 < range2) {
+                return x >= range1 && x <= range2;
+            } else {
+                return x >= range1 || x <= range2;
+            }
+        } else {
+            if (range1 < range2) {
+                return x > range1 && x < range2;
+            } else {
+                return x > range1 || x < range2;
+            }
         }
-       }else{
-           if (range1<range2){
-               return x > range1 && x < range2;
-           }else{
-               return x > range1 || x < range2;
-           }
-       }
     }
 
     //Function wants to limit number line from one position to other.\

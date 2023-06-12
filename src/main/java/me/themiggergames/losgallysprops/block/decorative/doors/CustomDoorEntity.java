@@ -29,12 +29,12 @@ public class CustomDoorEntity extends BlockEntity implements IAnimatable {
         ));
     }
 
-    private PlayState predicate(AnimationEvent<CustomDoorEntity> event){
+    private PlayState predicate(AnimationEvent<CustomDoorEntity> event) {
         BlockState state = event.getAnimatable().getWorld().getBlockState(event.getAnimatable().getPos());
         Block block = state.getBlock();
-        if(!(block instanceof PowerElements))
+        if (!(block instanceof PowerElements))
             return PlayState.CONTINUE;
-        switch (state.get(PowerElements.ISPOWERED)){
+        switch (state.get(PowerElements.ISPOWERED)) {
             case BEING_DISABLED:
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("door_close", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
                 break;

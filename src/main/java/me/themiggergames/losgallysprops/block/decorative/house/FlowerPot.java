@@ -10,7 +10,6 @@ import net.minecraft.block.SaplingBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
@@ -27,11 +26,11 @@ import java.util.ArrayList;
 public class FlowerPot extends HorizontalFacingBlock implements BlockRotatable, StyledBlock {
 
     public static final Integer MAX_STYLE = 8;
-    public static final IntProperty STYLES = IntProperty.of("style", 0, MAX_STYLE-1);
-    public static final ArrayList<Text> TITLES = new ArrayList<>(){
+    public static final IntProperty STYLES = IntProperty.of("style", 0, MAX_STYLE - 1);
+    public static final ArrayList<Text> TITLES = new ArrayList<>() {
         {
-            for(int i =0; i<MAX_STYLE; i++)
-                add(Text.translatable("ui.losgallysprops.styles.flower_pot."+i));
+            for (int i = 0; i < MAX_STYLE; i++)
+                add(Text.translatable("ui.losgallysprops.styles.flower_pot." + i));
         }
     };
 
@@ -42,37 +41,37 @@ public class FlowerPot extends HorizontalFacingBlock implements BlockRotatable, 
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return getDefaultState().with(STYLES,0).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw())).with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw()));
+        return getDefaultState().with(STYLES, 0).with(ROTATION, BlockRotatable.getRotation(ctx.getPlayerYaw())).with(FACING, BlockRotatable.getHeadDirection(ctx.getPlayerYaw()));
     }
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         Item itemInHand = player.getStackInHand(hand).getItem();
 
-        if (itemInHand == ModItems.STYLE_EDITOR){
+        if (itemInHand == ModItems.STYLE_EDITOR) {
             return ActionResult.CONSUME;
         }
 
-        if (player.getStackInHand(hand) == ItemStack.EMPTY || itemInHand == ModItems.CONFIGURATIOR) {
+        if (itemInHand == ModItems.CONFIGURATIOR) {
             world.setBlockState(pos, state.with(STYLES, 0));
             return ActionResult.SUCCESS;
         }
 
-        if(!(Block.getBlockFromItem(itemInHand) instanceof SaplingBlock))
+        if (!(Block.getBlockFromItem(itemInHand) instanceof SaplingBlock))
             return ActionResult.SUCCESS;
 
-        if (itemInHand == Items.ACACIA_SAPLING){
+        if (itemInHand == Items.ACACIA_SAPLING) {
             world.setBlockState(pos, state.with(STYLES, 1));
-        }else if(itemInHand == Items.BIRCH_SAPLING){
-            world.setBlockState(pos, state.with(STYLES,2));
-        }else if(itemInHand == Items.DARK_OAK_SAPLING){
-            world.setBlockState(pos, state.with(STYLES,3));
-        }else if(itemInHand == Items.JUNGLE_SAPLING){
-            world.setBlockState(pos, state.with(STYLES,4));
-        }else if(itemInHand == Items.OAK_SAPLING){
-            world.setBlockState(pos, state.with(STYLES,5));
-        }else if(itemInHand == Items.SPRUCE_SAPLING){
-            world.setBlockState(pos, state.with(STYLES,6));
+        } else if (itemInHand == Items.BIRCH_SAPLING) {
+            world.setBlockState(pos, state.with(STYLES, 2));
+        } else if (itemInHand == Items.DARK_OAK_SAPLING) {
+            world.setBlockState(pos, state.with(STYLES, 3));
+        } else if (itemInHand == Items.JUNGLE_SAPLING) {
+            world.setBlockState(pos, state.with(STYLES, 4));
+        } else if (itemInHand == Items.OAK_SAPLING) {
+            world.setBlockState(pos, state.with(STYLES, 5));
+        } else if (itemInHand == Items.SPRUCE_SAPLING) {
+            world.setBlockState(pos, state.with(STYLES, 6));
         } else {
             world.setBlockState(pos, state.with(STYLES, 7));
         }

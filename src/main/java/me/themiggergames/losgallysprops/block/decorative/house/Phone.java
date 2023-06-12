@@ -1,7 +1,7 @@
 package me.themiggergames.losgallysprops.block.decorative.house;
 
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -23,16 +23,17 @@ import net.minecraft.world.World;
 
 
 public class Phone extends HorizontalFacingBlock {
-        SoundEvent soundEvent;
+    SoundEvent soundEvent;
 
-        VoxelShape voxelShape;
-        public Phone(Settings settings, SoundEvent sound, VoxelShape shape) {
-            super(settings);
-            DebugLogger.sendMessage(this.getClass().getName()+" Init");
-            soundEvent = sound;
-            voxelShape = shape;
-            setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
-        }
+    VoxelShape voxelShape;
+
+    public Phone(Settings settings, SoundEvent sound, VoxelShape shape) {
+        super(settings);
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
+        soundEvent = sound;
+        voxelShape = shape;
+        setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
+    }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
@@ -40,10 +41,10 @@ public class Phone extends HorizontalFacingBlock {
     }
 
 
-        public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-            Direction dir = state.get(FACING);
-            return voxelShape;
-        }
+    public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
+        Direction dir = state.get(FACING);
+        return voxelShape;
+    }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
@@ -53,8 +54,8 @@ public class Phone extends HorizontalFacingBlock {
     @Override
     public ActionResult onUse(BlockState blockState, World world, BlockPos blockPos, PlayerEntity placedBy, Hand hand, BlockHitResult blockHitResult) {
         if (!world.isClient) {
-             world.playSound(null, blockPos, soundEvent, SoundCategory.BLOCKS, 1f, 1f);
-         }
+            world.playSound(null, blockPos, soundEvent, SoundCategory.BLOCKS, 1f, 1f);
+        }
 
         return ActionResult.SUCCESS;
     }

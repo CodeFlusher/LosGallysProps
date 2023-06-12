@@ -1,6 +1,6 @@
 package me.themiggergames.losgallysprops.block.decorative.special;
 
-import me.themiggergames.losgallysprops.debugtools.DebugLogger;
+import me.themiggergames.losgallysprops.util.InformativeLogger;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
@@ -24,7 +24,7 @@ public class TriggerBlock extends Block {
 
     public TriggerBlock(Settings settings) {
         super(settings.noCollision());
-        DebugLogger.sendMessage(this.getClass().getName()+" Init");
+        InformativeLogger.debugMessage(this.getClass().getName() + " Init");
     }
 
     @Nullable
@@ -40,15 +40,15 @@ public class TriggerBlock extends Block {
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        DebugLogger.sendMessage(String.valueOf(world.isPlayerInRange(pos.getX(), pos.getY(), pos.getZ(), 2)));
-        if(world.isPlayerInRange(pos.getX(), pos.getY(), pos.getZ(), 2)){
+        InformativeLogger.debugMessage(String.valueOf(world.isPlayerInRange(pos.getX(), pos.getY(), pos.getZ(), 2)));
+        if (world.isPlayerInRange(pos.getX(), pos.getY(), pos.getZ(), 2)) {
             world.setBlockState(pos, state.with(POWERED, true));
-            world.emitGameEvent(world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(),2, false), GameEvent.BLOCK_ACTIVATE, pos);
-            this.updateNeighbors(state,world,pos);
-        }else{
+            world.emitGameEvent(world.getClosestPlayer(pos.getX(), pos.getY(), pos.getZ(), 2, false), GameEvent.BLOCK_ACTIVATE, pos);
+            this.updateNeighbors(state, world, pos);
+        } else {
             world.setBlockState(pos, state.with(POWERED, false));
             world.emitGameEvent(null, GameEvent.BLOCK_DEACTIVATE, pos);
-            this.updateNeighbors(state,world,pos);
+            this.updateNeighbors(state, world, pos);
         }
         world.createAndScheduleBlockTick(pos, state.getBlock(), 4);
     }
@@ -73,6 +73,7 @@ public class TriggerBlock extends Block {
     public int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return state.get(POWERED) ? 15 : 0;
     }
+
     @Override
     public int getStrongRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return state.get(POWERED) ? 15 : 0;
@@ -80,7 +81,7 @@ public class TriggerBlock extends Block {
 
     private void updateNeighbors(BlockState state, World world, BlockPos pos) {
         world.updateNeighborsAlways(pos, this);
-        for(Direction dir : DIRECTIONS){
+        for (Direction dir : DIRECTIONS) {
             world.updateNeighborsAlways(pos.offset(dir), this);
         }
     }

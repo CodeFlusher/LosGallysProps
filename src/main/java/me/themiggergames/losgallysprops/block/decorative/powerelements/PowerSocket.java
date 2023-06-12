@@ -14,7 +14,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class PowerSocket extends HorizontalFacingBlock {
 
-    SymmetricVoxelShapeController controller = new SymmetricVoxelShapeController(0.3f, 0.2f, 0.3f,0.35f, 0.35f, 0.8f);
+    SymmetricVoxelShapeController controller = new SymmetricVoxelShapeController(0.3f, 0.2f, 0.3f, 0.35f, 0.35f, 0.8f);
+
     public PowerSocket(Settings settings) {
         super(settings.nonOpaque());
     }

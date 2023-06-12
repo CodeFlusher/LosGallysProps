@@ -16,6 +16,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class PowerElementsEntity extends BlockEntity implements IAnimatable {
     AnimationFactory factory = new AnimationFactory(this);
+
     public PowerElementsEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.POWER_ELEMENTS_ENTITY, pos, state);
     }
@@ -23,9 +24,9 @@ public class PowerElementsEntity extends BlockEntity implements IAnimatable {
     private PlayState predicate(AnimationEvent<PowerElementsEntity> event) {
         BlockState state = event.getAnimatable().getWorld().getBlockState(event.getAnimatable().getPos());
         Block block = state.getBlock();
-        if(!(block instanceof PowerElements))
+        if (!(block instanceof PowerElements))
             return PlayState.CONTINUE;
-        switch (state.get(PowerElements.ISPOWERED)){
+        switch (state.get(PowerElements.ISPOWERED)) {
             case BEING_DISABLED:
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("switch_off", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
                 break;
@@ -41,12 +42,13 @@ public class PowerElementsEntity extends BlockEntity implements IAnimatable {
         }
         return PlayState.CONTINUE;
     }
+
     private PlayState openPredicate(AnimationEvent<PowerElementsEntity> event) {
         BlockState state = event.getAnimatable().getWorld().getBlockState(event.getAnimatable().getPos());
         Block block = state.getBlock();
-        if(!(block instanceof PowerElements))
+        if (!(block instanceof PowerElements))
             return PlayState.CONTINUE;
-        switch (state.get(PowerElements.ISOPEN)){
+        switch (state.get(PowerElements.ISOPEN)) {
             case BEING_DISABLED:
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("door_close", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
                 break;
@@ -61,12 +63,13 @@ public class PowerElementsEntity extends BlockEntity implements IAnimatable {
         }
         return PlayState.CONTINUE;
     }
+
     private PlayState powerPredicate(AnimationEvent<PowerElementsEntity> event) {
         BlockState state = event.getAnimatable().getWorld().getBlockState(event.getAnimatable().getPos());
         Block block = state.getBlock();
-        if(!(block instanceof PowerElements))
+        if (!(block instanceof PowerElements))
             return PlayState.CONTINUE;
-        switch (state.get(PowerElements.ISPOWERED)){
+        switch (state.get(PowerElements.ISPOWERED)) {
             case BEING_DISABLED:
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("power_pointer_off", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
                 break;
@@ -82,12 +85,13 @@ public class PowerElementsEntity extends BlockEntity implements IAnimatable {
         }
         return PlayState.CONTINUE;
     }
+
     private PlayState idlePredicate(AnimationEvent<PowerElementsEntity> event) {
         BlockState state = event.getAnimatable().getWorld().getBlockState(event.getAnimatable().getPos());
         Block block = state.getBlock();
-        if(!(block instanceof PowerElements))
+        if (!(block instanceof PowerElements))
             return PlayState.CONTINUE;
-        switch (state.get(PowerElements.ISPOWERED)){
+        switch (state.get(PowerElements.ISPOWERED)) {
             case BEING_DISABLED:
                 event.getController().setAnimation(new AnimationBuilder().addAnimation("idle_off", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
                 break;
@@ -103,6 +107,7 @@ public class PowerElementsEntity extends BlockEntity implements IAnimatable {
         }
         return PlayState.CONTINUE;
     }
+
     @Override
     public void registerControllers(AnimationData animationData) {
         animationData.addAnimationController(new AnimationController(this, "switch_controller", 0, this::predicate));
@@ -110,7 +115,6 @@ public class PowerElementsEntity extends BlockEntity implements IAnimatable {
         animationData.addAnimationController(new AnimationController(this, "power_pointer_controller", 0, this::powerPredicate));
         animationData.addAnimationController(new AnimationController(this, "idle_controller", 0, this::idlePredicate));
     }
-
 
 
     @Override

@@ -7,7 +7,10 @@ import java.util.ArrayList;
 
 public interface StyledBlock {
     int getMaxStyle();
+
     IntProperty getIntProperty();
+
     boolean usuesUnstandartTiteling();
+
     ArrayList<Text> getTitlesList();
 }
