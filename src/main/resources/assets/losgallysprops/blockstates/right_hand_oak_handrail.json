@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/handrail/wood/oak_handrail_r" },
+        "facing=east":  { "model": "losgallysprops:block/handrail/wood/oak_handrail_r", "y": 90},
+        "facing=south": { "model": "losgallysprops:block/handrail/wood/oak_handrail_r", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/handrail/wood/oak_handrail_r", "y": 270}
+    }
+}

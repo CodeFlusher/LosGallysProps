@@ -1,0 +1,85 @@
+{
+    "multipart": [
+        {
+            "when":{
+                "north": "true"
+            },
+            "apply": {
+                "model": "losgallysprops:block/roof/variants/brick_roof_top_wing"
+            }
+        },
+        {
+            "when":{
+                "east": "true"
+            },
+            "apply": {
+                "model": "losgallysprops:block/roof/variants/brick_roof_top_wing",
+                "y": 90
+            }
+
+        },
+        {
+            "when":{
+                "south": "true"
+            },
+            "apply": {
+                "model": "losgallysprops:block/roof/variants/brick_roof_top_wing",
+                "y": 180
+            }
+
+        },
+        {
+            "when":{
+                "west": "true"
+            },
+            "apply": {
+                "model": "losgallysprops:block/roof/variants/brick_roof_top_wing",
+                "y": 270
+            }
+
+        },
+        {
+            "when":{
+                "north": "false",
+                "west": "false"
+            },
+            "apply": {
+                "model": "losgallysprops:block/roof/variants/brick_roof_top_body"
+            }
+
+        },
+        {
+            "when":{
+                "east": "false",
+                "north": "false"
+            },
+            "apply": {
+                "model": "losgallysprops:block/roof/variants/brick_roof_top_body",
+                "y": 90
+            }
+
+        },
+        {
+            "when":{
+                "east": "false",
+                "south": "false"
+            },
+            "apply": {
+                "model": "losgallysprops:block/roof/variants/brick_roof_top_body",
+                "y": 180
+            }
+
+        },
+        {
+            "when":{
+                "south": "false",
+                "west": "false"
+            },
+            "apply": {
+                "model": "losgallysprops:block/roof/variants/brick_roof_top_body",
+                "y": 270
+            }
+
+        }
+    ]
+}

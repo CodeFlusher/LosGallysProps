@@ -1,0 +1,74 @@
+{
+    "multipart": [
+        {
+            "apply": {
+                "model": "losgallysprops:block/post/fancy_iron_post_center"
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
+                "y": 0
+            },
+            "when":
+            {
+                "north": true
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
+                "y": 90
+            },
+            "when":
+            {
+                "east": true
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
+                "y": 180
+            },
+            "when":
+            {
+                "south": true
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
+                "y": 270
+            },
+            "when":
+            {
+                "west": true
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_cut"
+            },
+            "when":
+            {
+                "up": true
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_cut",
+                "x": 180
+            },
+            "when":
+            {
+                "down": true
+            }
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/tunnel/power_rail"},
+        "facing=east":  { "model": "losgallysprops:block/tunnel/power_rail", "y":  90},
+        "facing=south": { "model": "losgallysprops:block/tunnel/power_rail", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/tunnel/power_rail", "y": 270}
+    }
+}

@@ -1,0 +1,56 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"particle": "losgallysprops:block/traffic_lights/old/old_traffic_light"
+	},
+	"elements": [
+		{
+			"from": [5, 15, 4],
+			"to": [11, 21, 6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 16]},
+			"faces": {
+				"north": {"uv": [6, 6, 0, 12], "texture": "#red"},
+				"east": {"uv": [8, 0, 6, 6], "texture": "#red"},
+				"south": {"uv": [6, 0, 0, 6], "texture": "#red"},
+				"west": {"uv": [8, 6, 6, 12], "texture": "#red"},
+				"up": {"uv": [14, 0, 8, 2], "texture": "#red"},
+				"down": {"uv": [14, 4, 8, 2], "texture": "#red"}
+			}
+		},
+		{
+			"from": [5, 5, 4],
+			"to": [11, 11, 6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 16]},
+			"faces": {
+				"north": {"uv": [6, 6, 0, 12], "texture": "#yellow"},
+				"east": {"uv": [8, 0, 6, 6], "texture": "#yellow"},
+				"south": {"uv": [6, 0, 0, 6], "texture": "#yellow"},
+				"west": {"uv": [8, 6, 6, 12], "texture": "#yellow"},
+				"up": {"uv": [14, 0, 8, 2], "texture": "#yellow"},
+				"down": {"uv": [14, 4, 8, 2], "texture": "#yellow"}
+			}
+		},
+		{
+			"from": [5, -5, 4],
+			"to": [11, 1, 6],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 16]},
+			"faces": {
+				"north": {"uv": [6, 6, 0, 12], "texture": "#green"},
+				"east": {"uv": [8, 0, 6, 6], "texture": "#green"},
+				"south": {"uv": [6, 0, 0, 6], "texture": "#green"},
+				"west": {"uv": [8, 6, 6, 12], "texture": "#green"},
+				"up": {"uv": [14, 0, 8, 2], "texture": "#green"},
+				"down": {"uv": [14, 4, 8, 2], "texture": "#green"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "ohio",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}

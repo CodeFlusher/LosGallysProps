@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/roadsign_base",
+  "textures": {
+    "mark": "losgallysprops:block/roadsigns/one_way_end"
+  }
+}

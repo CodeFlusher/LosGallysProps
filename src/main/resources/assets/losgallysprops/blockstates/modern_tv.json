@@ -1,0 +1,507 @@
+{
+    "multipart":[
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_base"
+            },
+            "when": {
+                "facing": "north"
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_base",
+                "y": 90
+            },
+            "when": {
+                "facing": "east"
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_base",
+                "y": 180
+            },
+            "when": {
+                "facing": "south"
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_base",
+                "y": 270
+            },
+            "when": {
+                "facing": "west"
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/0"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 0
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/0",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 0
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/0",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 0
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/0",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 0
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/1"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 1
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/1",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 1
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/1",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 1
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/1",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 1
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/2"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 2
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/2",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 2
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/2",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 2
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/2",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 2
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/3"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 3
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/3",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 3
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/3",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 3
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/3",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 3
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/4"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 4
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/4",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 4
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/4",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 4
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/4",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 4
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/5"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 5
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/5",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 5
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/5",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 5
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/5",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 5
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/6"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 6
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/6",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 6
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/6",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 6
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/6",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 6
+            }
+        },{
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/7"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 7
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/7",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 7
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/7",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 7
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/7",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 7
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/8"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 8
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/8",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 8
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/8",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 8
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/8",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 8
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/9"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 9
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/9",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 9
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/9",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 9
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/9",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 9
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/10"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 10
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/10",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 10
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/10",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 10
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/10",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 10
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/11"
+            },
+            "when": {
+                "facing": "north",
+                "styles": 11
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/11",
+                "y": 90
+            },
+            "when": {
+                "facing": "east",
+                "styles": 11
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/11",
+                "y": 180
+            },
+            "when": {
+                "facing": "south",
+                "styles": 11
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/pc/tv_modern/11",
+                "y": 270
+            },
+            "when": {
+                "facing": "west",
+                "styles": 11
+            }
+        }
+
+    ]
+}

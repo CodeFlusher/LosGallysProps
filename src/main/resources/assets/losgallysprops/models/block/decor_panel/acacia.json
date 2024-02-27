@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/decor_panel/decor_panel_base",
+  "textures": {
+    "face": "block/acacia_log"
+  }
+}

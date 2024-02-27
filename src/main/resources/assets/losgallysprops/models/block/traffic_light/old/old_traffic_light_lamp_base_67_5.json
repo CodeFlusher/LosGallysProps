@@ -1,0 +1,60 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"1": "losgallysprops:block/traffic_lights/old/old_traffic_light_red_lit",
+		"2": "losgallysprops:block/traffic_lights/old/old_traffic_light_yellow_lit",
+		"3": "losgallysprops:block/traffic_lights/old/old_traffic_light_green_lit",
+		"particle": "losgallysprops:block/traffic_lights/old/old_traffic_light"
+	},
+	"elements": [
+		{
+			"from": [15, 15, 5],
+			"to": [17, 21, 11],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [6, 6, 8, 12], "texture": "#red"},
+				"east": {"uv": [0, 0, 6, 6], "texture": "#red"},
+				"south": {"uv": [6, 0, 8, 6], "texture": "#red"},
+				"west": {"uv": [0, 6, 6, 12], "texture": "#red"},
+				"up": {"uv": [14, 2, 8, 0], "rotation": 90, "texture": "#red"},
+				"down": {"uv": [14, 2, 8, 4], "rotation": 270, "texture": "#red"}
+			}
+		},
+		{
+			"from": [15, 5, 5],
+			"to": [17, 11, 11],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [6, 6, 8, 12], "texture": "#yellow"},
+				"east": {"uv": [0, 0, 6, 6], "texture": "#yellow"},
+				"south": {"uv": [6, 0, 8, 6], "texture": "#yellow"},
+				"west": {"uv": [0, 6, 6, 12], "texture": "#yellow"},
+				"up": {"uv": [14, 2, 8, 0], "rotation": 90, "texture": "#yellow"},
+				"down": {"uv": [14, 2, 8, 4], "rotation": 270, "texture": "#yellow"}
+			}
+		},
+		{
+			"from": [15, -5, 5],
+			"to": [17, 1, 11],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [6, 6, 8, 12], "texture": "#green"},
+				"east": {"uv": [0, 0, 6, 6], "texture": "#green"},
+				"south": {"uv": [6, 0, 8, 6], "texture": "#green"},
+				"west": {"uv": [0, 6, 6, 12], "texture": "#green"},
+				"up": {"uv": [14, 2, 8, 0], "rotation": 90, "texture": "#green"},
+				"down": {"uv": [14, 2, 8, 4], "rotation": 270, "texture": "#green"}
+			}
+		}
+	],
+	"display": {},
+	"groups": [
+		{
+			"name": "lights",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2]
+		}
+	]
+}

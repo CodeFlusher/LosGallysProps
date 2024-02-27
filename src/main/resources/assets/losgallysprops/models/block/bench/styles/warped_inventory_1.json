@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/bench/bench_inventory_1",
+  "textures": {
+    "base": "block/warped_planks"
+  }
+}

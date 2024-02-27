@@ -1,0 +1,117 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/base_window"
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/base_window",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/base_window",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/base_window",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/top_window"
+      },
+      "when": {
+        "facing": "north",
+        "top": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/top_window",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "top": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/top_window",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "top": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/top_window",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "top": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/bottom_window"
+      },
+      "when": {
+        "facing": "north",
+        "bottom": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/bottom_window",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "bottom": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/bottom_window",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "bottom": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/window/bottom_window",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "bottom": false
+      }
+    }
+  ]
+}

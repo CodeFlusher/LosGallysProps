@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/vertical_slabs/vertical_slab_base",
+  "textures": {
+    "face": "block/mangrove_planks"
+  }
+}

@@ -1,0 +1,48 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"particle": "losgallysprops:block/traffic_lights/modern/modern_traffic_light_glass"
+	},
+	"elements": [
+		{
+			"name": "glass",
+			"from": [3, 13, 1.175],
+			"to": [13, 23, 1.175],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 22.875]},
+			"faces": {
+				"east": {"uv": [0, 0, 0, 16], "texture": "#red"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#red"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#red"},
+				"up": {"uv": [0, 0, 10, 0], "texture": "#red"},
+				"down": {"uv": [0, 0, 10, 0], "texture": "#red"}
+			}
+		},
+		{
+			"name": "glass",
+			"from": [3, 3, 1.175],
+			"to": [13, 13, 1.175],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 22.875]},
+			"faces": {
+				"east": {"uv": [0, 0, 0, 16], "texture": "#red"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#yellow"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#red"},
+				"up": {"uv": [0, 0, 10, 0], "texture": "#red"},
+				"down": {"uv": [0, 0, 10, 0], "texture": "#red"}
+			}
+		},
+		{
+			"name": "glass",
+			"from": [3, -7, 1.175],
+			"to": [13, 3, 1.175],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 22.875]},
+			"faces": {
+				"east": {"uv": [0, 0, 0, 16], "texture": "#red"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#green"},
+				"west": {"uv": [0, 0, 0, 16], "texture": "#red"},
+				"up": {"uv": [0, 0, 10, 0], "texture": "#red"},
+				"down": {"uv": [0, 0, 10, 0], "texture": "#red"}
+			}
+		}
+	]
+}

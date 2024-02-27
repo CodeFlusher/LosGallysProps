@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/biotoilet/biotoilet_base"},
+        "facing=east":  { "model": "losgallysprops:block/biotoilet/biotoilet_base", "y":  90},
+        "facing=south": { "model": "losgallysprops:block/biotoilet/biotoilet_base", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/biotoilet/biotoilet_base", "y": 270}
+    }
+}

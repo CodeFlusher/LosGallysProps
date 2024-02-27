@@ -1,0 +1,1045 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/onwall_old_traffic_light"
+      }
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/onwall_old_traffic_light",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/onwall_old_traffic_light",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/onwall_old_traffic_light",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement0/default"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement0/default",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement0/default",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 0
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement0/default",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement1/default"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement1/default",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement1/default",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement1/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement1/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement1/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 1
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement1/67_5",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/default"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 1,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 2,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 3,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/67_5"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/default",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 1,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 2,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 3,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/67_5",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/default",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 1,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 2,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 3,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/67_5",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 2
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement2/67_5",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/default"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 1,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 2,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 3,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/67_5"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/default",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 1,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 2,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 3,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/67_5",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/default",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 1,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 2,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 3,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/67_5",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 3
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement3/67_5",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/default"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 1,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 2,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 3,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/67_5"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/default",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 1,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 2,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 3,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/67_5",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/default",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 1,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 2,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 3,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/67_5",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 4
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement4/67_5",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/default"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 1,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 2,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 3,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/67_5"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/default",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 1,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 2,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 3,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/67_5",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/default",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 1,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 2,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 3,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/67_5",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 5
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement5/67_5",
+        "y": 270
+      }
+    },
+
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 0,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/default"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 1,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/22_5"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 2,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/45"
+      }
+    },
+    {
+      "when": {
+        "facing": "north",
+        "rotation": 3,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/67_5"
+      }
+    },
+
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 0,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/default",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 1,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/22_5",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 2,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/45",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "facing": "east",
+        "rotation": 3,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/67_5",
+        "y": 90
+      }
+    },
+
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 0,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/default",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 1,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/22_5",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 2,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/45",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "facing": "south",
+        "rotation": 3,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/67_5",
+        "y": 180
+      }
+    },
+
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 0,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/default",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 1,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/22_5",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 2,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/45",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "facing": "west",
+        "rotation": 3,
+        "statement": 6
+      },
+      "apply":{
+        "model": "losgallysprops:block/traffic_light/on_wall_old/lights/statement6/67_5",
+        "y": 270
+      }
+    }
+  ]
+}

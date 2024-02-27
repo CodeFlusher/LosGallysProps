@@ -1,0 +1,8 @@
+{
+    "variants":
+    {
+        "": {
+            "model": "losgallysprops:block/material_blocks/floor_tiles_block"
+        }
+    }
+}

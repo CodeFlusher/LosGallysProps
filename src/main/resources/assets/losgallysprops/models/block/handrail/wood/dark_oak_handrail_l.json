@@ -1,0 +1,10 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "losgallysprops:block/handrail/l_handrail_base",
+	"textures": {
+		"top": "block/stripped_dark_oak_log",
+		"side": "block/iron_block",
+		"bottom": "block/dark_oak_log",
+		"particle": "block/stripped_dark_oak_log"
+	}
+}

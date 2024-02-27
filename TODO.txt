@@ -1,0 +1,22 @@
+DONE-Щитки
+DONE -Фикс лесниц
+MODEL ONLY -Вертикальные полублоки
+-Запраки(как проп)
+DONE -Фикс разметки
+DONE -Бетонный вариант канализации.
+DONE -Домофон излучает redstone signal
+DONE -Лава лампа
+WIP -ТЦ Двери
+DONE -Новые светофоры
+DONE -Розетки
+DONE -Style Editor
+DONE -CAMERAS
+DONE - Windows
+ОТЛОЖЕНО - Modern Architecture Things
+Parts of it. - Computer
+DONE - TV
+DONE - Pencil Storage
+- Table Lamp
+- Outside Lightning
+DONE - Benches
+DONE - Trash Bins

@@ -1,0 +1,172 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_0_base"
+      },
+      "when": {
+        "facing": "north",
+        "tunnel_type": 0,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_1_base"
+      },
+      "when": {
+        "facing": "north",
+        "tunnel_type": 1,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_2_base"
+      },
+      "when": {
+        "facing": "north",
+        "tunnel_type": 2,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_0_base",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "tunnel_type": 0,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_1_base",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "tunnel_type": 1,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_2_base",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "tunnel_type": 2,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_0_base",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "tunnel_type": 0,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_1_base",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "tunnel_type": 1,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_2_base",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "tunnel_type": 2,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_0_base",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "tunnel_type": 0,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_1_base",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "tunnel_type": 1,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_wall_2_base",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "tunnel_type": 2,
+        "is_ceiling": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_ceiling_base"
+      },
+      "when": {
+        "facing": "north",
+        "is_ceiling": true
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_ceiling_base",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "is_ceiling": true
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_ceiling_base",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "is_ceiling": true
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/tunnel/subway_ceiling_base",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "is_ceiling": true
+      }
+    }
+  ]
+}

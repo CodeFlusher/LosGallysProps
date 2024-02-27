@@ -1,0 +1,9 @@
+{
+    "variants":
+    {
+        "facing=north": { "model": "losgallysprops:block/trash_bin/trash_bin_type_2_base"},
+        "facing=east":  { "model": "losgallysprops:block/trash_bin/trash_bin_type_2_base", "y":  90},
+        "facing=south": { "model": "losgallysprops:block/trash_bin/trash_bin_type_2_base", "y": 180},
+        "facing=west":  { "model": "losgallysprops:block/trash_bin/trash_bin_type_2_base", "y": 270}
+    }
+}

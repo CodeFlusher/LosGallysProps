@@ -1,0 +1,6 @@
+{
+  "parent": "losgallysprops:block/fence/fence_side_45",
+  "textures": {
+    "texture": "block/oak_planks"
+  }
+}

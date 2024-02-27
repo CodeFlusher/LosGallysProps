@@ -1,0 +1,104 @@
+{
+    "multipart": [
+        {
+            "apply": {
+                "model": "losgallysprops:block/roadsign/subway_logo"
+            },
+            "when": {
+                "facing": "north"
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/roadsign/subway_logo",
+                "y": 90
+            },
+            "when": {
+                "facing": "east"
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/roadsign/subway_logo",
+                "y": 180
+            },
+            "when": {
+                "facing": "south"
+            }
+        },
+        {
+            "apply": {
+                "model": "losgallysprops:block/roadsign/subway_logo",
+                "y": 270
+            },
+            "when": {
+                "facing": "west"
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
+                "y": 0
+            },
+            "when":
+            {
+                "north": true
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
+                "y": 90
+            },
+            "when":
+            {
+                "east": true
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
+                "y": 180
+            },
+            "when":
+            {
+                "south": true
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_vertical_cut",
+                "y": 270
+            },
+            "when":
+            {
+                "west": true
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_cut"
+            },
+            "when":
+            {
+                "up": true
+            }
+        },
+        {
+            "apply":
+            {
+                "model": "losgallysprops:block/post/fancy_iron_post_cut",
+                "x": 180
+            },
+            "when":
+            {
+                "down": true
+            }
+        }
+    ]
+}

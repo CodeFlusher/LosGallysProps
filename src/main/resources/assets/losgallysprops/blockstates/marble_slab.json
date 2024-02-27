@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "losgallysprops:block/stairs/marble/slab"
+    },
+    "type=double": {
+      "model": "losgallysprops:block/material_blocks/marble_block"
+    },
+    "type=top": {
+      "model": "losgallysprops:block/stairs/marble/slab_top"
+    }
+  }
+}

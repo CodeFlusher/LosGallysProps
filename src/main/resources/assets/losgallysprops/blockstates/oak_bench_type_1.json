@@ -1,0 +1,152 @@
+{
+  "multipart": [
+    {
+      "apply":{
+        "model": "losgallysprops:block/bench/border_type_1"
+      },
+      "when": {
+        "left": false,
+        "right": false
+      }
+    },
+    {
+      "apply":{
+        "model": "losgallysprops:block/bench/border_type_1"
+      },
+      "when": {
+        "left": false,
+        "right": true
+      }
+    },
+    {
+      "apply":{
+        "model": "losgallysprops:block/bench/border_type_1"
+      },
+      "when": {
+        "left": true,
+        "right": false
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_l"
+      },
+      "when": {
+        "left": true,
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_r"
+      },
+      "when": {
+        "right": true,
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_c"
+      },
+      "when": {
+        "left": true,
+        "right": true,
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_l",
+        "y": 90
+      },
+      "when": {
+        "left": true,
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_r",
+        "y": 90
+      },
+      "when": {
+        "right": true,
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_c",
+        "y": 90
+      },
+      "when": {
+        "left": true,
+        "right": true,
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_l",
+        "y": 180
+      },
+      "when": {
+        "left": true,
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_r",
+        "y": 180
+      },
+      "when": {
+        "right": true,
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_c",
+        "y": 180
+      },
+      "when": {
+        "left": true,
+        "right": true,
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_l",
+        "y": 270
+      },
+      "when": {
+        "left": true,
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_r",
+        "y": 270
+      },
+      "when": {
+        "right": true,
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "losgallysprops:block/bench/styles/oak_1_c",
+        "y": 270
+      },
+      "when": {
+        "left": true,
+        "right": true,
+        "facing": "west"
+      }
+    }
+  ]
+}
